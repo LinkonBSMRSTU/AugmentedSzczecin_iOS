@@ -38,6 +38,6 @@ class ASAlertController: UIAlertController
     
     func dismiss(completion: ()->()) {
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismissViewControllerAnimated(true, completion: completion)
     }
 }
