@@ -1,9 +1,9 @@
 //
 //  NSTimerExtension.swift
-//  Sprint1
+//  AugmentedSzczecin
 //
-//  Created by Programowanie on 04/04/15.
-//  Copyright (c) 2015 BLStream. All rights reserved.
+//  Created by Nate Cook
+//  https://gist.github.com/natecook1000/b0285b518576b22c4dc8
 //
 
 import Foundation
