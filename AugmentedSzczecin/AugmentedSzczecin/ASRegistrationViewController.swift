@@ -13,22 +13,26 @@ class ASRegistrationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
-    var alert = ASAlertController()
-    var success = true;
-    
+    var alert: ASAlertController?
+    var success = false;
+     
     @IBAction func registerButtonTapped(sender: AnyObject) {
-    
+        alert = ASAlertController(title: "Rejestruję", message: "Proszę czekać", preferredStyle: .Alert)
+        alert?.showWithDelay(2, andVC: self)
         //request to api
-        alert.showAlertWithDelay("Loading", alertMessage: "Please wait...", controller: self, delay: 2)
         if(success == true) {
-            alert.stopTimer()
+            alert?.stopTimer()
+            alert?.dismiss({ () -> () in
+                NSLog("info")
+            })
             self.performSegueWithIdentifier("RegisterSegue", sender: nil)
         }
-        else {
-            alert.dismissAlert(self)
-            alert.showAlertWithDelay("error", alertMessage: "404notfound", controller: self, delay: 0)
+        else{
+            alert?.stopTimer()
+            alert = ASAlertController(title: "Błąd", message: "Sprawdz swoje połączenie z Internetem", preferredStyle: .Alert)
+            alert?.addCancelAction("Zamknij")
+            alert?.show(self)
         }
-    
     }
     
     override func viewDidLoad() {
@@ -36,7 +40,7 @@ class ASRegistrationViewController: UIViewController, UITextFieldDelegate {
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
-        
+
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
