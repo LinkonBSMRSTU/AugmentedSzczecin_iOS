@@ -18,20 +18,21 @@ class ASRegistrationViewController: UIViewController, UITextFieldDelegate {
      
     @IBAction func registerButtonTapped(sender: AnyObject) {
         alert = ASAlertController(title: "Rejestruję", message: "Proszę czekać", preferredStyle: .Alert)
-        alert?.showWithDelay(2, andVC: self)
+        alert?.showWithDelay(2, inViewController: self)
         //request to api
         if(success == true) {
-            alert?.stopTimer()
             alert?.dismiss({ () -> () in
-                NSLog("info")
+                NSLog("success")
             })
             self.performSegueWithIdentifier("RegisterSegue", sender: nil)
         }
         else{
-            alert?.stopTimer()
+            alert?.dismiss({ () -> () in
+                NSLog("error")
+            })
             alert = ASAlertController(title: "Błąd", message: "Sprawdz swoje połączenie z Internetem", preferredStyle: .Alert)
             alert?.addCancelAction("Zamknij")
-            alert?.show(self)
+            alert?.showInViewController(self)
         }
     }
     

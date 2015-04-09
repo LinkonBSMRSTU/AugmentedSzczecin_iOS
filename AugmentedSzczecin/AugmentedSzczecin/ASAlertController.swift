@@ -15,11 +15,18 @@ class ASAlertController: UIAlertController
     var timer: NSTimer?
     
     
-    func show(vc: UIViewController) {
-        vc.presentViewController(self, animated: true, completion: nil)
+    func showInViewController(vc: UIViewController) {
+                vc.presentViewController(self, animated: true, completion: nil)
     }
     
-    func showWithDelay(delay: Double, andVC vc: UIViewController){
+    func showWithDelay(delay: Double, inViewController vc: UIViewController){
+        let indicator = UIActivityIndicatorView(frame: self.view.bounds)
+        indicator.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+        indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.WhiteLarge
+        self.view.addSubview(indicator)
+        indicator.userInteractionEnabled = false
+        indicator.startAnimating()
+
         timer = NSTimer.schedule(delay: delay) { timer in
             vc.presentViewController(self, animated: true, completion: nil)
         }
@@ -32,12 +39,12 @@ class ASAlertController: UIAlertController
         self.addAction(cancelAction)
     }
     
-    func stopTimer() {
+    private func stopTimer() {
         timer?.invalidate()
     }
     
     func dismiss(completion: ()->()) {
-        
+        self.stopTimer()
         self.dismissViewControllerAnimated(true, completion: completion)
     }
 }
