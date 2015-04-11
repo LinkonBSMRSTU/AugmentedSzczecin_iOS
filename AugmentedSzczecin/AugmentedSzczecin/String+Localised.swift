@@ -8,10 +8,9 @@
 
 import UIKit
 
-/* 
-Extension placed here does not work in other files "member of this class not found"
+
 extension String {
-    var localised: String {
-        return NSLocalizedString(self, tableName: nil, bundle: NSBundle.mainBundle(), value: "", comment: "")
+    var localized: String {
+        return NSLocalizedString(self, comment: "")
     }
-}*/
+}

@@ -18,17 +18,8 @@ class ASFirstContactViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        loginButton.setTitle("Login".localised , forState: UIControlState.Normal)
-        registerButton.setTitle("Register".localised, forState: UIControlState.Normal)
+        loginButton.setTitle("Login".localized , forState: UIControlState.Normal)
+        registerButton.setTitle("Register".localized, forState: UIControlState.Normal)
     }
     
-}
-
-//This extension works everywhere
-//Same code is in String+Localised.swift
-
-extension String {
-    var localised: String {
-        return NSLocalizedString(self, tableName: nil, bundle: NSBundle.mainBundle(), value: "", comment: "")
-    }
 }

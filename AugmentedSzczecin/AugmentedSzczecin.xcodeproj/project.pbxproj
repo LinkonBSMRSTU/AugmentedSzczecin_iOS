@@ -21,6 +21,9 @@
 		056730331AD9386A0055308E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 056730321AD9386A0055308E /* Localizable.strings */; };
 		057235D91ACD932B00B8FAE6 /* ASRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054B546B1AB47F7D00ABCE74 /* ASRegistrationViewController.swift */; };
 		057B96781AD93EA500372E11 /* String+Localised.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057B96771AD93EA500372E11 /* String+Localised.swift */; };
+		057B967B1AD962ED00372E11 /* String+Localised.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057B96771AD93EA500372E11 /* String+Localised.swift */; };
+		057B967C1AD9643900372E11 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 056730321AD9386A0055308E /* Localizable.strings */; };
+		057B96811AD964BA00372E11 /* StringLocalizableExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057B96801AD964BA00372E11 /* StringLocalizableExtensionTests.swift */; };
 		05DB8B211AB82624008E02DC /* ASRegistrationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054B546D1AB482E200ABCE74 /* ASRegistrationSegue.swift */; };
 		23625D3D1AAE0DB100EAC93B /* libBLSAugmentedController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23625D3C1AAE0DB100EAC93B /* libBLSAugmentedController.a */; };
 		47B8BD5423453E8F7879AFAB /* Pods_AugmentedSzczecinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C0473809D3465E0B0E8CE0 /* Pods_AugmentedSzczecinTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -57,6 +60,7 @@
 		0567302B1AD3E7C40055308E /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		056730321AD9386A0055308E /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		057B96771AD93EA500372E11 /* String+Localised.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localised.swift"; sourceTree = "<group>"; };
+		057B96801AD964BA00372E11 /* StringLocalizableExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringLocalizableExtensionTests.swift; sourceTree = "<group>"; };
 		057FA5CAC38BA6CA6D144787 /* Pods-AugmentedSzczecinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugmentedSzczecinTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AugmentedSzczecinTests/Pods-AugmentedSzczecinTests.release.xcconfig"; sourceTree = "<group>"; };
 		23625D3C1AAE0DB100EAC93B /* libBLSAugmentedController.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBLSAugmentedController.a; path = "BLSAugmentedController/build/Debug-iphoneos/libBLSAugmentedController.a"; sourceTree = "<group>"; };
 		6D2DE5011A9B7033003717F8 /* AugmentedSzczecin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AugmentedSzczecin.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +179,7 @@
 				054B54711AB630D700ABCE74 /* ASFirstContactViewControllerTests.swift */,
 				054B54731AB630F800ABCE74 /* UIRegistrationViewControllerTests.swift */,
 				6D2DE51A1A9B7033003717F8 /* Supporting Files */,
+				057B96801AD964BA00372E11 /* StringLocalizableExtensionTests.swift */,
 			);
 			path = AugmentedSzczecinTests;
 			sourceTree = "<group>";
@@ -352,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				054B54781AB6361900ABCE74 /* Main.storyboard in Resources */,
+				057B967C1AD9643900372E11 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,11 +480,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				054B54701AB630A400ABCE74 /* ASRegistrationSegueTests.swift in Sources */,
+				057B96811AD964BA00372E11 /* StringLocalizableExtensionTests.swift in Sources */,
 				054B54741AB630F800ABCE74 /* UIRegistrationViewControllerTests.swift in Sources */,
 				05DB8B211AB82624008E02DC /* ASRegistrationSegue.swift in Sources */,
 				054B54791AB7381500ABCE74 /* ASFirstContactViewController.swift in Sources */,
 				054B54721AB630D700ABCE74 /* ASFirstContactViewControllerTests.swift in Sources */,
 				057235D91ACD932B00B8FAE6 /* ASRegistrationViewController.swift in Sources */,
+				057B967B1AD962ED00372E11 /* String+Localised.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,6 +668,7 @@
 			baseConfigurationReference = C71386729CA57FAA34BF4B7D /* Pods-AugmentedSzczecinTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -671,6 +680,7 @@
 				INFOPLIST_FILE = AugmentedSzczecinTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AugmentedSzczecin.app/AugmentedSzczecin";
 			};
 			name = Debug;
@@ -680,6 +690,7 @@
 			baseConfigurationReference = 057FA5CAC38BA6CA6D144787 /* Pods-AugmentedSzczecinTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
