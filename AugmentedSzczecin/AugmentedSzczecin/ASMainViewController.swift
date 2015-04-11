@@ -8,17 +8,30 @@
 
 import UIKit
 
-class ASMainViewController: BLSAugmentedViewController, BLSAugmentedViewControllerDelegate {
+class ASMainViewController: BLSAugmentedViewController, BLSAugmentedViewControllerDelegate, CLLocationManagerDelegate {
     
     var isConnectedToNetwork: Bool?
-    var isGPSEnabled: Bool?
+    var currentLocation: CLLocationCoordinate2D?
+    
+    let locationManager = CLLocationManager()
     
     @IBOutlet weak var mapChoiceSegmentedControl: UISegmentedControl!
     
     override func viewWillAppear(animated: Bool) {
-        self.setMapRegionWithTopLeftCoordinate(CLLocationCoordinate2DMake(53.4294687,14.5556164), andBottomRightCoordinate: CLLocationCoordinate2DMake(53.4288305,14.5561803), animated: false)
+        
         isConnectedToNetwork = Reachability.isConnectedToNetwork()
-        isGPSEnabled = CLLocationManager.locationServicesEnabled()
+        
+        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled(){
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
+        }
+        else{
+            currentLocation = CLLocationCoordinate2DMake(53.4294687,14.5556164)
+            self.setMapRegionWithTopLeftCoordinate(currentLocation!, andBottomRightCoordinate: currentLocation!, animated: false)
+        }
     }
     
     func augmentedViewController(augmentedViewController: BLSAugmentedViewController!, viewForAnnotation annotation: BLSAugmentedAnnotation!, forUserLocation location: CLLocation!, distance: CLLocationDistance) -> BLSAugmentedAnnotationView! {
@@ -28,11 +41,16 @@ class ASMainViewController: BLSAugmentedViewController, BLSAugmentedViewControll
     @IBAction func mapTypeChange(sender: UISegmentedControl) {
         if (sender.selectedSegmentIndex == 0) {
             self.style = BLSAugmentedViewControllerStyle.Map
-            self.setMapRegionWithTopLeftCoordinate(CLLocationCoordinate2DMake(53.4294687,14.5556164), andBottomRightCoordinate: CLLocationCoordinate2DMake(53.4288305,14.5561803), animated: false)
+            self.setMapRegionWithTopLeftCoordinate(currentLocation!, andBottomRightCoordinate: currentLocation!, animated: false)
         } else if (sender.selectedSegmentIndex == 1) {
             self.style = BLSAugmentedViewControllerStyle.AR
         }
     }
     
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        currentLocation = manager.location.coordinate
+        self.setMapRegionWithTopLeftCoordinate(currentLocation!, andBottomRightCoordinate: currentLocation!, animated: false)
+        self.addAnnotation(ASAnnotation(type: "UserLocation", withCoordinate: currentLocation!))
+    }
     
 }
