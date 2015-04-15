@@ -173,17 +173,30 @@
                                     <action selector="mapTypeChange:" destination="Wmo-2f-gmO" eventType="valueChanged" id="wkL-b8-46l"/>
                                 </connections>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500m" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiR-tI-1UA">
+                                <rect key="frame" x="0.0" y="529" width="600" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="gOb-lB-tVK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ZUB-zw-lil" firstAttribute="trailing" secondItem="60O-2R-d04" secondAttribute="trailingMargin" id="12a-Bj-Pxk"/>
                             <constraint firstItem="xoK-ji-1sM" firstAttribute="top" secondItem="ZUB-zw-lil" secondAttribute="bottom" constant="66" id="8ik-LO-0Lq"/>
                             <constraint firstItem="ZUB-zw-lil" firstAttribute="leading" secondItem="60O-2R-d04" secondAttribute="leadingMargin" id="DHk-Oe-ZCW"/>
+                            <constraint firstItem="xoK-ji-1sM" firstAttribute="top" secondItem="eiR-tI-1UA" secondAttribute="bottom" id="Khq-2s-G6q"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eiR-tI-1UA" secondAttribute="trailing" constant="-16" id="Qai-KU-P4b"/>
                             <constraint firstAttribute="centerX" secondItem="ZUB-zw-lil" secondAttribute="centerX" id="Wf4-9V-qYD"/>
+                            <constraint firstItem="eiR-tI-1UA" firstAttribute="leading" secondItem="60O-2R-d04" secondAttribute="leadingMargin" constant="-16" id="obA-UM-sb9"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="mapChoiceSegmentedControl" destination="ZUB-zw-lil" id="4jG-C0-i7X"/>
+                        <outlet property="scaleLabel" destination="eiR-tI-1UA" id="raK-3j-h8T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fG-aR-A3L" userLabel="First Responder" sceneMemberID="firstResponder"/>
