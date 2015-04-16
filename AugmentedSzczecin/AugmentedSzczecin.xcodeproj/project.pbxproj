@@ -22,6 +22,7 @@
 		057B967A1AD959D300372E11 /* ASAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057B96791AD959D300372E11 /* ASAnnotation.swift */; };
 		05CAEC7C1ADEE8A600628015 /* UIColor+ColorFromHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CAEC7B1ADEE8A600628015 /* UIColor+ColorFromHex.swift */; };
 		05CAEC7D1ADEE8A600628015 /* UIColor+ColorFromHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CAEC7B1ADEE8A600628015 /* UIColor+ColorFromHex.swift */; };
+		05CAECAF1ADFAC6800628015 /* UIColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CAECAE1ADFAC6800628015 /* UIColorExtensionTests.swift */; };
 		05DB8B211AB82624008E02DC /* ASRegistrationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054B546D1AB482E200ABCE74 /* ASRegistrationSegue.swift */; };
 		23625D3D1AAE0DB100EAC93B /* libBLSAugmentedController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23625D3C1AAE0DB100EAC93B /* libBLSAugmentedController.a */; };
 		47B8BD5423453E8F7879AFAB /* Pods_AugmentedSzczecinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C0473809D3465E0B0E8CE0 /* Pods_AugmentedSzczecinTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -59,6 +60,7 @@
 		057B96791AD959D300372E11 /* ASAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASAnnotation.swift; sourceTree = "<group>"; };
 		057FA5CAC38BA6CA6D144787 /* Pods-AugmentedSzczecinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugmentedSzczecinTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AugmentedSzczecinTests/Pods-AugmentedSzczecinTests.release.xcconfig"; sourceTree = "<group>"; };
 		05CAEC7B1ADEE8A600628015 /* UIColor+ColorFromHex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+ColorFromHex.swift"; sourceTree = "<group>"; };
+		05CAECAE1ADFAC6800628015 /* UIColorExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTests.swift; sourceTree = "<group>"; };
 		23625D3C1AAE0DB100EAC93B /* libBLSAugmentedController.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBLSAugmentedController.a; path = "BLSAugmentedController/build/Debug-iphoneos/libBLSAugmentedController.a"; sourceTree = "<group>"; };
 		6D2DE5011A9B7033003717F8 /* AugmentedSzczecin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AugmentedSzczecin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D2DE5051A9B7033003717F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				054B54711AB630D700ABCE74 /* ASFirstContactViewControllerTests.swift */,
 				054B54731AB630F800ABCE74 /* UIRegistrationViewControllerTests.swift */,
 				6D2DE51A1A9B7033003717F8 /* Supporting Files */,
+				05CAECAE1ADFAC6800628015 /* UIColorExtensionTests.swift */,
 			);
 			path = AugmentedSzczecinTests;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				054B54701AB630A400ABCE74 /* ASRegistrationSegueTests.swift in Sources */,
 				054B54741AB630F800ABCE74 /* UIRegistrationViewControllerTests.swift in Sources */,
 				05DB8B211AB82624008E02DC /* ASRegistrationSegue.swift in Sources */,
+				05CAECAF1ADFAC6800628015 /* UIColorExtensionTests.swift in Sources */,
 				054B54791AB7381500ABCE74 /* ASFirstContactViewController.swift in Sources */,
 				05CAEC7D1ADEE8A600628015 /* UIColor+ColorFromHex.swift in Sources */,
 				054B54721AB630D700ABCE74 /* ASFirstContactViewControllerTests.swift in Sources */,
