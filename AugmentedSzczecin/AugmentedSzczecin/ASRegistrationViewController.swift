@@ -25,7 +25,10 @@ class ASRegistrationViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
+        registerButton.setTitle("Register".localized, forState: UIControlState.Normal)
+        cancelButton.setTitle("Cancel".localized, forState: UIControlState.Normal)
+        
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
