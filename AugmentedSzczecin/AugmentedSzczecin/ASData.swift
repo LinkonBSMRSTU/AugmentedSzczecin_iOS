@@ -30,14 +30,14 @@ class ASData: NSObject {
         }()
     
     lazy var managedObjectModel: NSManagedObjectModel = {
-        let modelURL = NSBundle.mainBundle().URLForResource("AugmentedSzczecin", withExtension: "momd")!
+        let modelURL = NSBundle.mainBundle().URLForResource("ASDataModel", withExtension: "momd")!
         return NSManagedObjectModel(contentsOfURL: modelURL)!
         }()
     
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
 
         var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("AugmentedSzczecin.sqlite")
+        let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("ASDataModel.sqlite")
         var error: NSError? = nil
         var failureReason = "There was an error creating or loading the application's saved data."
         let mOptions = [NSMigratePersistentStoresAutomaticallyOption: true,
