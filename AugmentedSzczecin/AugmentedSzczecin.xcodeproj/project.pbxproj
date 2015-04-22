@@ -54,6 +54,7 @@
 		2399E0651AE820A10000DFEE /* _ASUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399E0621AE820A10000DFEE /* _ASUser.swift */; };
 		2399E0661AE820A10000DFEE /* ASUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399E0631AE820A10000DFEE /* ASUser.swift */; };
 		2399E0671AE820A10000DFEE /* ASUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399E0631AE820A10000DFEE /* ASUser.swift */; };
+		2399E0681AE8237B0000DFEE /* ASDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A42F98D61ABEDE42006CF22E /* ASDataModel.xcdatamodeld */; };
 		47B8BD5423453E8F7879AFAB /* Pods_AugmentedSzczecinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C0473809D3465E0B0E8CE0 /* Pods_AugmentedSzczecinTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6D2DE5071A9B7033003717F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2DE5061A9B7033003717F8 /* AppDelegate.swift */; };
 		6D2DE50C1A9B7033003717F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D2DE50A1A9B7033003717F8 /* Main.storyboard */; };
@@ -592,6 +593,7 @@
 				EFB7A3DE1AE2BADE00528083 /* ASRestUtil.swift in Sources */,
 				EF7F50061AE2D6A600502380 /* ASCredentialManager.swift in Sources */,
 				054B54791AB7381500ABCE74 /* ASFirstContactViewController.swift in Sources */,
+				2399E0681AE8237B0000DFEE /* ASDataModel.xcdatamodeld in Sources */,
 				05CAEC7D1ADEE8A600628015 /* UIColor+ColorFromHex.swift in Sources */,
 				054B54721AB630D700ABCE74 /* ASFirstContactViewControllerTests.swift in Sources */,
 				057235D91ACD932B00B8FAE6 /* ASRegistrationViewController.swift in Sources */,

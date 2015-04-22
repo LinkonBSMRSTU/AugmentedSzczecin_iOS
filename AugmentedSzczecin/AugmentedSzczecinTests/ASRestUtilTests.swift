@@ -54,17 +54,15 @@ class ASRestUtilTests: XCTestCase {
     
     func testCreateUserFromJson() {
         
-//        var params = ["id":12345,"email":"xxx", "password":"zzz"]
-//        var exampleJsonData = NSJSONSerialization.dataWithJSONObject(params, options: nil, error: nil)
-//        var exampleJsonDictionary = NSJSONSerialization.JSONObjectWithData(exampleJsonData!, options: .MutableLeaves, error: nil) as? NSDictionary
-//        
-//        
-//        
-//        let results = ASRestUtil.handleSignUp(exampleJsonDictionary!)
-//
-//        XCTAssertEqual(results.password!, params["password"] as! String, "")
-//        XCTAssertEqual(results.email!, params["email"] as! String, "")
-//        XCTAssertEqual(results.id!, params["id"] as! Int, "")
+        var params = ["id":12345,"email":"xxx", "password":"zzz"]
+        var exampleJsonData = NSJSONSerialization.dataWithJSONObject(params, options: nil, error: nil)
+        var exampleJsonDictionary = NSJSONSerialization.JSONObjectWithData(exampleJsonData!, options: .MutableLeaves, error: nil) as? NSDictionary
+
+        let results = ASRestUtil.handleSignUp(exampleJsonDictionary!)
+
+        XCTAssertEqual(results!.password!, params["password"] as! String, "")
+        XCTAssertEqual(results!.email!, params["email"] as! String, "")
+        XCTAssertEqual(results!.id!, params["id"] as! Int, "")
         
     }
     
