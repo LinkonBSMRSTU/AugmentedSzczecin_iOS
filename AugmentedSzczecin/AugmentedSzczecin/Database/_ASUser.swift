@@ -15,7 +15,7 @@ class _ASUser: NSManagedObject {
     // MARK: - Class methods
 
     class func entityName () -> String {
-        return "User"
+        return "ASUser"
     }
 
     class func entity(managedObjectContext: NSManagedObjectContext!) -> NSEntityDescription! {

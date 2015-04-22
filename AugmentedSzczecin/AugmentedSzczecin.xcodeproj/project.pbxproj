@@ -50,14 +50,16 @@
 		2399E05F1AE80BA90000DFEE /* NSTimerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399E05D1AE80BA90000DFEE /* NSTimerExtension.swift */; };
 		2399E0601AE81ECC0000DFEE /* ASMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399E05A1AE80BA00000DFEE /* ASMainViewController.swift */; };
 		2399E0611AE81EF40000DFEE /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0567302B1AD3E7C40055308E /* Reachability.swift */; };
+		2399E0641AE820A10000DFEE /* _ASUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399E0621AE820A10000DFEE /* _ASUser.swift */; };
+		2399E0651AE820A10000DFEE /* _ASUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399E0621AE820A10000DFEE /* _ASUser.swift */; };
+		2399E0661AE820A10000DFEE /* ASUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399E0631AE820A10000DFEE /* ASUser.swift */; };
+		2399E0671AE820A10000DFEE /* ASUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399E0631AE820A10000DFEE /* ASUser.swift */; };
 		47B8BD5423453E8F7879AFAB /* Pods_AugmentedSzczecinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C0473809D3465E0B0E8CE0 /* Pods_AugmentedSzczecinTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6D2DE5071A9B7033003717F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2DE5061A9B7033003717F8 /* AppDelegate.swift */; };
 		6D2DE50C1A9B7033003717F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D2DE50A1A9B7033003717F8 /* Main.storyboard */; };
 		6D2DE50E1A9B7033003717F8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D2DE50D1A9B7033003717F8 /* Images.xcassets */; };
 		6D2DE5111A9B7033003717F8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D2DE50F1A9B7033003717F8 /* LaunchScreen.xib */; };
 		A42F98D81ABEDE42006CF22E /* ASDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A42F98D61ABEDE42006CF22E /* ASDataModel.xcdatamodeld */; };
-		A42F98DC1ABEE073006CF22E /* _ASUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42F98DA1ABEE073006CF22E /* _ASUser.swift */; };
-		A42F98DD1ABEE073006CF22E /* ASUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42F98DB1ABEE073006CF22E /* ASUser.swift */; };
 		A4B52E141AD2AB6200C318A6 /* ASData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B52E131AD2AB6200C318A6 /* ASData.swift */; };
 		A4FE1C701AA518750044DE55 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		D386927B9EBA7240D980CCF6 /* Pods_AugmentedSzczecin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 910EF554C1DC1F0DAAA42A47 /* Pods_AugmentedSzczecin.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -65,8 +67,6 @@
 		D5922F4F1ADD37A6005DD8B2 /* ASLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5922F4D1ADD37A6005DD8B2 /* ASLoginViewController.swift */; };
 		D5922F511ADD7968005DD8B2 /* ASLoginSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5922F501ADD7968005DD8B2 /* ASLoginSegue.swift */; };
 		D5922F521ADD7968005DD8B2 /* ASLoginSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5922F501ADD7968005DD8B2 /* ASLoginSegue.swift */; };
-		EF7F50041AE2D2DF00502380 /* ASUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42F98DB1ABEE073006CF22E /* ASUser.swift */; };
-		EF7F50051AE2D34500502380 /* _ASUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42F98DA1ABEE073006CF22E /* _ASUser.swift */; };
 		EF7F50061AE2D6A600502380 /* ASCredentialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB7A3DF1AE2BB2B00528083 /* ASCredentialManager.swift */; };
 		EF7F50071AE2D6AE00502380 /* ASData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B52E131AD2AB6200C318A6 /* ASData.swift */; };
 		EFB6C2331AE783C500A74DDA /* ASRestUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB6C2321AE783C500A74DDA /* ASRestUtilTests.swift */; };
@@ -105,6 +105,8 @@
 		2399E0571AE80B970000DFEE /* ASAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASAlertController.swift; sourceTree = "<group>"; };
 		2399E05A1AE80BA00000DFEE /* ASMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASMainViewController.swift; sourceTree = "<group>"; };
 		2399E05D1AE80BA90000DFEE /* NSTimerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTimerExtension.swift; sourceTree = "<group>"; };
+		2399E0621AE820A10000DFEE /* _ASUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = _ASUser.swift; path = Database/_ASUser.swift; sourceTree = "<group>"; };
+		2399E0631AE820A10000DFEE /* ASUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASUser.swift; path = Database/ASUser.swift; sourceTree = "<group>"; };
 		6D2DE5011A9B7033003717F8 /* AugmentedSzczecin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AugmentedSzczecin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D2DE5051A9B7033003717F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D2DE5061A9B7033003717F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,8 +129,6 @@
 		910EF554C1DC1F0DAAA42A47 /* Pods_AugmentedSzczecin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AugmentedSzczecin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A78CE0DD15202A86FD6BD9A /* Pods-AugmentedSzczecin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugmentedSzczecin.release.xcconfig"; path = "Pods/Target Support Files/Pods-AugmentedSzczecin/Pods-AugmentedSzczecin.release.xcconfig"; sourceTree = "<group>"; };
 		A42F98D71ABEDE42006CF22E /* ASDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ASDataModel.xcdatamodel; sourceTree = "<group>"; };
-		A42F98DA1ABEE073006CF22E /* _ASUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = _ASUser.swift; path = Database/_ASUser.swift; sourceTree = "<group>"; };
-		A42F98DB1ABEE073006CF22E /* ASUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASUser.swift; path = Database/ASUser.swift; sourceTree = "<group>"; };
 		A4B52E131AD2AB6200C318A6 /* ASData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASData.swift; sourceTree = "<group>"; };
 		A4FE1C711AA5191D0044DE55 /* AugmentedSzczecin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AugmentedSzczecin-Bridging-Header.h"; sourceTree = "<group>"; };
 		B6EEC7F471F4EBF1FD094437 /* Pods-AugmentedSzczecin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugmentedSzczecin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AugmentedSzczecin/Pods-AugmentedSzczecin.debug.xcconfig"; sourceTree = "<group>"; };
@@ -297,8 +297,8 @@
 		A42F98D91ABEDE4E006CF22E /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				A42F98DA1ABEE073006CF22E /* _ASUser.swift */,
-				A42F98DB1ABEE073006CF22E /* ASUser.swift */,
+				2399E0621AE820A10000DFEE /* _ASUser.swift */,
+				2399E0631AE820A10000DFEE /* ASUser.swift */,
 				A42F98D61ABEDE42006CF22E /* ASDataModel.xcdatamodeld */,
 				A4B52E131AD2AB6200C318A6 /* ASData.swift */,
 			);
@@ -556,11 +556,11 @@
 				054B546A1AB47B6500ABCE74 /* ASFirstContactViewController.swift in Sources */,
 				D5922F4E1ADD37A6005DD8B2 /* ASLoginViewController.swift in Sources */,
 				A4B52E141AD2AB6200C318A6 /* ASData.swift in Sources */,
-				A42F98DC1ABEE073006CF22E /* _ASUser.swift in Sources */,
+				2399E0661AE820A10000DFEE /* ASUser.swift in Sources */,
 				A4FE1C701AA518750044DE55 /* (null) in Sources */,
 				054B546E1AB482E200ABCE74 /* ASRegistrationSegue.swift in Sources */,
-				A42F98DD1ABEE073006CF22E /* ASUser.swift in Sources */,
 				D5922F511ADD7968005DD8B2 /* ASLoginSegue.swift in Sources */,
+				2399E0641AE820A10000DFEE /* _ASUser.swift in Sources */,
 				0567302C1AD3E7C40055308E /* Reachability.swift in Sources */,
 				EFB7A3DD1AE2BADE00528083 /* ASRestUtil.swift in Sources */,
 				EFB7A3E01AE2BB2B00528083 /* ASCredentialManager.swift in Sources */,
@@ -580,13 +580,13 @@
 				054B54701AB630A400ABCE74 /* ASRegistrationSegueTests.swift in Sources */,
 				2399E0601AE81ECC0000DFEE /* ASMainViewController.swift in Sources */,
 				057B96811AD964BA00372E11 /* StringLocalizableExtensionTests.swift in Sources */,
-				EF7F50041AE2D2DF00502380 /* ASUser.swift in Sources */,
 				EFB6C2331AE783C500A74DDA /* ASRestUtilTests.swift in Sources */,
 				054B54741AB630F800ABCE74 /* UIRegistrationViewControllerTests.swift in Sources */,
 				05DB8B211AB82624008E02DC /* ASRegistrationSegue.swift in Sources */,
-				EF7F50051AE2D34500502380 /* _ASUser.swift in Sources */,
+				2399E0671AE820A10000DFEE /* ASUser.swift in Sources */,
 				05CAECAF1ADFAC6800628015 /* UIColorExtensionTests.swift in Sources */,
 				D5922F521ADD7968005DD8B2 /* ASLoginSegue.swift in Sources */,
+				2399E0651AE820A10000DFEE /* _ASUser.swift in Sources */,
 				2399E05F1AE80BA90000DFEE /* NSTimerExtension.swift in Sources */,
 				EF7F50071AE2D6AE00502380 /* ASData.swift in Sources */,
 				EFB7A3DE1AE2BADE00528083 /* ASRestUtil.swift in Sources */,
