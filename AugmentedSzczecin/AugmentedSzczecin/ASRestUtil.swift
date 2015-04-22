@@ -120,7 +120,7 @@ class ASRestUtil {
     
     private class func createUserFromJson(userJson: Dictionary<String, AnyObject>) -> ASUser! {
         
-        var user: ASUser = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: ASData.sharedInstance.managedObjectContext!) as! ASUser
+        var user: ASUser = NSEntityDescription.insertNewObjectForEntityForName(ASUser.entityName(), inManagedObjectContext: ASData.sharedInstance.mainContext!) as! ASUser
         
         if let id = userJson["id"] as? Int {
             if let email = userJson["email"] as? String {
