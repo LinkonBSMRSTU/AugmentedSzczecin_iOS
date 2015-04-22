@@ -108,7 +108,7 @@ class ASRestUtil {
         task.resume()
     }
     
-    private class func handleSignUp(json: AnyObject) -> ASUser? {
+    class func handleSignUp(json: AnyObject) -> ASUser? {
         if let userJson = json as? JSONDictionary {
             if let user = ASRestUtil.createUserFromJson(userJson) {
                         return user
@@ -118,7 +118,7 @@ class ASRestUtil {
         return nil
     }
     
-    private class func createUserFromJson(userJson: Dictionary<String, AnyObject>) -> ASUser! {
+    class func createUserFromJson(userJson: Dictionary<String, AnyObject>) -> ASUser! {
         
         var user: ASUser = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: ASData.sharedInstance.managedObjectContext!) as! ASUser
         
@@ -136,7 +136,7 @@ class ASRestUtil {
         return nil
     }
     
-    private class func paramsForSigningUp(email: String, password: String) -> (apiPath: String, parameters: Dictionary<String, String>) {
+    class func paramsForSigningUp(email: String, password: String) -> (apiPath: String, parameters: Dictionary<String, String>) {
         
         let apiPath: String = "users"
         let parameters = ["email":email, "password":password]
