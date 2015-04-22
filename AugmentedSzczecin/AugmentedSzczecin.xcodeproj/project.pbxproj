@@ -470,7 +470,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/mogenerator -m \"${SRCROOT}/AugmentedSzczecin/Database/ASDataModel.xcdatamodeld/ASDataModel.xcdatamodel/\" -O \"${SRCROOT}/AugmentedSzczecin/Database/\" --swift --template-var arc=true";
+			shellScript = "mogenerator -m \"${SRCROOT}/AugmentedSzczecin/Database/ASDataModel.xcdatamodeld/ASDataModel.xcdatamodel/\" -O \"${SRCROOT}/AugmentedSzczecin/Database/\" --swift --template-var arc=true";
 		};
 		DB46A4AB299CA904E21F3310 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
