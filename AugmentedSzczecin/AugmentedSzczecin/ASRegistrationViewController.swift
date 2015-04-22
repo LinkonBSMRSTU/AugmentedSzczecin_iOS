@@ -17,6 +17,29 @@ class ASRegistrationViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func registerButtonTapped(sender: AnyObject) {
         self.performSegueWithIdentifier("RegisterSegue", sender: nil)
+        
+        //MOCK
+        
+        var email = "tbilski@wi.zut.edu.pl"
+        var password = "haslo1234"
+        
+        let restUtilTask = ASRestUtil()
+        restUtilTask.signUp(email, password: password, callbackSuccess: {(user: AnyObject?) -> Void in
+            
+            let _user = user as? ASUser
+            
+            println("Zarejestrowano pomyslnie uzytkownika")
+            println("Email: \(_user!.email!)")
+            println("Password: \(_user!.password!)")
+            println("Id: \(_user!.id!)")
+            
+            
+            },
+            callbackFailure: {(codeError: Int?, message: String) -> Void in
+                
+                
+                println("code: \(codeError != nil ? codeError! : codeError), message: \(message)")
+        })
     }
     
     @IBAction func cancelButtonTapped(sender: AnyObject) {

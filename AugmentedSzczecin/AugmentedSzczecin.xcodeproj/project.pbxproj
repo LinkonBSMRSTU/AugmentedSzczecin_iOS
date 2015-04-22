@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		EFB7A3D71AE2B8BB00528083 /* Mogenerator */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = EFB7A3DA1AE2B8BB00528083 /* Build configuration list for PBXAggregateTarget "Mogenerator" */;
+			buildPhases = (
+				EFB7A3DB1AE2B8BF00528083 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Mogenerator;
+			productName = Mogenerator;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		054B546A1AB47B6500ABCE74 /* ASFirstContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054B54691AB47B6500ABCE74 /* ASFirstContactViewController.swift */; };
 		054B546C1AB47F7D00ABCE74 /* ASRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054B546B1AB47F7D00ABCE74 /* ASRegistrationViewController.swift */; };
@@ -44,6 +58,13 @@
 		D5922F4F1ADD37A6005DD8B2 /* ASLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5922F4D1ADD37A6005DD8B2 /* ASLoginViewController.swift */; };
 		D5922F511ADD7968005DD8B2 /* ASLoginSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5922F501ADD7968005DD8B2 /* ASLoginSegue.swift */; };
 		D5922F521ADD7968005DD8B2 /* ASLoginSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5922F501ADD7968005DD8B2 /* ASLoginSegue.swift */; };
+		EF7F50041AE2D2DF00502380 /* ASUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42F98DB1ABEE073006CF22E /* ASUser.swift */; };
+		EF7F50051AE2D34500502380 /* _ASUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42F98DA1ABEE073006CF22E /* _ASUser.swift */; };
+		EF7F50061AE2D6A600502380 /* ASCredentialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB7A3DF1AE2BB2B00528083 /* ASCredentialManager.swift */; };
+		EF7F50071AE2D6AE00502380 /* ASData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B52E131AD2AB6200C318A6 /* ASData.swift */; };
+		EFB7A3DD1AE2BADE00528083 /* ASRestUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB7A3DC1AE2BADE00528083 /* ASRestUtil.swift */; };
+		EFB7A3DE1AE2BADE00528083 /* ASRestUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB7A3DC1AE2BADE00528083 /* ASRestUtil.swift */; };
+		EFB7A3E01AE2BB2B00528083 /* ASCredentialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB7A3DF1AE2BB2B00528083 /* ASCredentialManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +125,8 @@
 		C71386729CA57FAA34BF4B7D /* Pods-AugmentedSzczecinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugmentedSzczecinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AugmentedSzczecinTests/Pods-AugmentedSzczecinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D5922F4D1ADD37A6005DD8B2 /* ASLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASLoginViewController.swift; sourceTree = "<group>"; };
 		D5922F501ADD7968005DD8B2 /* ASLoginSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASLoginSegue.swift; sourceTree = "<group>"; };
+		EFB7A3DC1AE2BADE00528083 /* ASRestUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASRestUtil.swift; sourceTree = "<group>"; };
+		EFB7A3DF1AE2BB2B00528083 /* ASCredentialManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASCredentialManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,10 +186,12 @@
 				D5922F501ADD7968005DD8B2 /* ASLoginSegue.swift */,
 				D5922F4D1ADD37A6005DD8B2 /* ASLoginViewController.swift */,
 				6D2DE5061A9B7033003717F8 /* AppDelegate.swift */,
+				EFB7A3DC1AE2BADE00528083 /* ASRestUtil.swift */,
 				054B54691AB47B6500ABCE74 /* ASFirstContactViewController.swift */,
 				054B547A1AB73AE200ABCE74 /* ASMainViewController.swift */,
 				054B546B1AB47F7D00ABCE74 /* ASRegistrationViewController.swift */,
 				054B546D1AB482E200ABCE74 /* ASRegistrationSegue.swift */,
+				EFB7A3DF1AE2BB2B00528083 /* ASCredentialManager.swift */,
 				0567302D1AD936A90055308E /* Extensions */,
 				A42F98D91ABEDE4E006CF22E /* Database */,
 				6D90A5721AA744B300F36771 /* Storyboards & XIBs */,
@@ -338,6 +363,9 @@
 						CreatedOnToolsVersion = 6.1.1;
 						TestTargetID = 6D2DE5001A9B7033003717F8;
 					};
+					EFB7A3D71AE2B8BB00528083 = {
+						CreatedOnToolsVersion = 6.3;
+					};
 				};
 			};
 			buildConfigurationList = 6D2DE4FC1A9B7033003717F8 /* Build configuration list for PBXProject "AugmentedSzczecin" */;
@@ -355,6 +383,7 @@
 			targets = (
 				6D2DE5001A9B7033003717F8 /* AugmentedSzczecin */,
 				6D2DE5151A9B7033003717F8 /* AugmentedSzczecinTests */,
+				EFB7A3D71AE2B8BB00528083 /* Mogenerator */,
 			);
 		};
 /* End PBXProject section */
@@ -487,6 +516,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		EFB7A3DB1AE2B8BF00528083 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/mogenerator -m AugmentedSzczecin/Database/ASDataModel.xcdatamodeld -O AugmentedSzczecin/Database/ --swift --template-var arc=true";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -505,6 +547,8 @@
 				A42F98DD1ABEE073006CF22E /* ASUser.swift in Sources */,
 				D5922F511ADD7968005DD8B2 /* ASLoginSegue.swift in Sources */,
 				0567302C1AD3E7C40055308E /* Reachability.swift in Sources */,
+				EFB7A3DD1AE2BADE00528083 /* ASRestUtil.swift in Sources */,
+				EFB7A3E01AE2BB2B00528083 /* ASCredentialManager.swift in Sources */,
 				054B546C1AB47F7D00ABCE74 /* ASRegistrationViewController.swift in Sources */,
 				6D2DE5071A9B7033003717F8 /* AppDelegate.swift in Sources */,
 				057B96781AD93EA500372E11 /* String+Localised.swift in Sources */,
@@ -518,10 +562,15 @@
 			files = (
 				054B54701AB630A400ABCE74 /* ASRegistrationSegueTests.swift in Sources */,
 				057B96811AD964BA00372E11 /* StringLocalizableExtensionTests.swift in Sources */,
+				EF7F50041AE2D2DF00502380 /* ASUser.swift in Sources */,
 				054B54741AB630F800ABCE74 /* UIRegistrationViewControllerTests.swift in Sources */,
 				05DB8B211AB82624008E02DC /* ASRegistrationSegue.swift in Sources */,
+				EF7F50051AE2D34500502380 /* _ASUser.swift in Sources */,
 				05CAECAF1ADFAC6800628015 /* UIColorExtensionTests.swift in Sources */,
 				D5922F521ADD7968005DD8B2 /* ASLoginSegue.swift in Sources */,
+				EF7F50071AE2D6AE00502380 /* ASData.swift in Sources */,
+				EFB7A3DE1AE2BADE00528083 /* ASRestUtil.swift in Sources */,
+				EF7F50061AE2D6A600502380 /* ASCredentialManager.swift in Sources */,
 				054B54791AB7381500ABCE74 /* ASFirstContactViewController.swift in Sources */,
 				05CAEC7D1ADEE8A600628015 /* UIColor+ColorFromHex.swift in Sources */,
 				054B54721AB630D700ABCE74 /* ASFirstContactViewControllerTests.swift in Sources */,
@@ -743,6 +792,20 @@
 			};
 			name = Release;
 		};
+		EFB7A3D81AE2B8BB00528083 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EFB7A3D91AE2B8BB00528083 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -769,6 +832,15 @@
 			buildConfigurations = (
 				6D2DE5241A9B7033003717F8 /* Debug */,
 				6D2DE5251A9B7033003717F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFB7A3DA1AE2B8BB00528083 /* Build configuration list for PBXAggregateTarget "Mogenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFB7A3D81AE2B8BB00528083 /* Debug */,
+				EFB7A3D91AE2B8BB00528083 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
