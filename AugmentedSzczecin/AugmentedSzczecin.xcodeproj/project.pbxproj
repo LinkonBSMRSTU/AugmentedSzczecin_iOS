@@ -48,6 +48,8 @@
 		2399E05B1AE80BA00000DFEE /* ASMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399E05A1AE80BA00000DFEE /* ASMainViewController.swift */; };
 		2399E05E1AE80BA90000DFEE /* NSTimerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399E05D1AE80BA90000DFEE /* NSTimerExtension.swift */; };
 		2399E05F1AE80BA90000DFEE /* NSTimerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399E05D1AE80BA90000DFEE /* NSTimerExtension.swift */; };
+		2399E0601AE81ECC0000DFEE /* ASMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399E05A1AE80BA00000DFEE /* ASMainViewController.swift */; };
+		2399E0611AE81EF40000DFEE /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0567302B1AD3E7C40055308E /* Reachability.swift */; };
 		47B8BD5423453E8F7879AFAB /* Pods_AugmentedSzczecinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C0473809D3465E0B0E8CE0 /* Pods_AugmentedSzczecinTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6D2DE5071A9B7033003717F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2DE5061A9B7033003717F8 /* AppDelegate.swift */; };
 		6D2DE50C1A9B7033003717F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D2DE50A1A9B7033003717F8 /* Main.storyboard */; };
@@ -576,6 +578,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				054B54701AB630A400ABCE74 /* ASRegistrationSegueTests.swift in Sources */,
+				2399E0601AE81ECC0000DFEE /* ASMainViewController.swift in Sources */,
 				057B96811AD964BA00372E11 /* StringLocalizableExtensionTests.swift in Sources */,
 				EF7F50041AE2D2DF00502380 /* ASUser.swift in Sources */,
 				EFB6C2331AE783C500A74DDA /* ASRestUtilTests.swift in Sources */,
@@ -592,6 +595,7 @@
 				05CAEC7D1ADEE8A600628015 /* UIColor+ColorFromHex.swift in Sources */,
 				054B54721AB630D700ABCE74 /* ASFirstContactViewControllerTests.swift in Sources */,
 				057235D91ACD932B00B8FAE6 /* ASRegistrationViewController.swift in Sources */,
+				2399E0611AE81EF40000DFEE /* Reachability.swift in Sources */,
 				057B967B1AD962ED00372E11 /* String+Localised.swift in Sources */,
 				2399E0591AE80B970000DFEE /* ASAlertController.swift in Sources */,
 				D5922F4F1ADD37A6005DD8B2 /* ASLoginViewController.swift in Sources */,
@@ -788,6 +792,7 @@
 				INFOPLIST_FILE = AugmentedSzczecinTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AugmentedSzczecin/AugmentedSzczecin-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AugmentedSzczecin.app/AugmentedSzczecin";
 			};
@@ -806,6 +811,7 @@
 				INFOPLIST_FILE = AugmentedSzczecinTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AugmentedSzczecin/AugmentedSzczecin-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AugmentedSzczecin.app/AugmentedSzczecin";
 			};
 			name = Release;
