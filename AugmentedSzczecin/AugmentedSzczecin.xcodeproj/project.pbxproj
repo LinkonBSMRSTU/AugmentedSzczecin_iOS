@@ -67,6 +67,7 @@
 		EF7F50051AE2D34500502380 /* _ASUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42F98DA1ABEE073006CF22E /* _ASUser.swift */; };
 		EF7F50061AE2D6A600502380 /* ASCredentialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB7A3DF1AE2BB2B00528083 /* ASCredentialManager.swift */; };
 		EF7F50071AE2D6AE00502380 /* ASData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B52E131AD2AB6200C318A6 /* ASData.swift */; };
+		EFB6C2331AE783C500A74DDA /* ASRestUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB6C2321AE783C500A74DDA /* ASRestUtilTests.swift */; };
 		EFB7A3DD1AE2BADE00528083 /* ASRestUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB7A3DC1AE2BADE00528083 /* ASRestUtil.swift */; };
 		EFB7A3DE1AE2BADE00528083 /* ASRestUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB7A3DC1AE2BADE00528083 /* ASRestUtil.swift */; };
 		EFB7A3E01AE2BB2B00528083 /* ASCredentialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB7A3DF1AE2BB2B00528083 /* ASCredentialManager.swift */; };
@@ -132,6 +133,7 @@
 		C71386729CA57FAA34BF4B7D /* Pods-AugmentedSzczecinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugmentedSzczecinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AugmentedSzczecinTests/Pods-AugmentedSzczecinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D5922F4D1ADD37A6005DD8B2 /* ASLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASLoginViewController.swift; sourceTree = "<group>"; };
 		D5922F501ADD7968005DD8B2 /* ASLoginSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASLoginSegue.swift; sourceTree = "<group>"; };
+		EFB6C2321AE783C500A74DDA /* ASRestUtilTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASRestUtilTests.swift; sourceTree = "<group>"; };
 		EFB7A3DC1AE2BADE00528083 /* ASRestUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASRestUtil.swift; sourceTree = "<group>"; };
 		EFB7A3DF1AE2BB2B00528083 /* ASCredentialManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASCredentialManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -228,6 +230,7 @@
 			children = (
 				054B546F1AB630A400ABCE74 /* ASRegistrationSegueTests.swift */,
 				054B54711AB630D700ABCE74 /* ASFirstContactViewControllerTests.swift */,
+				EFB6C2321AE783C500A74DDA /* ASRestUtilTests.swift */,
 				054B54731AB630F800ABCE74 /* UIRegistrationViewControllerTests.swift */,
 				6D2DE51A1A9B7033003717F8 /* Supporting Files */,
 				057B96801AD964BA00372E11 /* StringLocalizableExtensionTests.swift */,
@@ -575,6 +578,7 @@
 				054B54701AB630A400ABCE74 /* ASRegistrationSegueTests.swift in Sources */,
 				057B96811AD964BA00372E11 /* StringLocalizableExtensionTests.swift in Sources */,
 				EF7F50041AE2D2DF00502380 /* ASUser.swift in Sources */,
+				EFB6C2331AE783C500A74DDA /* ASRestUtilTests.swift in Sources */,
 				054B54741AB630F800ABCE74 /* UIRegistrationViewControllerTests.swift in Sources */,
 				05DB8B211AB82624008E02DC /* ASRegistrationSegue.swift in Sources */,
 				EF7F50051AE2D34500502380 /* _ASUser.swift in Sources */,
