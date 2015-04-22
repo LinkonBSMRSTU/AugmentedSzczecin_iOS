@@ -20,14 +20,14 @@
 		0567302C1AD3E7C40055308E /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0567302B1AD3E7C40055308E /* Reachability.swift */; };
 		056730331AD9386A0055308E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 056730321AD9386A0055308E /* Localizable.strings */; };
 		057235D91ACD932B00B8FAE6 /* ASRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054B546B1AB47F7D00ABCE74 /* ASRegistrationViewController.swift */; };
-		057B967A1AD959D300372E11 /* ASAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057B96791AD959D300372E11 /* ASAnnotation.swift */; };
-		05CAEC7C1ADEE8A600628015 /* UIColor+ColorFromHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CAEC7B1ADEE8A600628015 /* UIColor+ColorFromHex.swift */; };
-		05CAEC7D1ADEE8A600628015 /* UIColor+ColorFromHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CAEC7B1ADEE8A600628015 /* UIColor+ColorFromHex.swift */; };
-		05CAECAF1ADFAC6800628015 /* UIColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CAECAE1ADFAC6800628015 /* UIColorExtensionTests.swift */; };
 		057B96781AD93EA500372E11 /* String+Localised.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057B96771AD93EA500372E11 /* String+Localised.swift */; };
+		057B967A1AD959D300372E11 /* ASAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057B96791AD959D300372E11 /* ASAnnotation.swift */; };
 		057B967B1AD962ED00372E11 /* String+Localised.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057B96771AD93EA500372E11 /* String+Localised.swift */; };
 		057B967C1AD9643900372E11 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 056730321AD9386A0055308E /* Localizable.strings */; };
 		057B96811AD964BA00372E11 /* StringLocalizableExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057B96801AD964BA00372E11 /* StringLocalizableExtensionTests.swift */; };
+		05CAEC7C1ADEE8A600628015 /* UIColor+ColorFromHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CAEC7B1ADEE8A600628015 /* UIColor+ColorFromHex.swift */; };
+		05CAEC7D1ADEE8A600628015 /* UIColor+ColorFromHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CAEC7B1ADEE8A600628015 /* UIColor+ColorFromHex.swift */; };
+		05CAECAF1ADFAC6800628015 /* UIColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CAECAE1ADFAC6800628015 /* UIColorExtensionTests.swift */; };
 		05DB8B211AB82624008E02DC /* ASRegistrationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054B546D1AB482E200ABCE74 /* ASRegistrationSegue.swift */; };
 		23625D3D1AAE0DB100EAC93B /* libBLSAugmentedController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23625D3C1AAE0DB100EAC93B /* libBLSAugmentedController.a */; };
 		47B8BD5423453E8F7879AFAB /* Pods_AugmentedSzczecinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C0473809D3465E0B0E8CE0 /* Pods_AugmentedSzczecinTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -68,8 +68,8 @@
 		0567302B1AD3E7C40055308E /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		056730321AD9386A0055308E /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		057B96771AD93EA500372E11 /* String+Localised.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localised.swift"; sourceTree = "<group>"; };
-		057B96801AD964BA00372E11 /* StringLocalizableExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringLocalizableExtensionTests.swift; sourceTree = "<group>"; };
 		057B96791AD959D300372E11 /* ASAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASAnnotation.swift; sourceTree = "<group>"; };
+		057B96801AD964BA00372E11 /* StringLocalizableExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringLocalizableExtensionTests.swift; sourceTree = "<group>"; };
 		057FA5CAC38BA6CA6D144787 /* Pods-AugmentedSzczecinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugmentedSzczecinTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AugmentedSzczecinTests/Pods-AugmentedSzczecinTests.release.xcconfig"; sourceTree = "<group>"; };
 		05CAEC7B1ADEE8A600628015 /* UIColor+ColorFromHex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+ColorFromHex.swift"; sourceTree = "<group>"; };
 		05CAECAE1ADFAC6800628015 /* UIColorExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTests.swift; sourceTree = "<group>"; };
