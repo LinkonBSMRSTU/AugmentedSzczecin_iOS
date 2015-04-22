@@ -15,35 +15,32 @@ class ASRegistrationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     
-    @IBAction func registerButtonTapped(sender: AnyObject) {
-        self.performSegueWithIdentifier("RegisterSegue", sender: nil)
-        
-        //MOCK
-        
-        var email = "tbilski@wi.zut.edu.pl"
-        var password = "haslo1234"
-        
-        let restUtilTask = ASRestUtil()
-        restUtilTask.signUp(email, password: password, callbackSuccess: {(user: AnyObject?) -> Void in
-            
-            let _user = user as? ASUser
-            
-            println("Zarejestrowano pomyslnie uzytkownika")
-            println("Email: \(_user!.email!)")
-            println("Password: \(_user!.password!)")
-            println("Id: \(_user!.id!)")
-            
-            
-            },
-            callbackFailure: {(codeError: Int?, message: String) -> Void in
-                
-                
-                println("code: \(codeError != nil ? codeError! : codeError), message: \(message)")
-        })
-    }
+    var loadingAlert: ASAlertController?
+    var errorAlert: ASAlertController?
+    var success = true;
     
     @IBAction func cancelButtonTapped(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    @IBAction func registerButtonTapped(sender: AnyObject) {
+        loadingAlert = ASAlertController(title: "Rejestruję", message: "Proszę czekać", preferredStyle: .Alert)
+        loadingAlert?.showWithDelay(2, inViewController: self)
+        //request to api
+        if(success == true) {
+            loadingAlert?.dismiss({ () -> () in
+                NSLog("success")
+            })
+            self.performSegueWithIdentifier("RegisterSegue", sender: nil)
+        }
+        else {
+            loadingAlert?.dismiss({ () -> () in
+                NSLog("error")
+            })
+            errorAlert = ASAlertController(title: "Błąd", message: "Sprawdz swoje połączenie z Internetem", preferredStyle: .Alert)
+            errorAlert?.addCancelAction("Zamknij")
+            errorAlert?.showInViewController(self)
+        }
     }
     
     override func viewDidLoad() {
@@ -54,7 +51,7 @@ class ASRegistrationViewController: UIViewController, UITextFieldDelegate {
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
-        
+
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
