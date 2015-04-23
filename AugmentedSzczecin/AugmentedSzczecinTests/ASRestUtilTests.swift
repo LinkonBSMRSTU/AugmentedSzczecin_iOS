@@ -52,7 +52,7 @@ class ASRestUtilTests: XCTestCase {
         
     }
     
-    func testCreateUserFromJson() {
+    func testCreateUserFromJsonCorrect() {
         
         var params = ["id":12345,"email":"xxx", "password":"zzz"]
         var exampleJsonData = NSJSONSerialization.dataWithJSONObject(params, options: nil, error: nil)
@@ -63,6 +63,18 @@ class ASRestUtilTests: XCTestCase {
         XCTAssertEqual(results!.password!, params["password"] as! String, "")
         XCTAssertEqual(results!.email!, params["email"] as! String, "")
         XCTAssertEqual(results!.id!, params["id"] as! Int, "")
+        
+    }
+    
+    func testCreateUserFromJsonIncorrect() {
+        
+        var params = ["id":12345,"email":"xxx"]
+        var exampleJsonData = NSJSONSerialization.dataWithJSONObject(params, options: nil, error: nil)
+        var exampleJsonDictionary = NSJSONSerialization.JSONObjectWithData(exampleJsonData!, options: .MutableLeaves, error: nil) as? NSDictionary
+        
+        let results = ASRestUtil.handleSignUp(exampleJsonDictionary!)
+        
+        XCTAssertNil(results, "When data in json are incorrect, handleSingUp method should return nil")
         
     }
     
