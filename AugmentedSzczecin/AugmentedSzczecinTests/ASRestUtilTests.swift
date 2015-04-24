@@ -8,6 +8,7 @@
 
 import UIKit
 import XCTest
+import CoreData
 
 class ASRestUtilTests: XCTestCase {
     
@@ -68,7 +69,7 @@ class ASRestUtilTests: XCTestCase {
     
     func testCreateUserFromJsonIncorrect() {
         
-        var params = ["id":12345,"email":"xxx"]
+        var params = ["id":12345,"email":"xxx"] //incorrect data
         var exampleJsonData = NSJSONSerialization.dataWithJSONObject(params, options: nil, error: nil)
         var exampleJsonDictionary = NSJSONSerialization.JSONObjectWithData(exampleJsonData!, options: .MutableLeaves, error: nil) as? NSDictionary
         
@@ -78,4 +79,72 @@ class ASRestUtilTests: XCTestCase {
         
     }
     
+    func testSavingListOfPoistoDatabase() {
+        
+        let paramsExample: Array<Dictionary<String,AnyObject>> = [
+            [
+            
+                "id":69383,
+                "name": "Pałac Pod Globusem",
+                "tag": "pl_otwarte_zabytki",
+                "location": [
+                    "latitude": 53.426098,
+                    "longitude": 14.554294
+                ]
+            ],
+            [
+                
+                "id":69390,
+                "name": "Kamienica, ob. poczta",
+                "tag": "pl_otwarte_zabytki",
+                "location": [
+                    "latitude": 53.428388,
+                    "longitude": 14.536905
+                ]
+            ]
+            
+        ]
+        
+        var exampleJsonData = NSJSONSerialization.dataWithJSONObject(paramsExample, options: nil, error: nil)
+        var exampleJsonDictionary = NSJSONSerialization.JSONObjectWithData(exampleJsonData!, options: .MutableContainers, error: nil) as? NSArray
+        
+        ASRestUtil.savePoisToDataBase(exampleJsonDictionary!)
+        
+        var request = NSFetchRequest(entityName: ASPOI.entityName())
+        
+        var error: NSError?        
+        var count = ASData.sharedInstance.mainContext?.countForFetchRequest(request, error: &error)
+        
+        var areDataSavedInDatabase: Bool {
+            get {
+                if (error == nil) {
+                    if count == paramsExample.count {
+                        return true
+                    } else {
+                        return false
+                    }
+                } else {
+                    return false
+                }
+            }
+        }
+        
+        XCTAssertTrue(areDataSavedInDatabase, "The list of POIs should be saved in database")
+    
+        if (areDataSavedInDatabase) {
+            if let data = ASData.sharedInstance.mainContext?.executeFetchRequest(request, error: nil) as? [ASPOI] {
+                for (index, element) in enumerate(data) {
+                    XCTAssertEqual(element.id!, paramsExample[index]["id"] as! Int, "")
+                    XCTAssertEqual(element.name!, paramsExample[index]["name"] as! String, "")
+                    XCTAssertEqual(element.tag!, paramsExample[index]["tag"] as! String, "")
+                    
+                    let location = paramsExample[index]["location"] as! Dictionary<String,AnyObject>
+                    
+                    XCTAssertEqualWithAccuracy(element.latitude! as! Double, location["latitude"] as! Double, 0.0001, "")
+                    XCTAssertEqualWithAccuracy(element.longitude! as! Double, location["longitude"] as! Double, 0.0001, "")
+                    
+                }
+            }
+        }
+    }
 }
