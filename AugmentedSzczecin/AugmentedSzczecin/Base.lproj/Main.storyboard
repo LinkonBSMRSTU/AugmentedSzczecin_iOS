@@ -144,7 +144,7 @@
                         <outlet property="emailTextField" destination="Q6C-VA-RIr" id="Pqb-Bw-Kbd"/>
                         <outlet property="passwordTextField" destination="AMc-pq-knP" id="kdq-Tw-n07"/>
                         <outlet property="registerButton" destination="ttG-Xk-FRl" id="Fjb-ob-o4g"/>
-                        <segue destination="Wmo-2f-gmO" kind="custom" identifier="RegisterSegue" customClass="ASRegistrationSegue" customModule="AugmentedSzczecin" customModuleProvider="target" id="1ue-ca-Cu3"/>
+                        <segue destination="6Pd-oO-MBu" kind="custom" identifier="RegisterSegue" customClass="ASRegistrationSegue" customModule="AugmentedSzczecin" customModuleProvider="target" id="iYy-r8-m9m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s4W-TT-E62" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -152,9 +152,64 @@
             <point key="canvasLocation" x="909" y="329"/>
         </scene>
         <!--Main View Controller-->
+        <scene sceneID="FwW-H0-IGO">
+            <objects>
+                <viewController id="6Pd-oO-MBu" customClass="ASMainViewController" customModule="AugmentedSzczecin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ybr-pg-Crk"/>
+                        <viewControllerLayoutGuide type="bottom" id="zsc-88-RMC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8jS-LT-aGX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vku-2a-Jbl">
+                                <rect key="frame" x="277" y="217" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Vku-2a-Jbl" secondAttribute="height" multiplier="23:15" id="U5j-rM-irS"/>
+                                </constraints>
+                                <state key="normal" title="Map">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showMapButtonTapped:" destination="6Pd-oO-MBu" eventType="touchUpInside" id="deu-il-kD5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vya-KW-mP2">
+                                <rect key="frame" x="276" y="255" width="48" height="30"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchButtonTap:" destination="6Pd-oO-MBu" eventType="touchUpInside" id="Ebp-4h-ShT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vya-KW-mP2" firstAttribute="top" secondItem="Vku-2a-Jbl" secondAttribute="bottom" constant="8" id="4LX-FZ-Fvn"/>
+                            <constraint firstItem="zsc-88-RMC" firstAttribute="top" secondItem="Vku-2a-Jbl" secondAttribute="bottom" constant="353" id="Gjv-3n-cb5"/>
+                            <constraint firstItem="Vku-2a-Jbl" firstAttribute="top" secondItem="Ybr-pg-Crk" secondAttribute="bottom" constant="197" id="WiQ-0i-1sc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vya-KW-mP2" secondAttribute="trailing" constant="260" id="nvC-3y-bKd"/>
+                            <constraint firstItem="vya-KW-mP2" firstAttribute="leading" secondItem="8jS-LT-aGX" secondAttribute="leadingMargin" constant="260" id="oPt-Ac-wGo"/>
+                            <constraint firstAttribute="centerX" secondItem="Vku-2a-Jbl" secondAttribute="centerX" id="sNM-PW-no6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchButton" destination="vya-KW-mP2" id="sn8-ks-hjc"/>
+                        <outlet property="showMapButton" destination="Vku-2a-Jbl" id="vOI-AC-1rb"/>
+                        <segue destination="Wmo-2f-gmO" kind="presentation" identifier="showMapSegue" id="jlj-YO-hqE"/>
+                        <segue destination="ylX-W7-8ux" kind="presentation" identifier="searchSegue" id="DK7-hE-Uw4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bF9-A7-eTu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1688" y="329"/>
+        </scene>
+        <!--Map View Controller-->
         <scene sceneID="v6K-ma-LjK">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" id="Wmo-2f-gmO" customClass="ASMainViewController" customModule="AugmentedSzczecin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="Wmo-2f-gmO" customClass="ASMapViewController" customModule="AugmentedSzczecin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Jl-m6-9Qo"/>
                         <viewControllerLayoutGuide type="bottom" id="xoK-ji-1sM"/>
@@ -179,9 +234,22 @@
                                     <constraint firstAttribute="height" constant="71" id="gOb-lB-tVK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsv-aM-9LY">
+                                <rect key="frame" x="16" y="28" width="47" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="47" id="ZS7-Ll-jDU"/>
+                                    <constraint firstAttribute="height" constant="30" id="yLC-qi-s67"/>
+                                </constraints>
+                                <state key="normal" title="Home">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="homeButtonTap:" destination="Wmo-2f-gmO" eventType="touchUpInside" id="U64-h6-yB0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -191,17 +259,66 @@
                             <constraint firstItem="xoK-ji-1sM" firstAttribute="top" secondItem="eiR-tI-1UA" secondAttribute="bottom" id="Khq-2s-G6q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eiR-tI-1UA" secondAttribute="trailing" constant="-16" id="Qai-KU-P4b"/>
                             <constraint firstAttribute="centerX" secondItem="ZUB-zw-lil" secondAttribute="centerX" id="Wf4-9V-qYD"/>
+                            <constraint firstItem="Xsv-aM-9LY" firstAttribute="leading" secondItem="60O-2R-d04" secondAttribute="leadingMargin" id="gy0-pZ-1xJ"/>
+                            <constraint firstItem="Xsv-aM-9LY" firstAttribute="top" secondItem="0Jl-m6-9Qo" secondAttribute="bottom" constant="8" id="oMG-Hg-pjg"/>
                             <constraint firstItem="eiR-tI-1UA" firstAttribute="leading" secondItem="60O-2R-d04" secondAttribute="leadingMargin" constant="-16" id="obA-UM-sb9"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="homeButton" destination="Xsv-aM-9LY" id="Hzc-lV-I8c"/>
                         <outlet property="mapChoiceSegmentedControl" destination="ZUB-zw-lil" id="4jG-C0-i7X"/>
                         <outlet property="scaleLabel" destination="eiR-tI-1UA" id="raK-3j-h8T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fG-aR-A3L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1681" y="329"/>
+            <point key="canvasLocation" x="2445" y="329"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="weN-yb-4BO">
+            <objects>
+                <tableViewController id="ylX-W7-8ux" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="U2G-I5-2Q6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="krq-GY-iId">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="ylX-W7-8ux" id="1Op-eZ-tUK"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="eBa-rX-l8G">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eBa-rX-l8G" id="Zxj-Zd-KBv">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ylX-W7-8ux" id="Li0-cV-X6f"/>
+                            <outlet property="delegate" destination="ylX-W7-8ux" id="bhD-4c-IUL"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="FeV-Ac-ipr" id="na2-TO-4xC"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vd9-QK-fWT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="FeV-Ac-ipr">
+                    <connections>
+                        <outlet property="delegate" destination="ylX-W7-8ux" id="s2X-qM-Nw3"/>
+                        <outlet property="searchBar" destination="krq-GY-iId" id="ALU-Mm-YLB"/>
+                        <outlet property="searchContentsController" destination="ylX-W7-8ux" id="4um-Uj-0Jr"/>
+                        <outlet property="searchResultsDataSource" destination="ylX-W7-8ux" id="jaT-dr-9vQ"/>
+                        <outlet property="searchResultsDelegate" destination="ylX-W7-8ux" id="uh7-ai-pKs"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="2445" y="1077"/>
         </scene>
     </scenes>
 </document>
