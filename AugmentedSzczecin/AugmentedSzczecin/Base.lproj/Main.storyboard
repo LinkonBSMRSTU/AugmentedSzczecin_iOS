@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7519.1" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7B0-UG-zg7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7519.1" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7B0-UG-zg7">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7513.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -177,6 +177,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vya-KW-mP2">
                                 <rect key="frame" x="276" y="255" width="48" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="ZQc-is-Nsq"/>
+                                </constraints>
                                 <state key="normal" title="Search">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -187,11 +190,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vya-KW-mP2" firstAttribute="top" secondItem="Vku-2a-Jbl" secondAttribute="bottom" constant="8" id="4LX-FZ-Fvn"/>
-                            <constraint firstItem="zsc-88-RMC" firstAttribute="top" secondItem="Vku-2a-Jbl" secondAttribute="bottom" constant="353" id="Gjv-3n-cb5"/>
+                            <constraint firstItem="vya-KW-mP2" firstAttribute="top" secondItem="Vku-2a-Jbl" secondAttribute="bottom" constant="8" id="RNz-Zw-4Tc"/>
                             <constraint firstItem="Vku-2a-Jbl" firstAttribute="top" secondItem="Ybr-pg-Crk" secondAttribute="bottom" constant="197" id="WiQ-0i-1sc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="vya-KW-mP2" secondAttribute="trailing" constant="260" id="nvC-3y-bKd"/>
-                            <constraint firstItem="vya-KW-mP2" firstAttribute="leading" secondItem="8jS-LT-aGX" secondAttribute="leadingMargin" constant="260" id="oPt-Ac-wGo"/>
+                            <constraint firstAttribute="centerX" secondItem="vya-KW-mP2" secondAttribute="centerX" id="geb-LH-ygl"/>
                             <constraint firstAttribute="centerX" secondItem="Vku-2a-Jbl" secondAttribute="centerX" id="sNM-PW-no6"/>
                         </constraints>
                     </view>
@@ -274,24 +275,16 @@
             </objects>
             <point key="canvasLocation" x="2445" y="329"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="weN-yb-4BO">
             <objects>
-                <tableViewController id="ylX-W7-8ux" sceneMemberID="viewController">
+                <tableViewController id="ylX-W7-8ux" customClass="ASSearchViewController" customModule="AugmentedSzczecin" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="U2G-I5-2Q6">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="krq-GY-iId">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="ylX-W7-8ux" id="1Op-eZ-tUK"/>
-                            </connections>
-                        </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="eBa-rX-l8G">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ASSearchCell" id="eBa-rX-l8G">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eBa-rX-l8G" id="Zxj-Zd-KBv">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -311,7 +304,6 @@
                 <searchDisplayController id="FeV-Ac-ipr">
                     <connections>
                         <outlet property="delegate" destination="ylX-W7-8ux" id="s2X-qM-Nw3"/>
-                        <outlet property="searchBar" destination="krq-GY-iId" id="ALU-Mm-YLB"/>
                         <outlet property="searchContentsController" destination="ylX-W7-8ux" id="4um-Uj-0Jr"/>
                         <outlet property="searchResultsDataSource" destination="ylX-W7-8ux" id="jaT-dr-9vQ"/>
                         <outlet property="searchResultsDelegate" destination="ylX-W7-8ux" id="uh7-ai-pKs"/>
