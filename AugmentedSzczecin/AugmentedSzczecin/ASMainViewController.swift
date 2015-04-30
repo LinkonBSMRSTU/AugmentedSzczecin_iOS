@@ -25,7 +25,11 @@ class ASMainViewController: BLSAugmentedViewController, BLSAugmentedViewControll
     }
     
     func augmentedViewController(augmentedViewController: BLSAugmentedViewController!, viewForAnnotation annotation: BLSAugmentedAnnotation!, forUserLocation location: CLLocation!, distance: CLLocationDistance) -> BLSAugmentedAnnotationView! {
-        return BLSAugmentedAnnotationView()
+
+        // TODO: configure view
+        let view = ASAnnotationView.view()
+        return view
+        
     }
     
     @IBAction func mapTypeChange(sender: UISegmentedControl) {

@@ -55,6 +55,11 @@
 		2399E0661AE820A10000DFEE /* ASUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399E0631AE820A10000DFEE /* ASUser.swift */; };
 		2399E0671AE820A10000DFEE /* ASUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399E0631AE820A10000DFEE /* ASUser.swift */; };
 		2399E0681AE8237B0000DFEE /* ASDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A42F98D61ABEDE42006CF22E /* ASDataModel.xcdatamodeld */; };
+		23A168891AF22CF400898337 /* ASAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A168881AF22CF400898337 /* ASAnnotationView.xib */; };
+		23A1688B1AF22D4300898337 /* UIView+Xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A1688A1AF22D4300898337 /* UIView+Xib.swift */; };
+		23A1688C1AF22ED000898337 /* ASAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A168861AF22CD000898337 /* ASAnnotationView.swift */; };
+		23A1688D1AF22ED100898337 /* ASAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A168861AF22CD000898337 /* ASAnnotationView.swift */; };
+		23A1688E1AF22EDC00898337 /* UIView+Xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A1688A1AF22D4300898337 /* UIView+Xib.swift */; };
 		47B8BD5423453E8F7879AFAB /* Pods_AugmentedSzczecinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C0473809D3465E0B0E8CE0 /* Pods_AugmentedSzczecinTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6D2DE5071A9B7033003717F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2DE5061A9B7033003717F8 /* AppDelegate.swift */; };
 		6D2DE50C1A9B7033003717F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D2DE50A1A9B7033003717F8 /* Main.storyboard */; };
@@ -108,6 +113,9 @@
 		2399E05D1AE80BA90000DFEE /* NSTimerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTimerExtension.swift; sourceTree = "<group>"; };
 		2399E0621AE820A10000DFEE /* _ASUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = _ASUser.swift; path = Database/_ASUser.swift; sourceTree = "<group>"; };
 		2399E0631AE820A10000DFEE /* ASUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASUser.swift; path = Database/ASUser.swift; sourceTree = "<group>"; };
+		23A168861AF22CD000898337 /* ASAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASAnnotationView.swift; sourceTree = "<group>"; };
+		23A168881AF22CF400898337 /* ASAnnotationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ASAnnotationView.xib; sourceTree = "<group>"; };
+		23A1688A1AF22D4300898337 /* UIView+Xib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Xib.swift"; sourceTree = "<group>"; };
 		6D2DE5011A9B7033003717F8 /* AugmentedSzczecin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AugmentedSzczecin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D2DE5051A9B7033003717F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D2DE5061A9B7033003717F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +167,7 @@
 				057B96771AD93EA500372E11 /* String+Localised.swift */,
 				2399E05D1AE80BA90000DFEE /* NSTimerExtension.swift */,
 				05CAEC7B1ADEE8A600628015 /* UIColor+ColorFromHex.swift */,
+				23A1688A1AF22D4300898337 /* UIView+Xib.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -203,6 +212,8 @@
 				6D2DE50D1A9B7033003717F8 /* Images.xcassets */,
 				0567302B1AD3E7C40055308E /* Reachability.swift */,
 				057B96791AD959D300372E11 /* ASAnnotation.swift */,
+				23A168861AF22CD000898337 /* ASAnnotationView.swift */,
+				23A168881AF22CF400898337 /* ASAnnotationView.xib */,
 			);
 			path = AugmentedSzczecin;
 			sourceTree = "<group>";
@@ -376,6 +387,7 @@
 				056730331AD9386A0055308E /* Localizable.strings in Resources */,
 				6D2DE5111A9B7033003717F8 /* LaunchScreen.xib in Resources */,
 				6D2DE50E1A9B7033003717F8 /* Images.xcassets in Resources */,
+				23A168891AF22CF400898337 /* ASAnnotationView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +539,7 @@
 				D5922F511ADD7968005DD8B2 /* ASLoginSegue.swift in Sources */,
 				2399E0641AE820A10000DFEE /* _ASUser.swift in Sources */,
 				0567302C1AD3E7C40055308E /* Reachability.swift in Sources */,
+				23A1688B1AF22D4300898337 /* UIView+Xib.swift in Sources */,
 				EFB7A3DD1AE2BADE00528083 /* ASRestUtil.swift in Sources */,
 				EFB7A3E01AE2BB2B00528083 /* ASCredentialManager.swift in Sources */,
 				054B546C1AB47F7D00ABCE74 /* ASRegistrationViewController.swift in Sources */,
@@ -535,6 +548,7 @@
 				057B96781AD93EA500372E11 /* String+Localised.swift in Sources */,
 				2399E05E1AE80BA90000DFEE /* NSTimerExtension.swift in Sources */,
 				A42F98D81ABEDE42006CF22E /* ASDataModel.xcdatamodeld in Sources */,
+				23A1688D1AF22ED100898337 /* ASAnnotationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,6 +562,7 @@
 				EFB6C2331AE783C500A74DDA /* ASRestUtilTests.swift in Sources */,
 				054B54741AB630F800ABCE74 /* UIRegistrationViewControllerTests.swift in Sources */,
 				05DB8B211AB82624008E02DC /* ASRegistrationSegue.swift in Sources */,
+				23A1688E1AF22EDC00898337 /* UIView+Xib.swift in Sources */,
 				2399E0671AE820A10000DFEE /* ASUser.swift in Sources */,
 				05CAECAF1ADFAC6800628015 /* UIColorExtensionTests.swift in Sources */,
 				D5922F521ADD7968005DD8B2 /* ASLoginSegue.swift in Sources */,
@@ -561,6 +576,7 @@
 				05CAEC7D1ADEE8A600628015 /* UIColor+ColorFromHex.swift in Sources */,
 				054B54721AB630D700ABCE74 /* ASFirstContactViewControllerTests.swift in Sources */,
 				057235D91ACD932B00B8FAE6 /* ASRegistrationViewController.swift in Sources */,
+				23A1688C1AF22ED000898337 /* ASAnnotationView.swift in Sources */,
 				2399E0611AE81EF40000DFEE /* Reachability.swift in Sources */,
 				057B967B1AD962ED00372E11 /* String+Localised.swift in Sources */,
 				2399E0591AE80B970000DFEE /* ASAlertController.swift in Sources */,
