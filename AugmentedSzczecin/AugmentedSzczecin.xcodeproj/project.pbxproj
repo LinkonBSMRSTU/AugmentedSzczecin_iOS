@@ -158,6 +158,7 @@
 			children = (
 				057B96771AD93EA500372E11 /* String+Localised.swift */,
 				2399E05D1AE80BA90000DFEE /* NSTimerExtension.swift */,
+				05CAEC7B1ADEE8A600628015 /* UIColor+ColorFromHex.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -202,7 +203,6 @@
 				6D2DE50D1A9B7033003717F8 /* Images.xcassets */,
 				0567302B1AD3E7C40055308E /* Reachability.swift */,
 				057B96791AD959D300372E11 /* ASAnnotation.swift */,
-				05CAEC7B1ADEE8A600628015 /* UIColor+ColorFromHex.swift */,
 			);
 			path = AugmentedSzczecin;
 			sourceTree = "<group>";
