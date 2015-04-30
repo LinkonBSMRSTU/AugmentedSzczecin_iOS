@@ -116,16 +116,6 @@
 		6D2DE5101A9B7033003717F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6D2DE5161A9B7033003717F8 /* AugmentedSzczecinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AugmentedSzczecinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D2DE51B1A9B7033003717F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6D90A5751AA7450600F36771 /* BLSAugmentedAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLSAugmentedAnnotation.h; path = BLSAugmentedController/BLSAugmentedControllerFramework/BLSAugmentedAnnotation.h; sourceTree = "<group>"; };
-		6D90A5761AA7450600F36771 /* BLSAugmentedAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLSAugmentedAnnotationView.h; path = BLSAugmentedController/BLSAugmentedControllerFramework/BLSAugmentedAnnotationView.h; sourceTree = "<group>"; };
-		6D90A5771AA7450600F36771 /* BLSAugmentedAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLSAugmentedAnnotationView.m; path = BLSAugmentedController/BLSAugmentedControllerFramework/BLSAugmentedAnnotationView.m; sourceTree = "<group>"; };
-		6D90A5781AA7450600F36771 /* BLSAugmentedAnnotationViewCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLSAugmentedAnnotationViewCache.h; path = BLSAugmentedController/BLSAugmentedControllerFramework/BLSAugmentedAnnotationViewCache.h; sourceTree = "<group>"; };
-		6D90A5791AA7450600F36771 /* BLSAugmentedAnnotationViewCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLSAugmentedAnnotationViewCache.m; path = BLSAugmentedController/BLSAugmentedControllerFramework/BLSAugmentedAnnotationViewCache.m; sourceTree = "<group>"; };
-		6D90A57A1AA7450600F36771 /* BLSAugmentedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLSAugmentedController.h; path = BLSAugmentedController/BLSAugmentedControllerFramework/BLSAugmentedController.h; sourceTree = "<group>"; };
-		6D90A57B1AA7450600F36771 /* BLSAugmentedControllerHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLSAugmentedControllerHelpers.h; path = BLSAugmentedController/BLSAugmentedControllerFramework/BLSAugmentedControllerHelpers.h; sourceTree = "<group>"; };
-		6D90A57C1AA7450600F36771 /* BLSAugmentedControllerHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLSAugmentedControllerHelpers.m; path = BLSAugmentedController/BLSAugmentedControllerFramework/BLSAugmentedControllerHelpers.m; sourceTree = "<group>"; };
-		6D90A57D1AA7450600F36771 /* BLSAugmentedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLSAugmentedViewController.h; path = BLSAugmentedController/BLSAugmentedControllerFramework/BLSAugmentedViewController.h; sourceTree = "<group>"; };
-		6D90A57E1AA7450600F36771 /* BLSAugmentedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLSAugmentedViewController.m; path = BLSAugmentedController/BLSAugmentedControllerFramework/BLSAugmentedViewController.m; sourceTree = "<group>"; };
 		88C0473809D3465E0B0E8CE0 /* Pods_AugmentedSzczecinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AugmentedSzczecinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		910EF554C1DC1F0DAAA42A47 /* Pods_AugmentedSzczecin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AugmentedSzczecin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A78CE0DD15202A86FD6BD9A /* Pods-AugmentedSzczecin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugmentedSzczecin.release.xcconfig"; path = "Pods/Target Support Files/Pods-AugmentedSzczecin/Pods-AugmentedSzczecin.release.xcconfig"; sourceTree = "<group>"; };
@@ -176,7 +166,6 @@
 			isa = PBXGroup;
 			children = (
 				6D2DE5031A9B7033003717F8 /* AugmentedSzczecin */,
-				6D90A5731AA744CD00F36771 /* Externals */,
 				6D2DE5191A9B7033003717F8 /* AugmentedSzczecinTests */,
 				6D2DE5021A9B7033003717F8 /* Products */,
 				F723254C0E53789B7B9D930F /* Frameworks */,
@@ -257,31 +246,6 @@
 				6D2DE50F1A9B7033003717F8 /* LaunchScreen.xib */,
 			);
 			name = "Storyboards & XIBs";
-			sourceTree = "<group>";
-		};
-		6D90A5731AA744CD00F36771 /* Externals */ = {
-			isa = PBXGroup;
-			children = (
-				6D90A5741AA744E500F36771 /* BLSAugmentedViewController */,
-			);
-			name = Externals;
-			sourceTree = "<group>";
-		};
-		6D90A5741AA744E500F36771 /* BLSAugmentedViewController */ = {
-			isa = PBXGroup;
-			children = (
-				6D90A5751AA7450600F36771 /* BLSAugmentedAnnotation.h */,
-				6D90A5761AA7450600F36771 /* BLSAugmentedAnnotationView.h */,
-				6D90A5771AA7450600F36771 /* BLSAugmentedAnnotationView.m */,
-				6D90A5781AA7450600F36771 /* BLSAugmentedAnnotationViewCache.h */,
-				6D90A5791AA7450600F36771 /* BLSAugmentedAnnotationViewCache.m */,
-				6D90A57A1AA7450600F36771 /* BLSAugmentedController.h */,
-				6D90A57B1AA7450600F36771 /* BLSAugmentedControllerHelpers.h */,
-				6D90A57C1AA7450600F36771 /* BLSAugmentedControllerHelpers.m */,
-				6D90A57D1AA7450600F36771 /* BLSAugmentedViewController.h */,
-				6D90A57E1AA7450600F36771 /* BLSAugmentedViewController.m */,
-			);
-			name = BLSAugmentedViewController;
 			sourceTree = "<group>";
 		};
 		6E785378C7A87AF30DFD8EE2 /* Pods */ = {
