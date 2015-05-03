@@ -303,7 +303,6 @@
 				6D2DE4FD1A9B7033003717F8 /* Sources */,
 				6D2DE4FE1A9B7033003717F8 /* Frameworks */,
 				6D2DE4FF1A9B7033003717F8 /* Resources */,
-				A4E64EEB1ADE85CE00DAE38B /* Mogenerator Update */,
 				5EB5517377AE1BDE2B5FE14E /* Copy Pods Resources */,
 				A48DA9AB57BF274AC2ACAE4C /* Embed Pods Frameworks */,
 			);
@@ -478,20 +477,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AugmentedSzczecin/Pods-AugmentedSzczecin-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A4E64EEB1ADE85CE00DAE38B /* Mogenerator Update */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Mogenerator Update";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "mogenerator -m \"${SRCROOT}/AugmentedSzczecin/Database/ASDataModel.xcdatamodeld/ASDataModel.xcdatamodel/\" -O \"${SRCROOT}/AugmentedSzczecin/Database/\" --swift --template-var arc=true";
-		};
 		DB46A4AB299CA904E21F3310 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -518,7 +503,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/mogenerator -m AugmentedSzczecin/Database/ASDataModel.xcdatamodeld -O AugmentedSzczecin/Database/ --swift --template-var arc=true";
+			shellScript = "MOGENERATOR=$(which mogenerator)\n$MOGENERATOR -m \"${SRCROOT}/AugmentedSzczecin/Database/ASDataModel.xcdatamodeld/ASDataModel.xcdatamodel/\" -O \"${SRCROOT}/AugmentedSzczecin/Database/\" --swift --template-var arc=true";
 		};
 /* End PBXShellScriptBuildPhase section */
 
