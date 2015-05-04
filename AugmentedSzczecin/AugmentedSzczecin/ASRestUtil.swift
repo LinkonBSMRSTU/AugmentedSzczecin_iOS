@@ -165,13 +165,17 @@ class ASRestUtil {
         for iterator in listOfPoisJson {
             if let id = iterator["id"] as? Int, let name = iterator["name"] as? String, let tag = iterator["tag"] as? String, let location = iterator["location"]as? NSDictionary {
                 
-                var poi = ASPOI(managedObjectContext: ASData.sharedInstance.mainContext)
+                var managedContext = ASData.sharedInstance.mainContext
+                
+                var poi = ASPOI(managedObjectContext: managedContext)
                 
                 poi.id = id
                 poi.name = name
                 poi.tag = tag
                 poi.latitude = location["latitude"] as? Double
                 poi.longitude = location["longitude"] as? Double
+                
+                managedContext?.save(nil)
                 
             }
         

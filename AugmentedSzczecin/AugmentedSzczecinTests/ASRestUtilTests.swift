@@ -22,7 +22,26 @@ class ASRestUtilTests: XCTestCase {
     }
     
     override func tearDown() {
+        
+        // After testSavingListOfPoistoDatabase() is called, the added data should be entirely removed from the database
+        
+        let managedContext = ASData.sharedInstance.mainContext
+        
+        var request = NSFetchRequest(entityName: ASPOI.entityName())
+        
+        var data = managedContext?.executeFetchRequest(request, error: nil)
+        
+        if let dataToDelete = data as? [NSManagedObject] {
+            
+            for element in dataToDelete {
+                managedContext?.deleteObject(element)
+                managedContext?.save(nil)
+            }
+            
+        }
+        
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        
         super.tearDown()
     }
 
@@ -101,24 +120,93 @@ class ASRestUtilTests: XCTestCase {
                     "latitude": 53.428388,
                     "longitude": 14.536905
                 ]
+            ],
+            [
+                
+                "id":45637,
+                "name": "JakasNazwa1",
+                "tag": "JakisTag1",
+                "location": [
+                    "latitude": 43.737787,
+                    "longitude": 14.678678
+                ]
+            ],
+            [
+                
+                "id":29999,
+                "name": "JakasNazwa2",
+                "tag": "JakisTag2",
+                "location": [
+                    "latitude": 23.010823,
+                    "longitude": 78.283947
+                ]
+            ],
+            [
+                
+                "id":22222,
+                "name": "JakasNazwa3",
+                "tag": "JakisTag3",
+                "location": [
+                    "latitude": 45.787777,
+                    "longitude": 13.899777
+                ]
             ]
             
         ]
         
         var exampleJsonData = NSJSONSerialization.dataWithJSONObject(paramsExample, options: nil, error: nil)
         var exampleJsonDictionary = NSJSONSerialization.JSONObjectWithData(exampleJsonData!, options: .MutableContainers, error: nil) as? NSArray
+
         
-        ASRestUtil.savePoisToDataBase(exampleJsonDictionary!)
+        func getContext() -> NSManagedObjectContext? {
+            
+            let managedContext = ASData.sharedInstance.mainContext
+            
+            return managedContext
+            
+        }
         
-        var request = NSFetchRequest(entityName: ASPOI.entityName())
+        func getObjects(predicate: NSPredicate?) -> [AnyObject]? {
+            
+            var request = NSFetchRequest(entityName: ASPOI.entityName())
+            
+            if(predicate != nil) {
+                request.predicate = predicate
+            }
+            
+            var data = getContext()?.executeFetchRequest(request, error: nil)
+            
+            return data
+            
+        }
         
-        var error: NSError?        
-        var count = ASData.sharedInstance.mainContext?.countForFetchRequest(request, error: &error)
+        func deleteObjects() {
+            
+            if let data = getObjects(nil) {
+                for element in data {
+                    getContext()?.deleteObject(element as! NSManagedObject)
+                    getContext()?.save(nil)
+                }
+            }
+            
+        }
+        
+        func countObjectsInDatabase() -> (count: Int, error: NSError?)  {
+            
+            var request = NSFetchRequest(entityName: ASPOI.entityName())
+            var _error: NSError?
+            
+            return (count: ASData.sharedInstance.mainContext!.countForFetchRequest(request, error: &_error), error: _error)
+            
+        }
+        
+        deleteObjects()
+        ASRestUtil.savePoisToDataBase(exampleJsonDictionary!) //saving data to the database
         
         var areDataSavedInDatabase: Bool {
             get {
-                if (error == nil) {
-                    if count == paramsExample.count {
+                if (countObjectsInDatabase().error == nil) {
+                    if countObjectsInDatabase().count == paramsExample.count {
                         return true
                     } else {
                         return false
@@ -129,22 +217,39 @@ class ASRestUtilTests: XCTestCase {
             }
         }
         
-        XCTAssertTrue(areDataSavedInDatabase, "The list of POIs should be saved in database")
-    
+        XCTAssertTrue(areDataSavedInDatabase, "The list of POIs should be saved in database and have the same number of elements as paramsExample")
+        
         if (areDataSavedInDatabase) {
-            if let data = ASData.sharedInstance.mainContext?.executeFetchRequest(request, error: nil) as? [ASPOI] {
-                for (index, element) in enumerate(data) {
-                    XCTAssertEqual(element.id!, paramsExample[index]["id"] as! Int, "")
-                    XCTAssertEqual(element.name!, paramsExample[index]["name"] as! String, "")
-                    XCTAssertEqual(element.tag!, paramsExample[index]["tag"] as! String, "")
+            for element in paramsExample {
+                var id = element["id"] as! Int
+                let predicate = NSPredicate(format: "id == %ld", id)
+                if let data = getObjects(predicate) as? [NSManagedObject] {
+                    if (data.count == 1) {
+                        var fetchedObject = data[0]
+                        
+                        XCTAssertEqual(fetchedObject.valueForKeyPath(ASPOIAttributes.id.rawValue) as! Int, element["id"] as! Int, "")
+                        XCTAssertEqual(fetchedObject.valueForKeyPath(ASPOIAttributes.name.rawValue) as! String, element["name"] as! String, "")
+                        XCTAssertEqual(fetchedObject.valueForKeyPath(ASPOIAttributes.tag.rawValue) as! String, element["tag"] as! String, "")
+                        
+                        let location = element["location"] as! Dictionary<String,AnyObject>
+                        
+                        XCTAssertEqualWithAccuracy(fetchedObject.valueForKeyPath(ASPOIAttributes.latitude.rawValue) as! Double, location["latitude"] as! Double, 0.0001, "")
+                        XCTAssertEqualWithAccuracy(fetchedObject.valueForKeyPath(ASPOIAttributes.longitude.rawValue) as! Double, location["longitude"] as! Double, 0.0001, "")
+                        
+                    } else {
+                        XCTFail("Should be only one element that has the given id. Number of found elements: \(data.count)")
+                    }
+                
+                } else {
                     
-                    let location = paramsExample[index]["location"] as! Dictionary<String,AnyObject>
-                    
-                    XCTAssertEqualWithAccuracy(element.latitude! as! Double, location["latitude"] as! Double, 0.0001, "")
-                    XCTAssertEqualWithAccuracy(element.longitude! as! Double, location["longitude"] as! Double, 0.0001, "")
-                    
+                    XCTFail("Error has occurred. executeFetchRequest returned nil")
+
                 }
+                
+                
             }
+            
         }
+        
     }
 }
