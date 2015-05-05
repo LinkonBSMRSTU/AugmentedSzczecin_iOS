@@ -67,6 +67,7 @@
 		6D2DE5111A9B7033003717F8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D2DE50F1A9B7033003717F8 /* LaunchScreen.xib */; };
 		A42F98D81ABEDE42006CF22E /* ASDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A42F98D61ABEDE42006CF22E /* ASDataModel.xcdatamodeld */; };
 		A4B52E141AD2AB6200C318A6 /* ASData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B52E131AD2AB6200C318A6 /* ASData.swift */; };
+		A4DF18E01AF9800F00C44ACC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DF18DF1AF9800F00C44ACC /* CoreLocation.framework */; };
 		A4FE1C701AA518750044DE55 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		D386927B9EBA7240D980CCF6 /* Pods_AugmentedSzczecin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 910EF554C1DC1F0DAAA42A47 /* Pods_AugmentedSzczecin.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D5922F4E1ADD37A6005DD8B2 /* ASLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5922F4D1ADD37A6005DD8B2 /* ASLoginViewController.swift */; };
@@ -133,6 +134,7 @@
 		9A78CE0DD15202A86FD6BD9A /* Pods-AugmentedSzczecin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugmentedSzczecin.release.xcconfig"; path = "Pods/Target Support Files/Pods-AugmentedSzczecin/Pods-AugmentedSzczecin.release.xcconfig"; sourceTree = "<group>"; };
 		A42F98D71ABEDE42006CF22E /* ASDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ASDataModel.xcdatamodel; sourceTree = "<group>"; };
 		A4B52E131AD2AB6200C318A6 /* ASData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASData.swift; sourceTree = "<group>"; };
+		A4DF18DF1AF9800F00C44ACC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A4FE1C711AA5191D0044DE55 /* AugmentedSzczecin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AugmentedSzczecin-Bridging-Header.h"; sourceTree = "<group>"; };
 		B6EEC7F471F4EBF1FD094437 /* Pods-AugmentedSzczecin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugmentedSzczecin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AugmentedSzczecin/Pods-AugmentedSzczecin.debug.xcconfig"; sourceTree = "<group>"; };
 		C71386729CA57FAA34BF4B7D /* Pods-AugmentedSzczecinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugmentedSzczecinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AugmentedSzczecinTests/Pods-AugmentedSzczecinTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4DF18E01AF9800F00C44ACC /* CoreLocation.framework in Frameworks */,
 				056730261AD3E62E0055308E /* SystemConfiguration.framework in Frameworks */,
 				23625D3D1AAE0DB100EAC93B /* libBLSAugmentedController.a in Frameworks */,
 				D386927B9EBA7240D980CCF6 /* Pods_AugmentedSzczecin.framework in Frameworks */,
@@ -292,6 +295,7 @@
 		F723254C0E53789B7B9D930F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A4DF18DF1AF9800F00C44ACC /* CoreLocation.framework */,
 				056730251AD3E62E0055308E /* SystemConfiguration.framework */,
 				23625D3C1AAE0DB100EAC93B /* libBLSAugmentedController.a */,
 				910EF554C1DC1F0DAAA42A47 /* Pods_AugmentedSzczecin.framework */,
