@@ -14,9 +14,8 @@ class ASAlertController: UIAlertController
     var vc: UIViewController?
     var timer: NSTimer?
     
-    
     func showInViewController(vc: UIViewController) {
-                vc.presentViewController(self, animated: true, completion: nil)
+        vc.presentViewController(self, animated: true, completion: nil)
     }
     
     func showWithDelay(delay: Double, inViewController vc: UIViewController){
@@ -41,10 +40,15 @@ class ASAlertController: UIAlertController
     
     private func stopTimer() {
         timer?.invalidate()
+        self.timer = nil
     }
     
     func dismiss(completion: ()->()) {
-        self.stopTimer()
-        self.dismissViewControllerAnimated(true, completion: completion)
+        if self.timer != nil {
+            self.stopTimer()
+            completion()
+        } else {
+            self.dismissViewControllerAnimated(true, completion: completion)
+        }
     }
 }
