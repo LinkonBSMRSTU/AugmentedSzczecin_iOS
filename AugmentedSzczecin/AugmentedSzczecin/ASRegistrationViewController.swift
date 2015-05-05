@@ -10,6 +10,8 @@ import UIKit
 
 class ASRegistrationViewController: UIViewController, UITextFieldDelegate {
 
+    let kAlertDelay = 2.0
+
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
@@ -25,21 +27,20 @@ class ASRegistrationViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func registerButtonTapped(sender: AnyObject) {
         loadingAlert = ASAlertController(title: "Rejestruję", message: "Proszę czekać", preferredStyle: .Alert)
-        loadingAlert?.showWithDelay(2, inViewController: self)
+        loadingAlert?.showWithDelay(kAlertDelay, inViewController: self)
         //request to api
         if(success == true) {
-            loadingAlert?.dismiss({ () -> () in
+            loadingAlert?.dismiss() {
                 NSLog("success")
-            })
-            self.performSegueWithIdentifier("RegisterSegue", sender: nil)
+                self.performSegueWithIdentifier("RegisterSegue", sender: nil)
+            }
         }
         else {
-            loadingAlert?.dismiss({ () -> () in
-                NSLog("error")
-            })
-            errorAlert = ASAlertController(title: "Błąd", message: "Sprawdz swoje połączenie z Internetem", preferredStyle: .Alert)
-            errorAlert?.addCancelAction("Zamknij")
-            errorAlert?.showInViewController(self)
+            loadingAlert?.dismiss() {
+                self.errorAlert = ASAlertController(title: "Błąd", message: "Sprawdz swoje połączenie z Internetem", preferredStyle: .Alert)
+                self.errorAlert?.addCancelAction("Zamknij")
+                self.errorAlert?.showInViewController(self)
+            }
         }
     }
     
