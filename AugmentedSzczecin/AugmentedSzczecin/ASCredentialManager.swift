@@ -10,7 +10,13 @@ import Foundation
 
 class ASCredentialManager {
     
-    private let userDefaults = NSUserDefaults()
+    private(set) var usernameKey = "username"
+    private(set) var passwordKey = "password"
+    
+    var userDefaults: NSUserDefaults = {
+        var temporaryUserDefauls: NSUserDefaults = NSUserDefaults()
+        return temporaryUserDefauls
+        }()
     
     class var sharedInstance : ASCredentialManager {
         struct Static {
@@ -36,14 +42,14 @@ class ASCredentialManager {
     
     
     func storeCredential(username: String!, password: String!) {
-        userDefaults.setObject(username, forKey: "username")
-        userDefaults.setObject(password, forKey: "password")
-        userDefaults.synchronize()
+        self.userDefaults.setObject(username, forKey: usernameKey)
+        self.userDefaults.setObject(password, forKey: passwordKey)
+        self.userDefaults.synchronize()
     }
     
     func getCredentials() -> (String, String)? {
-        let username = userDefaults.stringForKey("username")
-        let password = userDefaults.stringForKey("password")
+        let username = self.userDefaults.stringForKey(usernameKey)
+        let password = self.userDefaults.stringForKey(passwordKey)
         if (username != nil || password != nil) {
             return (username!, password!)
         }
@@ -51,10 +57,9 @@ class ASCredentialManager {
     }
     
     func clearCredentials() {
-        userDefaults.removeObjectForKey("username")
-        userDefaults.removeObjectForKey("password")
-        userDefaults.synchronize()
+        self.userDefaults.removeObjectForKey(usernameKey)
+        self.userDefaults.removeObjectForKey(passwordKey)
+        self.userDefaults.synchronize()
     }
-     
     
 }
