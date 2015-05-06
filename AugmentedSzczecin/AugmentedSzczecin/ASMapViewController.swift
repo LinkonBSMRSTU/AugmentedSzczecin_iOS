@@ -7,14 +7,37 @@
 //
 
 import UIKit
+import CoreData
 
-class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControllerDelegate, MKMapViewDelegate {
+class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControllerDelegate, MKMapViewDelegate, NSFetchedResultsControllerDelegate {
     
     var isConnectedToNetwork: Bool?
     
     @IBOutlet weak var homeButton: UIButton!
     @IBOutlet weak var scaleLabel: UILabel!
     @IBOutlet weak var mapChoiceSegmentedControl: UISegmentedControl!
+    
+    lazy var fetchedResultsController: NSFetchedResultsController = {
+        let fetchRequest = NSFetchRequest(entityName: "ASPOI")
+        let frc = NSFetchedResultsController(
+            fetchRequest: fetchRequest,
+            managedObjectContext: ASData.sharedInstance.mainContext!,
+            sectionNameKeyPath: "ASPOI.id",
+            cacheName: nil)
+        
+        frc.delegate = self
+        
+        return frc
+        }()
+    
+    
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+
+    }
+    
+    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+
+    }
     
     override func viewWillAppear(animated: Bool) {
         
@@ -24,7 +47,7 @@ class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControlle
         scaleLabel.text = "500 m"
         scaleLabel.textColor = UIColor(hex: 0x212121, alpha: 1)
     }
-    
+
     func augmentedViewController(augmentedViewController: BLSAugmentedViewController!, viewForAnnotation annotation: BLSAugmentedAnnotation!, forUserLocation location: CLLocation!, distance: CLLocationDistance) -> BLSAugmentedAnnotationView! {
         return BLSAugmentedAnnotationView()
     }
