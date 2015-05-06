@@ -7,11 +7,26 @@
 //
 
 import UIKit
+import CoreData
 
-class ASSearchViewController: UITableViewController, UISearchResultsUpdating {
-    let tableData = ["BLStream", "Kaskada", "Galaxy", "Zamek Książąt Pomorskich"]
-    var filteredTableData = [String]()
+class ASSearchViewController: UITableViewController, UISearchResultsUpdating, NSFetchedResultsControllerDelegate {
     var resultSearchController = UISearchController()
+    
+    lazy var fetchedResultsController: NSFetchedResultsController = {
+        let fetchRequest = NSFetchRequest(entityName: "ASPOI")
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        let frc = NSFetchedResultsController(
+            fetchRequest: fetchRequest,
+            managedObjectContext: ASData.sharedInstance.mainContext!,
+            sectionNameKeyPath: "ASPOI.id",
+            cacheName: nil)
+        
+        frc.delegate = self
+        
+        return frc
+        }()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,47 +46,52 @@ class ASSearchViewController: UITableViewController, UISearchResultsUpdating {
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        if let sections = fetchedResultsController.sections {
+            return sections.count
+        }
+        
+        return 0
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (self.resultSearchController.active) {
-            return self.filteredTableData.count
+        if let sections = fetchedResultsController.sections {
+            let currentSection = sections[section] as! NSFetchedResultsSectionInfo
+            return currentSection.numberOfObjects
         }
-        else {
-            return self.tableData.count
+        
+        return 0
+    }
+
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if let sections = fetchedResultsController.sections {
+            let currentSection = sections[section] as! NSFetchedResultsSectionInfo
+            return currentSection.name
         }
+        
+        return nil
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ASSearchCell", forIndexPath: indexPath) as! UITableViewCell
-        
-        if (self.resultSearchController.active) {
-            cell.textLabel?.text = filteredTableData[indexPath.row]
+
+        let poi = fetchedResultsController.objectAtIndexPath(indexPath) as! ASPOI
             
+            cell.textLabel?.text = poi.name
+            cell.detailTextLabel?.text = poi.tag
             return cell
-        }
-        else {
-            cell.textLabel?.text = tableData[indexPath.row]
-            
-            return cell
-        }
     }
     
-    func updateSearchResultsForSearchController(searchController: UISearchController)
-    {
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
         if (searchController.searchBar.text != "") {
             
-            filteredTableData.removeAll(keepCapacity: false)
-            
-            let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text)
-            let array = (tableData as NSArray).filteredArrayUsingPredicate(searchPredicate)
-            
-            filteredTableData = array as! [String]
+            var predicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text)
+            fetchedResultsController.fetchRequest.predicate = predicate
+            fetchedResultsController.fetchRequest.fetchLimit = 25
             
         } else {
-            filteredTableData = tableData
+            fetchedResultsController.fetchRequest.predicate = nil
         }
         self.tableView.reloadData()
     }
