@@ -4,7 +4,9 @@
 import CoreData
 
 enum ASUserAttributes: String {
-    case user = "user"
+    case email = "email"
+    case id = "id"
+    case password = "password"
 }
 
 @objc
@@ -13,7 +15,7 @@ class _ASUser: NSManagedObject {
     // MARK: - Class methods
 
     class func entityName () -> String {
-        return "User"
+        return "ASUser"
     }
 
     class func entity(managedObjectContext: NSManagedObjectContext!) -> NSEntityDescription! {
@@ -34,9 +36,19 @@ class _ASUser: NSManagedObject {
     // MARK: - Properties
 
     @NSManaged
-    var user: String?
+    var email: String?
 
-    // func validateUser(value: AutoreleasingUnsafePointer<AnyObject>, error: NSErrorPointer) {}
+    // func validateEmail(value: AutoreleasingUnsafePointer<AnyObject>, error: NSErrorPointer) {}
+
+    @NSManaged
+    var id: NSNumber?
+
+    // func validateId(value: AutoreleasingUnsafePointer<AnyObject>, error: NSErrorPointer) {}
+
+    @NSManaged
+    var password: String?
+
+    // func validatePassword(value: AutoreleasingUnsafePointer<AnyObject>, error: NSErrorPointer) {}
 
     // MARK: - Relationships
 

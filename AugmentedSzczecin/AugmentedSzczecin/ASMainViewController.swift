@@ -18,7 +18,14 @@ class ASMainViewController: UIViewController {
         self.performSegueWithIdentifier("searchSegue", sender: nil)
     }
     
-    @IBAction func showMapButtonTapped(sender: AnyObject) {
+    func augmentedViewController(augmentedViewController: BLSAugmentedViewController!, viewForAnnotation annotation: BLSAugmentedAnnotation!, forUserLocation location: CLLocation!, distance: CLLocationDistance) -> BLSAugmentedAnnotationView! {
+
+        // TODO: configure view
+        let view = ASAnnotationView.view()
+        return view
+        
+    }
+@IBAction func showMapButtonTapped(sender: AnyObject) {
         self.performSegueWithIdentifier("showMapSegue", sender: nil)
     }
 }

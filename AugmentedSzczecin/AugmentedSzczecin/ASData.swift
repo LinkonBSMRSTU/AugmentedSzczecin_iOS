@@ -30,14 +30,14 @@ class ASData: NSObject {
         }()
     
     lazy var managedObjectModel: NSManagedObjectModel = {
-        let modelURL = NSBundle.mainBundle().URLForResource("AugmentedSzczecin", withExtension: "momd")!
+        let modelURL = NSBundle.mainBundle().URLForResource("ASDataModel", withExtension: "momd")!
         return NSManagedObjectModel(contentsOfURL: modelURL)!
         }()
     
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
 
         var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("AugmentedSzczecin.sqlite")
+        let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("ASDataModel.sqlite")
         var error: NSError? = nil
         var failureReason = "There was an error creating or loading the application's saved data."
         let mOptions = [NSMigratePersistentStoresAutomaticallyOption: true,
@@ -57,7 +57,7 @@ class ASData: NSObject {
         return coordinator
         }()
     
-    lazy var managedObjectContext: NSManagedObjectContext? = {
+    lazy var mainContext: NSManagedObjectContext? = {
         let coordinator = self.persistentStoreCoordinator
         if coordinator == nil {
             return nil
@@ -68,14 +68,28 @@ class ASData: NSObject {
         }()
     
     
-    func saveContext () {
-        if let moc = self.managedObjectContext {
+    func saveContext() {
+        if let moc = self.mainContext {
             var error: NSError? = nil
             if moc.hasChanges && !moc.save(&error) {
                 NSLog("Unresolved error \(error), \(error!.userInfo)")
                 abort()
             }
         }
+    }
+    
+    
+    func createChildContextFromAnyParentContext(parent: NSManagedObjectContext) -> NSManagedObjectContext{
+        var childContext = NSManagedObjectContext()
+        childContext.parentContext = parent
+
+        return childContext
+    }
+    
+    func createChildContextFromMainContext() -> NSManagedObjectContext {
+        var childContext = createChildContextFromAnyParentContext(self.mainContext!)
+
+        return childContext
     }
     
 

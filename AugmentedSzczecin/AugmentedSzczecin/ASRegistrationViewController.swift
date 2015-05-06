@@ -10,17 +10,38 @@ import UIKit
 
 class ASRegistrationViewController: UIViewController, UITextFieldDelegate {
 
+    let kAlertDelay = 2.0
+
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     
-    @IBAction func registerButtonTapped(sender: AnyObject) {
-        self.performSegueWithIdentifier("RegisterSegue", sender: nil)
-    }
+    var loadingAlert: ASAlertController?
+    var errorAlert: ASAlertController?
+    var success = true;
     
     @IBAction func cancelButtonTapped(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    @IBAction func registerButtonTapped(sender: AnyObject) {
+        loadingAlert = ASAlertController(title: "Rejestruję", message: "Proszę czekać", preferredStyle: .Alert)
+        loadingAlert?.showWithDelay(kAlertDelay, inViewController: self)
+        //request to api
+        if(success == true) {
+            loadingAlert?.dismiss() {
+                NSLog("success")
+                self.performSegueWithIdentifier("RegisterSegue", sender: nil)
+            }
+        }
+        else {
+            loadingAlert?.dismiss() {
+                self.errorAlert = ASAlertController(title: "Błąd", message: "Sprawdz swoje połączenie z Internetem", preferredStyle: .Alert)
+                self.errorAlert?.addCancelAction("Zamknij")
+                self.errorAlert?.showInViewController(self)
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -31,7 +52,7 @@ class ASRegistrationViewController: UIViewController, UITextFieldDelegate {
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
-        
+
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
