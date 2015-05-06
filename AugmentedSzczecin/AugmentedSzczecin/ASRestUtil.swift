@@ -162,10 +162,10 @@ class ASRestUtil {
     }
     
     class func savePoisToDataBase(listOfPoisJson: NSArray) {
+        let managedContext = ASData.sharedInstance.mainContext
+
         for iterator in listOfPoisJson {
             if let id = iterator["id"] as? Int, let name = iterator["name"] as? String, let tag = iterator["tag"] as? String, let location = iterator["location"]as? NSDictionary {
-                
-                var managedContext = ASData.sharedInstance.mainContext
                 
                 var poi = ASPOI(managedObjectContext: managedContext)
                 
