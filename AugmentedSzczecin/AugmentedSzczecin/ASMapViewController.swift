@@ -19,6 +19,8 @@ class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControlle
     
     lazy var fetchedResultsController: NSFetchedResultsController = {
         let fetchRequest = NSFetchRequest(entityName: "ASPOI")
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
         let frc = NSFetchedResultsController(
             fetchRequest: fetchRequest,
             managedObjectContext: ASData.sharedInstance.mainContext!,
