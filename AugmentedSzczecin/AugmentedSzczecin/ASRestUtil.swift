@@ -174,11 +174,8 @@ class ASRestUtil {
                 poi.tag = tag
                 poi.latitude = location["latitude"] as? Double
                 poi.longitude = location["longitude"] as? Double
-                
-                managedContext?.save(nil)
-                
             }
-        
+            managedContext?.save(nil)
         }
     }
     

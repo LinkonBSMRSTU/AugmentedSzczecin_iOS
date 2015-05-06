@@ -35,9 +35,8 @@ class ASRestUtilTests: XCTestCase {
             
             for element in dataToDelete {
                 managedContext?.deleteObject(element)
-                managedContext?.save(nil)
             }
-            
+            managedContext?.save(nil)
         }
         
         // Put teardown code here. This method is called after the invocation of each test method in the class.
@@ -185,10 +184,9 @@ class ASRestUtilTests: XCTestCase {
             if let data = getObjects(nil) {
                 for element in data {
                     getContext()?.deleteObject(element as! NSManagedObject)
-                    getContext()?.save(nil)
                 }
+                getContext()?.save(nil)
             }
-            
         }
         
         func countObjectsInDatabase() -> (count: Int, error: NSError?)  {
