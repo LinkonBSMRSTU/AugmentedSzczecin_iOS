@@ -33,12 +33,22 @@ class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControlle
         }()
     
     
-    func controllerDidChangeContent(controller: NSFetchedResultsController) {
-
-    }
-    
-    func controllerWillChangeContent(controller: NSFetchedResultsController) {
-
+    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+        
+        switch (type) {
+            
+        case .Insert:
+            //the implementation of inserting an object
+            break;
+        case .Delete:
+            //the implementation of deleting an object
+            break;
+        case .Update:
+            //the implementation of updating an object
+            break;
+        default:
+            break;
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
