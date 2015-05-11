@@ -13,14 +13,11 @@ class ASPOI: _ASPOI {
                 return
             }
             
-            if placemarks.count > 0 {
-                var placemark = placemarks[0] as! CLPlacemark
-                completionHandler(address: placemark)
-            }
-            else {
+            let placemark = placemarks.first as? CLPlacemark
+            if placemark == nil {
                 println("Problem with the data received from geocoder")
-                completionHandler(address: nil)
             }
+            completionHandler(address: placemark)
         })
     }
 
