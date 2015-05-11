@@ -181,6 +181,7 @@
 				057B96771AD93EA500372E11 /* String+Localised.swift */,
 				2399E05D1AE80BA90000DFEE /* NSTimerExtension.swift */,
 				23A1688A1AF22D4300898337 /* UIView+Xib.swift */,
+				05CAEC7B1ADEE8A600628015 /* UIColor+ColorFromHex.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -226,7 +227,6 @@
 				6D2DE5041A9B7033003717F8 /* Supporting Files */,
 				6D2DE50D1A9B7033003717F8 /* Images.xcassets */,
 				0567302B1AD3E7C40055308E /* Reachability.swift */,
-				05CAEC7B1ADEE8A600628015 /* UIColor+ColorFromHex.swift */,
 				057B96791AD959D300372E11 /* ASAnnotation.swift */,
 				23A168861AF22CD000898337 /* ASAnnotationView.swift */,
 				23A168881AF22CF400898337 /* ASAnnotationView.xib */,
