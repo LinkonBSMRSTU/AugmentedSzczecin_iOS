@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Social
 
 class ASPointDetailViewController: UIViewController, UIScrollViewDelegate {
 
@@ -23,7 +24,13 @@ class ASPointDetailViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var shareButton = UIBarButtonItem(title: "Share", style: .Plain, target: self, action: Selector("share"))
+        var backButton = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: Selector("popViewController"))
 
+        self.navigationItem.rightBarButtonItem = shareButton
+        self.navigationItem.leftBarButtonItem = backButton
+        
         //Mocking images
         if (images.count == 0) {
             images.append(UIImage(named: "SzczecinNight")!)
@@ -33,7 +40,7 @@ class ASPointDetailViewController: UIViewController, UIScrollViewDelegate {
 
         }
         
-        self.scrollView.frame = CGRectMake(0, 0, self.view.frame.width, self.scrollView.frame.height)
+        self.scrollView.frame = CGRectMake(0, 44, self.view.frame.width, self.scrollView.frame.height)
         let scrollViewWidth: CGFloat = self.scrollView.frame.width
         let scrollViewHeight: CGFloat = self.scrollView.frame.height
 
@@ -45,6 +52,7 @@ class ASPointDetailViewController: UIViewController, UIScrollViewDelegate {
             img.contentMode = UIViewContentMode.ScaleToFill
             self.scrollView.addSubview(img)
         }
+        
         
         self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.width * CGFloat(images.count), self.scrollView.frame.height)
         self.scrollView.delegate = self
@@ -64,5 +72,22 @@ class ASPointDetailViewController: UIViewController, UIScrollViewDelegate {
 
         self.pageControl.currentPage = Int(currentPage);
 
+    }
+    
+    func share() {
+        //temporary only facebook
+        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook){
+            var facebookSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+            facebookSheet.setInitialText("Share on Facebook")
+            self.presentViewController(facebookSheet, animated: true, completion: nil)
+        } else {
+            var alert = UIAlertController(title: "Accounts", message: "Please login to a Facebook account to share.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func popViewController() {
+        self.dismissViewControllerAnimated(false, completion: nil)
     }
 }
