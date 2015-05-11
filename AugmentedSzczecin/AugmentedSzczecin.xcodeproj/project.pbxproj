@@ -67,6 +67,7 @@
 		6D2DE5071A9B7033003717F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2DE5061A9B7033003717F8 /* AppDelegate.swift */; };
 		6D2DE50E1A9B7033003717F8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D2DE50D1A9B7033003717F8 /* Images.xcassets */; };
 		6D2DE5111A9B7033003717F8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D2DE50F1A9B7033003717F8 /* LaunchScreen.xib */; };
+		6D62583D1B0127C600600FC3 /* ASPOITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D62583B1B0127C600600FC3 /* ASPOITests.swift */; };
 		A42F98D81ABEDE42006CF22E /* ASDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A42F98D61ABEDE42006CF22E /* ASDataModel.xcdatamodeld */; };
 		A4B52E141AD2AB6200C318A6 /* ASData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B52E131AD2AB6200C318A6 /* ASData.swift */; };
 		A4DF18E01AF9800F00C44ACC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DF18DF1AF9800F00C44ACC /* CoreLocation.framework */; };
@@ -133,6 +134,7 @@
 		6D2DE5101A9B7033003717F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6D2DE5161A9B7033003717F8 /* AugmentedSzczecinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AugmentedSzczecinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D2DE51B1A9B7033003717F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D62583B1B0127C600600FC3 /* ASPOITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASPOITests.swift; sourceTree = "<group>"; };
 		88C0473809D3465E0B0E8CE0 /* Pods_AugmentedSzczecinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AugmentedSzczecinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		910EF554C1DC1F0DAAA42A47 /* Pods_AugmentedSzczecin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AugmentedSzczecin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A78CE0DD15202A86FD6BD9A /* Pods-AugmentedSzczecin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugmentedSzczecin.release.xcconfig"; path = "Pods/Target Support Files/Pods-AugmentedSzczecin/Pods-AugmentedSzczecin.release.xcconfig"; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 		6D2DE5191A9B7033003717F8 /* AugmentedSzczecinTests */ = {
 			isa = PBXGroup;
 			children = (
+				6D62583B1B0127C600600FC3 /* ASPOITests.swift */,
 				054B546F1AB630A400ABCE74 /* ASRegistrationSegueTests.swift */,
 				EF91BB9F1AFA234500F36937 /* ASCredentialManagerTests.swift */,
 				054B54711AB630D700ABCE74 /* ASFirstContactViewControllerTests.swift */,
@@ -590,6 +593,7 @@
 				23A1688C1AF22ED000898337 /* ASAnnotationView.swift in Sources */,
 				2399E0611AE81EF40000DFEE /* Reachability.swift in Sources */,
 				057B967B1AD962ED00372E11 /* String+Localised.swift in Sources */,
+				6D62583D1B0127C600600FC3 /* ASPOITests.swift in Sources */,
 				2399E0591AE80B970000DFEE /* ASAlertController.swift in Sources */,
 				D5922F4F1ADD37A6005DD8B2 /* ASLoginViewController.swift in Sources */,
 			);
