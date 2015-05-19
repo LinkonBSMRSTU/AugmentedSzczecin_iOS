@@ -13,16 +13,11 @@ class ASFirstContactViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
 
-    @IBAction func showLoginViewController(sender: AnyObject) {
-        self.performSegueWithIdentifier("ShowLogin", sender: nil)
-    }
-
     @IBAction func showRegistrationViewController(sender: AnyObject) {
         self.performSegueWithIdentifier("ShowRegistration", sender: nil)
     }
     
     override func viewDidLoad() {
-        loginButton.setTitle("Login".localized , forState: UIControlState.Normal)
         registerButton.setTitle("Register".localized, forState: UIControlState.Normal)
     }
     
