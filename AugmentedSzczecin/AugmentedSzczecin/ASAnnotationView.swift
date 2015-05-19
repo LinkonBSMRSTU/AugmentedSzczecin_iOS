@@ -9,8 +9,9 @@
 import UIKit
 
 class ASAnnotationView : BLSAugmentedAnnotationView {
- 
-    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
     
     class func nibName() -> String {
         return "ASAnnotationView"
