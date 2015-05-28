@@ -11,14 +11,21 @@ import UIKit
 class ASAnnotation: NSObject, BLSAugmentedAnnotation {
     
     var poi: ASPOI
-    var coordinate: CLLocationCoordinate2D
-    var title: String
-    var subtitle: String
     
-    init(poi: ASPOI, id: Int, coordinate: CLLocationCoordinate2D, title: String, subtitle: String) {
+    init(poi: ASPOI) {
         self.poi = poi
-        self.title = self.poi.name!
-        self.subtitle = self.poi.tag!
-        self.coordinate = CLLocationCoordinate2DMake(self.poi.latitude as! Double, self.poi.longitude as! Double)
     }
+    
+    var coordinate: CLLocationCoordinate2D {
+        return CLLocationCoordinate2DMake(self.poi.latitude as! Double, self.poi.longitude as! Double)
+    }
+    
+    var title: String {
+        return self.poi.name!
+    }
+    
+    var subtitle: String {
+        return self.poi.tag!
+    }
+    
 }
