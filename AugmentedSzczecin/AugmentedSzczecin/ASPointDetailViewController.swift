@@ -75,16 +75,24 @@ class ASPointDetailViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func share() {
-        //temporary only facebook
-        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook){
-            var facebookSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
-            facebookSheet.setInitialText("Share on Facebook")
-            self.presentViewController(facebookSheet, animated: true, completion: nil)
-        } else {
-            var alert = UIAlertController(title: "Accounts", message: "Please login to a Facebook account to share.", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
-        }
+        var image: UIImage = images.first!
+        let activity = UIActivityViewController(activityItems: ["My POI in AugmentedSzczecin", image], applicationActivities: nil)
+        activity.excludedActivityTypes = [
+            UIActivityTypePostToFlickr,
+            UIActivityTypePostToWeibo,
+            UIActivityTypeMessage,
+            UIActivityTypeAssignToContact,
+            UIActivityTypeSaveToCameraRoll,
+            UIActivityTypeAddToReadingList,
+            UIActivityTypePostToFlickr,
+            UIActivityTypePostToVimeo,
+            UIActivityTypePostToTencentWeibo,
+            UIActivityTypeAirDrop,
+            UIActivityTypePrint,
+            UIActivityTypeMail,
+            UIActivityTypeCopyToPasteboard
+        ]
+        self.presentViewController(activity, animated: true, completion: nil)
     }
     
     func popViewController() {
