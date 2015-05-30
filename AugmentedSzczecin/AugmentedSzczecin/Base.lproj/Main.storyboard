@@ -2,8 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7519.1" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7B0-UG-zg7">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7513.1"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -498,37 +496,11 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p17-Pa-Rrn">
-                                                <rect key="frame" x="528" y="4" width="46" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="46" id="63p-qf-Abp"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="hzj-rZ-kTU"/>
-                                                    <constraint firstAttribute="height" constant="30" id="uvX-cU-5HJ"/>
-                                                </constraints>
-                                                <state key="normal" title="ADD">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grade" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csv-Te-RVI">
-                                                <rect key="frame" x="523" y="45" width="51" height="22"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="22" id="PoP-4Q-Q0y"/>
-                                                    <constraint firstAttribute="width" constant="51" id="R4S-DY-P4w"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="51" id="prP-t4-DJs"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="csv-Te-RVI" secondAttribute="trailing" constant="26" id="7RE-6g-o87"/>
                                             <constraint firstAttribute="bottom" secondItem="2S3-Ux-mUr" secondAttribute="bottom" constant="13" id="W3V-Ih-UWy"/>
                                             <constraint firstAttribute="height" constant="80" id="g8J-gz-n8Q"/>
-                                            <constraint firstItem="csv-Te-RVI" firstAttribute="top" secondItem="p17-Pa-Rrn" secondAttribute="bottom" constant="11" id="g9J-n4-BXb"/>
                                             <constraint firstItem="2S3-Ux-mUr" firstAttribute="top" secondItem="EAr-Xh-0v7" secondAttribute="bottom" constant="8" symbolic="YES" id="hT0-hG-1jw"/>
-                                            <constraint firstItem="csv-Te-RVI" firstAttribute="trailing" secondItem="p17-Pa-Rrn" secondAttribute="trailing" id="nHt-hm-eAE"/>
-                                            <constraint firstItem="2S3-Ux-mUr" firstAttribute="baseline" secondItem="csv-Te-RVI" secondAttribute="firstBaseline" id="rwA-3D-fnG"/>
                                             <constraint firstItem="2S3-Ux-mUr" firstAttribute="leading" secondItem="EAr-Xh-0v7" secondAttribute="leading" id="ugg-dB-IQa"/>
                                             <constraint firstItem="2S3-Ux-mUr" firstAttribute="leading" secondItem="jg4-x6-Iga" secondAttribute="leadingMargin" id="z2h-H6-RHu"/>
                                         </constraints>
@@ -586,7 +558,6 @@
                         <outlet property="descriptionTextView" destination="u6q-wV-HlU" id="6Zx-pm-mGL"/>
                         <outlet property="detailInfoHolder" destination="jg4-x6-Iga" id="A2r-WJ-MXy"/>
                         <outlet property="nameLabel" destination="2S3-Ux-mUr" id="XOe-V0-64h"/>
-                        <outlet property="opinionLabel" destination="csv-Te-RVI" id="DFn-Qv-5LP"/>
                         <outlet property="pageControl" destination="9j8-9j-1hg" id="bZv-hM-0MX"/>
                         <outlet property="scrollView" destination="ids-Vs-1jM" id="AWF-IC-6f6"/>
                     </connections>

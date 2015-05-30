@@ -11,7 +11,6 @@ import UIKit
 class ASPointDetailViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var descriptionTextView: UITextView!
-    @IBOutlet weak var opinionLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var detailInfoHolder: UIView!
@@ -19,7 +18,8 @@ class ASPointDetailViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var pageControl: UIPageControl!
     
     var images = [UIImage]()
-    //let POI: ASPOI?
+    
+    var POI: ASPOI?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,14 +30,18 @@ class ASPointDetailViewController: UIViewController, UIScrollViewDelegate {
             images.append(UIImage(named: "SzczecinNight2")!)
             images.append(UIImage(named: "SzczecinNight")!)
             images.append(UIImage(named: "SzczecinNight2")!)
-
         }
+        
+        if (POI != nil) {
+            descriptionTextView.text = POI?.description
+            nameLabel.text = POI?.name
+            categoryLabel.text = POI?.tag
+        }
+        
         
         self.scrollView.frame = CGRectMake(0, 0, self.view.frame.width, self.scrollView.frame.height)
         let scrollViewWidth: CGFloat = self.scrollView.frame.width
         let scrollViewHeight: CGFloat = self.scrollView.frame.height
-
-        //self.nameLabel.text = self.POI!.name
         
         for index in 0...images.count-1 {
            var img = UIImageView(frame: CGRectMake(scrollViewWidth * CGFloat(index), 0, scrollViewWidth, scrollViewHeight))
@@ -53,7 +57,7 @@ class ASPointDetailViewController: UIViewController, UIScrollViewDelegate {
         detailInfoHolder.backgroundColor = UIColor.dodgerBlueAugmentedColor()
         nameLabel.textColor = UIColor.whiteAugmentedColor()
         categoryLabel.textColor = UIColor.whiteAugmentedColor()
-        opinionLabel.textColor = UIColor.whiteAugmentedColor()
+        
         
     }
 

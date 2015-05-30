@@ -47,7 +47,6 @@ class ASSearchViewController: UITableViewController, UISearchResultsUpdating, NS
     }
     
     override func viewDidAppear(animated: Bool) {
-        self.performSegueWithIdentifier("ShowDetailSegue", sender: nil)
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -89,7 +88,7 @@ class ASSearchViewController: UITableViewController, UISearchResultsUpdating, NS
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("ShowDetailSegue", sender: nil)
+        performSegueWithIdentifier("ShowDetailSegue", sender: fetchedResultsController.objectAtIndexPath(indexPath))
     }
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
@@ -103,6 +102,13 @@ class ASSearchViewController: UITableViewController, UISearchResultsUpdating, NS
             fetchedResultsController.fetchRequest.predicate = nil
         }
         self.tableView.reloadData()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "ShowDetailSegue") {
+            var destination = segue.destinationViewController as! ASPointDetailViewController
+            destination.POI = sender as? ASPOI
+        }
     }
     
 }
