@@ -21,4 +21,21 @@ class ASAnnotationView : BLSAugmentedAnnotationView {
         let bundle = NSBundle(forClass: ASAnnotationView.classForCoder())
         return UIView.loadFromNibNamed(ASAnnotationView.nibName(), bundle: bundle) as? ASAnnotationView
     }
+    
+    class func view(withPOI: ASPOI, location: CLLocation) ->ASAnnotationView? {
+        let view = UIView.loadFromNibNamed(ASAnnotationView.nibName(), bundle: NSBundle(forClass: ASAnnotationView.classForCoder())) as? ASAnnotationView
+        
+        
+        var destinationLat = withPOI.latitude as! CLLocationDegrees
+        var destinationLon = withPOI.longitude as! CLLocationDegrees
+        var destinationLoc = CLLocation(latitude: destinationLat, longitude: destinationLon)
+        
+        view?.distanceLabel.text = String(stringInterpolationSegment: destinationLoc.distanceFromLocation(location))
+        
+        withPOI.getAddress(CLGeocoder(), completionHandler: { (address) -> Void in
+            view?.addressLabel.text = address!.name
+        })
+        
+        return view
+    }
 }
