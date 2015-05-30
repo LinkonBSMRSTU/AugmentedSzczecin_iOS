@@ -25,7 +25,8 @@ class ASPointDetailViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var shareButton = UIBarButtonItem(title: "Share", style: .Plain, target: self, action: Selector("share"))
+        var shareButton = UIBarButtonItem(image: UIImage(named: "Share"), style: .Plain, target: self, action: Selector("share"))
+        shareButton.tintColor = UIColor.blackAugmentedColor()
         var backButton = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: Selector("popViewController"))
 
         self.navigationItem.rightBarButtonItem = shareButton
