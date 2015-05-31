@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7B0-UG-zg7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7B0-UG-zg7">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -139,6 +139,80 @@
             </objects>
             <point key="canvasLocation" x="909" y="329"/>
         </scene>
+        <!--About View Controller-->
+        <scene sceneID="Ded-cU-0yr">
+            <objects>
+                <viewController id="MHl-zy-euQ" customClass="ASAboutViewController" customModule="AugmentedSzczecin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WBf-aK-NXW"/>
+                        <viewControllerLayoutGuide type="bottom" id="LsZ-mL-oLl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qkN-m9-3sk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_as_vert" translatesAutoresizingMaskIntoConstraints="NO" id="FXR-LE-kC0">
+                                <rect key="frame" x="196" y="86" width="208" height="201"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="201" id="5hF-YW-Iij"/>
+                                    <constraint firstAttribute="width" constant="208" id="e9n-6U-gmr"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbm-Zf-x95">
+                                <rect key="frame" x="16" y="333" width="568" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="22f-K6-84q"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="szczecin_bg" translatesAutoresizingMaskIntoConstraints="NO" id="evI-m8-wOy">
+                                <rect key="frame" x="0.0" y="20" width="600" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="2KX-c0-R5c"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AugmentedSzczecin X.X(YY)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XnD-88-LLV">
+                                <rect key="frame" x="190" y="304" width="220" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Ljj-fA-Anh"/>
+                                    <constraint firstAttribute="width" constant="220" id="pPh-vb-YfV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Xbm-Zf-x95" firstAttribute="top" secondItem="XnD-88-LLV" secondAttribute="bottom" constant="8" symbolic="YES" id="6eI-Ap-CCp"/>
+                            <constraint firstItem="FXR-LE-kC0" firstAttribute="centerX" secondItem="XnD-88-LLV" secondAttribute="centerX" id="78B-PB-gwU"/>
+                            <constraint firstAttribute="centerX" secondItem="Xbm-Zf-x95" secondAttribute="centerX" id="Co5-Ez-dyG"/>
+                            <constraint firstAttribute="centerX" secondItem="XnD-88-LLV" secondAttribute="centerX" id="Cz9-5d-OwY"/>
+                            <constraint firstItem="FXR-LE-kC0" firstAttribute="centerX" secondItem="Xbm-Zf-x95" secondAttribute="centerX" id="RuL-aw-KEY"/>
+                            <constraint firstItem="XnD-88-LLV" firstAttribute="top" secondItem="FXR-LE-kC0" secondAttribute="bottom" constant="17" id="S4a-QQ-M6f"/>
+                            <constraint firstItem="FXR-LE-kC0" firstAttribute="top" secondItem="WBf-aK-NXW" secondAttribute="bottom" constant="66" id="ceb-23-FdC"/>
+                            <constraint firstAttribute="trailing" secondItem="evI-m8-wOy" secondAttribute="trailing" id="cec-dE-R2V"/>
+                            <constraint firstAttribute="centerX" secondItem="FXR-LE-kC0" secondAttribute="centerX" id="eSW-bg-i4i"/>
+                            <constraint firstAttribute="trailing" secondItem="Xbm-Zf-x95" secondAttribute="trailing" constant="16" id="fVx-VX-aJy"/>
+                            <constraint firstItem="Xbm-Zf-x95" firstAttribute="leading" secondItem="qkN-m9-3sk" secondAttribute="leading" constant="16" id="hmg-2Z-mIX"/>
+                            <constraint firstItem="evI-m8-wOy" firstAttribute="leading" secondItem="qkN-m9-3sk" secondAttribute="leading" id="w9p-hb-gLh"/>
+                            <constraint firstItem="evI-m8-wOy" firstAttribute="top" secondItem="WBf-aK-NXW" secondAttribute="bottom" id="z1M-fa-WKd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="aboutTextView" destination="Xbm-Zf-x95" id="S4g-4v-ciK"/>
+                        <outlet property="applicationNameAndVersionLabel" destination="XnD-88-LLV" id="frr-Xc-4Gm"/>
+                        <outlet property="backgroundImage" destination="evI-m8-wOy" id="EIS-dZ-TgM"/>
+                        <outlet property="logoImage" destination="FXR-LE-kC0" id="Dq8-SQ-6kn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QYs-EC-98W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1688" y="1077"/>
+        </scene>
         <!--Main View Controller-->
         <scene sceneID="FwW-H0-IGO">
             <objects>
@@ -175,20 +249,37 @@
                                     <action selector="searchButtonTap:" destination="6Pd-oO-MBu" eventType="touchUpInside" id="Ebp-4h-ShT"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubB-vd-iW2">
+                                <rect key="frame" x="277" y="293" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="6yn-a3-h9g"/>
+                                    <constraint firstAttribute="height" constant="30" id="Fwu-DW-0Y5"/>
+                                </constraints>
+                                <state key="normal" title="About">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="aboutButtonTap:" destination="6Pd-oO-MBu" eventType="touchUpInside" id="lBB-jy-SPy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ubB-vd-iW2" firstAttribute="top" secondItem="vya-KW-mP2" secondAttribute="bottom" constant="8" id="55S-pn-yds"/>
                             <constraint firstItem="vya-KW-mP2" firstAttribute="top" secondItem="Vku-2a-Jbl" secondAttribute="bottom" constant="8" id="RNz-Zw-4Tc"/>
+                            <constraint firstAttribute="centerX" secondItem="ubB-vd-iW2" secondAttribute="centerX" id="UxJ-7Z-sNl"/>
                             <constraint firstItem="Vku-2a-Jbl" firstAttribute="top" secondItem="Ybr-pg-Crk" secondAttribute="bottom" constant="197" id="WiQ-0i-1sc"/>
                             <constraint firstAttribute="centerX" secondItem="vya-KW-mP2" secondAttribute="centerX" id="geb-LH-ygl"/>
                             <constraint firstAttribute="centerX" secondItem="Vku-2a-Jbl" secondAttribute="centerX" id="sNM-PW-no6"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="aboutButton" destination="ubB-vd-iW2" id="S5u-Yk-5Uc"/>
                         <outlet property="searchButton" destination="vya-KW-mP2" id="sn8-ks-hjc"/>
                         <outlet property="showMapButton" destination="Vku-2a-Jbl" id="vOI-AC-1rb"/>
                         <segue destination="Wmo-2f-gmO" kind="presentation" identifier="showMapSegue" id="jlj-YO-hqE"/>
                         <segue destination="ylX-W7-8ux" kind="presentation" identifier="searchSegue" id="DK7-hE-Uw4"/>
+                        <segue destination="MHl-zy-euQ" kind="presentation" identifier="aboutSegue" id="7jU-Qd-qSW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bF9-A7-eTu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -301,4 +392,8 @@
             <point key="canvasLocation" x="2445" y="1077"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo_as_vert" width="309" height="361"/>
+        <image name="szczecin_bg" width="1240" height="455"/>
+    </resources>
 </document>
