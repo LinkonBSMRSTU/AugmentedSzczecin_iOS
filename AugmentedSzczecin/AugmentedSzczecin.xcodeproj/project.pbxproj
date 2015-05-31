@@ -69,6 +69,7 @@
 		6D2DE5111A9B7033003717F8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D2DE50F1A9B7033003717F8 /* LaunchScreen.xib */; };
 		6D62583D1B0127C600600FC3 /* ASPOITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D62583B1B0127C600600FC3 /* ASPOITests.swift */; };
 		A42F98D81ABEDE42006CF22E /* ASDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A42F98D61ABEDE42006CF22E /* ASDataModel.xcdatamodeld */; };
+		A484B6DB1B1B269E005EC2A3 /* ASAddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A484B6DA1B1B269E005EC2A3 /* ASAddPlaceViewController.swift */; };
 		A4B52E141AD2AB6200C318A6 /* ASData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B52E131AD2AB6200C318A6 /* ASData.swift */; };
 		A4DF18E01AF9800F00C44ACC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DF18DF1AF9800F00C44ACC /* CoreLocation.framework */; };
 		D386927B9EBA7240D980CCF6 /* Pods_AugmentedSzczecin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 910EF554C1DC1F0DAAA42A47 /* Pods_AugmentedSzczecin.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -135,6 +136,7 @@
 		910EF554C1DC1F0DAAA42A47 /* Pods_AugmentedSzczecin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AugmentedSzczecin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A78CE0DD15202A86FD6BD9A /* Pods-AugmentedSzczecin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugmentedSzczecin.release.xcconfig"; path = "Pods/Target Support Files/Pods-AugmentedSzczecin/Pods-AugmentedSzczecin.release.xcconfig"; sourceTree = "<group>"; };
 		A42F98D71ABEDE42006CF22E /* ASDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ASDataModel.xcdatamodel; sourceTree = "<group>"; };
+		A484B6DA1B1B269E005EC2A3 /* ASAddPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASAddPlaceViewController.swift; sourceTree = "<group>"; };
 		A4B52E131AD2AB6200C318A6 /* ASData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASData.swift; sourceTree = "<group>"; };
 		A4DF18DF1AF9800F00C44ACC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A4FE1C711AA5191D0044DE55 /* AugmentedSzczecin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AugmentedSzczecin-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				6D2DE5061A9B7033003717F8 /* AppDelegate.swift */,
 				EFB7A3DC1AE2BADE00528083 /* ASRestUtil.swift */,
 				054B54691AB47B6500ABCE74 /* ASFirstContactViewController.swift */,
+				A484B6DA1B1B269E005EC2A3 /* ASAddPlaceViewController.swift */,
 				054B547A1AB73AE200ABCE74 /* ASMapViewController.swift */,
 				054B546B1AB47F7D00ABCE74 /* ASRegistrationViewController.swift */,
 				054B546D1AB482E200ABCE74 /* ASRegistrationSegue.swift */,
@@ -529,6 +532,7 @@
 			files = (
 				050B83CB1AFA0A0D00DF4342 /* ASMapViewController.swift in Sources */,
 				057B967A1AD959D300372E11 /* ASAnnotation.swift in Sources */,
+				A484B6DB1B1B269E005EC2A3 /* ASAddPlaceViewController.swift in Sources */,
 				05CAEC7C1ADEE8A600628015 /* UIColor+ColorFromHex.swift in Sources */,
 				054B546A1AB47B6500ABCE74 /* ASFirstContactViewController.swift in Sources */,
 				050B83C81AFA095A00DF4342 /* _ASUser.swift in Sources */,
