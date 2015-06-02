@@ -8,20 +8,37 @@
 
 import UIKit
 
-class ASAddPlaceViewController: UIViewController {
+class ASAddPlaceViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var streetTextField: UITextField!
+    @IBOutlet weak var zipCodeTextField: UITextField!
+    @IBOutlet weak var cityTextField: UITextField!
+    @IBOutlet weak var categoryTextField: UITextField!
+    @IBOutlet weak var tagsTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        nameTextField.placeholder = "Name".localized
+        streetTextField.placeholder = "Street".localized
+        zipCodeTextField.placeholder = "Zip Code".localized
+        cityTextField.placeholder = "City".localized
+        categoryTextField.placeholder = "Category".localized
+        tagsTextField.placeholder = "Tags".localized
+        
+        
     }
 
+    @IBAction func openCategoryPicker(sender: AnyObject) {
+        self.performSegueWithIdentifier("showCategoryPickerSegue", sender: nil)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
