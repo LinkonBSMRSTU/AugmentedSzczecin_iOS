@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Social
 
 class ASPointDetailViewController: UIViewController, UIScrollViewDelegate {
 
@@ -23,7 +24,14 @@ class ASPointDetailViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var shareButton = UIBarButtonItem(image: UIImage(named: "Share"), style: .Plain, target: self, action: Selector("share"))
+        shareButton.tintColor = UIColor.blackAugmentedColor()
+        var backButton = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: Selector("popViewController"))
 
+        self.navigationItem.rightBarButtonItem = shareButton
+        self.navigationItem.leftBarButtonItem = backButton
+        
         //Mocking images
         if (images.count == 0) {
             images.append(UIImage(named: "SzczecinNight")!)
@@ -40,6 +48,7 @@ class ASPointDetailViewController: UIViewController, UIScrollViewDelegate {
         
         
         self.scrollView.frame = CGRectMake(0, 0, self.view.frame.width, self.scrollView.frame.height)
+
         let scrollViewWidth: CGFloat = self.scrollView.frame.width
         let scrollViewHeight: CGFloat = self.scrollView.frame.height
         
@@ -49,6 +58,7 @@ class ASPointDetailViewController: UIViewController, UIScrollViewDelegate {
             img.contentMode = UIViewContentMode.ScaleToFill
             self.scrollView.addSubview(img)
         }
+        
         
         self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.width * CGFloat(images.count), self.scrollView.frame.height)
         self.scrollView.delegate = self
@@ -68,5 +78,30 @@ class ASPointDetailViewController: UIViewController, UIScrollViewDelegate {
 
         self.pageControl.currentPage = Int(currentPage);
 
+    }
+    
+    func share() {
+        var image: UIImage = images.first!
+        let activity = UIActivityViewController(activityItems: ["My POI in AugmentedSzczecin", image], applicationActivities: nil)
+        activity.excludedActivityTypes = [
+            UIActivityTypePostToFlickr,
+            UIActivityTypePostToWeibo,
+            UIActivityTypeMessage,
+            UIActivityTypeAssignToContact,
+            UIActivityTypeSaveToCameraRoll,
+            UIActivityTypeAddToReadingList,
+            UIActivityTypePostToFlickr,
+            UIActivityTypePostToVimeo,
+            UIActivityTypePostToTencentWeibo,
+            UIActivityTypeAirDrop,
+            UIActivityTypePrint,
+            UIActivityTypeMail,
+            UIActivityTypeCopyToPasteboard
+        ]
+        self.presentViewController(activity, animated: true, completion: nil)
+    }
+    
+    func popViewController() {
+        self.dismissViewControllerAnimated(false, completion: nil)
     }
 }

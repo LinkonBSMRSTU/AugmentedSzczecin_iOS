@@ -257,6 +257,7 @@
                         <outlet property="homeButton" destination="Xsv-aM-9LY" id="Hzc-lV-I8c"/>
                         <outlet property="mapChoiceSegmentedControl" destination="ZUB-zw-lil" id="4jG-C0-i7X"/>
                         <outlet property="scaleLabel" destination="eiR-tI-1UA" id="raK-3j-h8T"/>
+                        <segue destination="0K9-u3-YEU" kind="presentation" identifier="ShowDetailSegue" id="ZuN-Gn-vWJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fG-aR-A3L" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -286,7 +287,7 @@
                     </tableView>
                     <connections>
                         <outlet property="searchDisplayController" destination="FeV-Ac-ipr" id="na2-TO-4xC"/>
-                        <segue destination="zYs-1y-M3B" kind="presentation" identifier="ShowDetailSegue" id="x87-t2-r3w"/>
+                        <segue destination="0K9-u3-YEU" kind="showDetail" identifier="ShowDetailSegue" id="aFB-h9-tP9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vd9-QK-fWT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -402,6 +403,9 @@
                             <constraint firstItem="zNx-p3-0yS" firstAttribute="top" secondItem="Ewd-xF-buL" secondAttribute="top" id="rRh-Wv-sky"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Gld-DC-2wc">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="YJ6-in-aYl"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="categoryLabel" destination="EAr-Xh-0v7" id="axg-4i-4jk"/>
                         <outlet property="descriptionTextView" destination="u6q-wV-HlU" id="6Zx-pm-mGL"/>
@@ -413,10 +417,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IAE-A6-jA7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3575" y="301"/>
+            <point key="canvasLocation" x="5199" y="301"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hkA-s0-0hT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0K9-u3-YEU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="US6-wf-N4B">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zYs-1y-M3B" kind="relationship" relationship="rootViewController" id="q1W-5R-hhQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Tb-kM-aZI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4387" y="301"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jlj-YO-hqE"/>
+        <segue reference="ZuN-Gn-vWJ"/>
     </inferredMetricsTieBreakers>
 </document>
