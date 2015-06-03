@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<<<<<<< HEAD
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7B0-UG-zg7">
+=======
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7B0-UG-zg7">
+>>>>>>> origin/feature/AS-475
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -30,17 +34,31 @@
                                     <action selector="showRegistrationViewController:" destination="3Zn-T2-33E" eventType="touchUpInside" id="CjD-tz-eeh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJg-db-eHn">
+                                <rect key="frame" x="285" y="373" width="31" height="30"/>
+                                <state key="normal" title="Skip">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="skipAndGoToMainViewController:" destination="3Zn-T2-33E" eventType="touchUpInside" id="bhQ-ti-DqA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="MTY-GG-DcM" secondAttribute="centerX" id="35l-LZ-L7E"/>
+                            <constraint firstItem="T83-su-XMp" firstAttribute="top" secondItem="cJg-db-eHn" secondAttribute="bottom" constant="197" id="6Kd-J1-8S7"/>
+                            <constraint firstItem="cJg-db-eHn" firstAttribute="top" secondItem="MTY-GG-DcM" secondAttribute="bottom" constant="8" id="DI4-cI-TSL"/>
                             <constraint firstItem="T83-su-XMp" firstAttribute="top" secondItem="MTY-GG-DcM" secondAttribute="bottom" constant="235" id="fdN-2b-ueb"/>
+                            <constraint firstAttribute="centerX" secondItem="cJg-db-eHn" secondAttribute="centerX" id="wnm-eq-zbh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cz1-Fl-1Ba"/>
                     <connections>
                         <outlet property="registerButton" destination="MTY-GG-DcM" id="tJ4-aZ-f9j"/>
+                        <outlet property="skipButton" destination="cJg-db-eHn" id="aGF-XB-wbN"/>
                         <segue destination="BZm-JQ-Z3R" kind="presentation" identifier="ShowRegistration" id="Gbv-sH-6dx"/>
+                        <segue destination="6Pd-oO-MBu" kind="presentation" identifier="SkipAndGoToMainViewController" id="9Te-CJ-Vyg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tdo-Ci-wrn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -137,7 +155,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s4W-TT-E62" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="909" y="329"/>
+            <point key="canvasLocation" x="897" y="-63"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="Ded-cU-0yr">
@@ -672,6 +690,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ZuN-Gn-vWJ"/>
+        <segue reference="9Te-CJ-Vyg"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="logo_as_vert" width="309" height="361"/>
