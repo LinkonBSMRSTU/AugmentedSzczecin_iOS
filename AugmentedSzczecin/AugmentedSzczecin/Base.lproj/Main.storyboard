@@ -18,12 +18,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTY-GG-DcM">
-                                <rect key="frame" x="260" y="335" width="80" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="szczecin_bg" translatesAutoresizingMaskIntoConstraints="NO" id="gBa-QX-Om7">
+                                <rect key="frame" x="0.0" y="64" width="600" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="MTY-GG-DcM" secondAttribute="height" multiplier="8:3" id="SX4-gV-d8c"/>
+                                    <constraint firstAttribute="width" constant="600" id="fXp-qz-ueY"/>
                                 </constraints>
-                                <state key="normal" title="Register">
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_as_vert" translatesAutoresizingMaskIntoConstraints="NO" id="oxw-3T-1zr">
+                                <rect key="frame" x="151" y="200" width="298" height="159"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oxw-3T-1zr" secondAttribute="height" multiplier="15:8" id="RvR-NB-JKO"/>
+                                    <constraint firstAttribute="width" constant="298" id="r4G-A6-QFa"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTY-GG-DcM">
+                                <rect key="frame" x="241" y="419" width="118" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MTY-GG-DcM" secondAttribute="height" multiplier="8:3" constant="32" id="SX4-gV-d8c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Załóż konto">
+                                    <color key="titleColor" red="0.89803922179999995" green="0.26666668059999998" blue="0.270588249" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -34,7 +49,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="MTY-GG-DcM" secondAttribute="centerX" id="35l-LZ-L7E"/>
-                            <constraint firstItem="T83-su-XMp" firstAttribute="top" secondItem="MTY-GG-DcM" secondAttribute="bottom" constant="235" id="fdN-2b-ueb"/>
+                            <constraint firstItem="oxw-3T-1zr" firstAttribute="centerX" secondItem="MTY-GG-DcM" secondAttribute="centerX" id="576-Sn-VN4"/>
+                            <constraint firstItem="gBa-QX-Om7" firstAttribute="centerX" secondItem="MTY-GG-DcM" secondAttribute="centerX" id="D2I-1N-V2L"/>
+                            <constraint firstItem="gBa-QX-Om7" firstAttribute="top" secondItem="wwP-Jz-wqo" secondAttribute="bottom" id="FWi-Bl-Q99"/>
+                            <constraint firstItem="T83-su-XMp" firstAttribute="top" secondItem="oxw-3T-1zr" secondAttribute="bottom" constant="241" id="L4a-GF-QI6"/>
+                            <constraint firstItem="oxw-3T-1zr" firstAttribute="top" secondItem="gBa-QX-Om7" secondAttribute="bottom" constant="8" id="T3C-Oh-jFl"/>
+                            <constraint firstItem="oxw-3T-1zr" firstAttribute="top" secondItem="wwP-Jz-wqo" secondAttribute="bottom" constant="136" id="c4U-b9-xd2"/>
+                            <constraint firstAttribute="centerX" secondItem="oxw-3T-1zr" secondAttribute="centerX" id="deo-1s-xvH"/>
+                            <constraint firstAttribute="centerY" secondItem="gBa-QX-Om7" secondAttribute="centerY" constant="172" id="eW9-mT-dr1"/>
+                            <constraint firstItem="T83-su-XMp" firstAttribute="top" secondItem="MTY-GG-DcM" secondAttribute="bottom" constant="149" id="fdN-2b-ueb"/>
+                            <constraint firstItem="gBa-QX-Om7" firstAttribute="leading" secondItem="pxM-CT-CAP" secondAttribute="leading" id="hus-4c-IbW"/>
+                            <constraint firstAttribute="centerX" secondItem="oxw-3T-1zr" secondAttribute="centerX" id="peB-k8-rSf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cz1-Fl-1Ba"/>
@@ -78,6 +103,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q6C-VA-RIr">
                                 <rect key="frame" x="207" y="101" width="187" height="30"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="2Hx-Yf-bVh"/>
                                     <constraint firstAttribute="width" secondItem="Q6C-VA-RIr" secondAttribute="height" multiplier="187:30" id="hMd-qm-4re"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -92,20 +118,34 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttG-Xk-FRl">
-                                <rect key="frame" x="264" y="333" width="73" height="30"/>
+                                <rect key="frame" x="233" y="331" width="139" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="ttG-Xk-FRl" secondAttribute="height" multiplier="73:30" id="N9E-ov-Hur"/>
+                                    <constraint firstAttribute="width" secondItem="ttG-Xk-FRl" secondAttribute="height" multiplier="73:30" constant="61.13333333333334" id="eE9-5X-Vbh"/>
+                                    <constraint firstAttribute="width" constant="139" id="gpp-cl-0rn"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Register">
+                                    <color key="titleColor" red="0.89803922179999995" green="0.26666668059999998" blue="0.270588249" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="registerButtonTapped:" destination="BZm-JQ-Z3R" eventType="touchUpInside" id="L1z-9S-S4b"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="szczecin_bg" translatesAutoresizingMaskIntoConstraints="NO" id="qUo-du-Kht">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="6LC-hz-Eon"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVR-1N-zPd">
-                                <rect key="frame" x="277" y="371" width="48" height="30"/>
+                                <rect key="frame" x="233" y="371" width="139" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hVR-1N-zPd" secondAttribute="height" multiplier="139:32" id="Rsx-kH-Rpb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.89803922179999995" green="0.26666668059999998" blue="0.270588249" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -116,15 +156,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="AMc-pq-knP" firstAttribute="top" secondItem="Q6C-VA-RIr" secondAttribute="bottom" constant="69" id="6Y1-NI-Bo7"/>
-                            <constraint firstAttribute="centerX" secondItem="AMc-pq-knP" secondAttribute="centerX" id="9NZ-wm-QZA"/>
+                            <constraint firstItem="lEs-KN-qdx" firstAttribute="top" secondItem="hVR-1N-zPd" secondAttribute="bottom" constant="197" id="7qC-PY-kiV"/>
+                            <constraint firstAttribute="centerX" secondItem="qUo-du-Kht" secondAttribute="centerX" id="8nu-AO-ejP"/>
+                            <constraint firstAttribute="centerX" secondItem="AMc-pq-knP" secondAttribute="centerX" constant="-1" id="9NZ-wm-QZA"/>
+                            <constraint firstItem="qUo-du-Kht" firstAttribute="leading" secondItem="Zud-iJ-nMi" secondAttribute="leading" id="P1Z-MG-DgY"/>
                             <constraint firstItem="Q6C-VA-RIr" firstAttribute="top" secondItem="HaI-ke-G3z" secondAttribute="bottom" constant="81" id="R6I-Cn-b1o"/>
-                            <constraint firstItem="ttG-Xk-FRl" firstAttribute="top" secondItem="AMc-pq-knP" secondAttribute="bottom" constant="103" id="SCf-zV-iYK"/>
-                            <constraint firstAttribute="centerX" secondItem="Q6C-VA-RIr" secondAttribute="centerX" id="X1B-XY-dJZ"/>
+                            <constraint firstItem="hVR-1N-zPd" firstAttribute="top" secondItem="ttG-Xk-FRl" secondAttribute="bottom" constant="8" id="RUN-6t-AIJ"/>
+                            <constraint firstItem="qUo-du-Kht" firstAttribute="top" secondItem="Zud-iJ-nMi" secondAttribute="top" id="RzT-6X-Dpa"/>
+                            <constraint firstAttribute="centerX" secondItem="Q6C-VA-RIr" secondAttribute="centerX" constant="-1" id="X1B-XY-dJZ"/>
                             <constraint firstItem="AMc-pq-knP" firstAttribute="top" secondItem="Q6C-VA-RIr" secondAttribute="bottom" constant="69" id="Y3v-aZ-h7t"/>
-                            <constraint firstItem="hVR-1N-zPd" firstAttribute="top" secondItem="ttG-Xk-FRl" secondAttribute="bottom" constant="8" id="YUC-UF-S0C"/>
-                            <constraint firstAttribute="centerX" secondItem="hVR-1N-zPd" secondAttribute="centerX" constant="-1" id="arA-ZP-PcG"/>
-                            <constraint firstAttribute="centerX" secondItem="ttG-Xk-FRl" secondAttribute="centerX" id="gEB-GR-TUo"/>
-                            <constraint firstItem="lEs-KN-qdx" firstAttribute="top" secondItem="hVR-1N-zPd" secondAttribute="bottom" constant="199" id="ijT-n4-wjb"/>
+                            <constraint firstAttribute="centerX" secondItem="hVR-1N-zPd" secondAttribute="centerX" constant="-3" id="arA-ZP-PcG"/>
+                            <constraint firstAttribute="centerX" secondItem="ttG-Xk-FRl" secondAttribute="centerX" constant="-2.5" id="gEB-GR-TUo"/>
+                            <constraint firstItem="AMc-pq-knP" firstAttribute="top" secondItem="qUo-du-Kht" secondAttribute="bottom" constant="72" id="yby-ga-IED"/>
                         </constraints>
                     </view>
                     <connections>
@@ -301,4 +344,8 @@
             <point key="canvasLocation" x="2445" y="1077"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo_as_vert" width="309" height="361"/>
+        <image name="szczecin_bg" width="1240" height="455"/>
+    </resources>
 </document>

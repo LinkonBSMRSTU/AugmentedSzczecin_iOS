@@ -47,8 +47,15 @@ class ASRegistrationViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        registerButton.setTitle("Register".localized, forState: UIControlState.Normal)
-        cancelButton.setTitle("Cancel".localized, forState: UIControlState.Normal)
+        registerButton.setTitle("Zarejestruj".localized, forState: UIControlState.Normal)
+        cancelButton.setTitle("Anuluj".localized, forState: UIControlState.Normal)
+        registerButton.layer.borderWidth = 1
+        registerButton.layer.borderColor = UIColor.redAugmentedColor().CGColor
+        registerButton.layer.cornerRadius = 5
+        
+        cancelButton.layer.borderWidth = 1
+        cancelButton.layer.borderColor = UIColor.redAugmentedColor().CGColor
+        cancelButton.layer.cornerRadius = 5
         
         emailTextField.delegate = self
         passwordTextField.delegate = self

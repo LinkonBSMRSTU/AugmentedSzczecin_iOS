@@ -18,7 +18,12 @@ class ASFirstContactViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        registerButton.setTitle("Register".localized, forState: UIControlState.Normal)
+        registerButton.setTitle("Załóż konto".localized, forState: UIControlState.Normal)
+        registerButton.layer.borderWidth = 1
+        registerButton.layer.borderColor = UIColor.redAugmentedColor().CGColor
+        registerButton.layer.cornerRadius = 5
+        //registerButton.layer.masksToBounds = true
+        
     }
     
 }
