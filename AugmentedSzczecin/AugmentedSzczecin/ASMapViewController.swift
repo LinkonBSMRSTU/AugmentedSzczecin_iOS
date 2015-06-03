@@ -61,7 +61,14 @@ class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControlle
     }
 
     func augmentedViewController(augmentedViewController: BLSAugmentedViewController!, viewForAnnotation annotation: BLSAugmentedAnnotation!, forUserLocation location: CLLocation!, distance: CLLocationDistance) -> BLSAugmentedAnnotationView! {
-        return BLSAugmentedAnnotationView()
+        let annotationView = ASAnnotationView()
+        
+        if let annotation = annotation as? ASAnnotation {
+            annotationView.addressLabel.text = annotation.title
+            annotationView.distanceLabel.text = annotation.subtitle
+        }
+        
+        return annotationView
     }
     
     @IBAction func homeButtonTap(sender: AnyObject) {
