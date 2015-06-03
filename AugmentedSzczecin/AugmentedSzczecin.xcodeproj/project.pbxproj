@@ -73,8 +73,6 @@
 		A484B6D91B1B143D005EC2A3 /* ASAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A484B6D81B1B143D005EC2A3 /* ASAboutViewController.swift */; };
 		A4B52E141AD2AB6200C318A6 /* ASData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B52E131AD2AB6200C318A6 /* ASData.swift */; };
 		A4DF18E01AF9800F00C44ACC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DF18DF1AF9800F00C44ACC /* CoreLocation.framework */; };
-		A4E6DEFA1AFC088B005EC16B /* ASPOITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E6DEF91AFC088B005EC16B /* ASPOITests.swift */; };
-		A4FE1C701AA518750044DE55 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		D386927B9EBA7240D980CCF6 /* Pods_AugmentedSzczecin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 910EF554C1DC1F0DAAA42A47 /* Pods_AugmentedSzczecin.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		EF1B26C81AE9082A002CA8F9 /* _ASPOI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1B26C61AE9082A002CA8F9 /* _ASPOI.swift */; };
 		EF1B26C91AE9082A002CA8F9 /* _ASPOI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1B26C61AE9082A002CA8F9 /* _ASPOI.swift */; };
@@ -143,7 +141,6 @@
 		A484B6D81B1B143D005EC2A3 /* ASAboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASAboutViewController.swift; sourceTree = "<group>"; };
 		A4B52E131AD2AB6200C318A6 /* ASData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASData.swift; sourceTree = "<group>"; };
 		A4DF18DF1AF9800F00C44ACC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		A4E6DEF91AFC088B005EC16B /* ASPOITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASPOITests.swift; sourceTree = "<group>"; };
 		A4FE1C711AA5191D0044DE55 /* AugmentedSzczecin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AugmentedSzczecin-Bridging-Header.h"; sourceTree = "<group>"; };
 		B6EEC7F471F4EBF1FD094437 /* Pods-AugmentedSzczecin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugmentedSzczecin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AugmentedSzczecin/Pods-AugmentedSzczecin.debug.xcconfig"; sourceTree = "<group>"; };
 		C71386729CA57FAA34BF4B7D /* Pods-AugmentedSzczecinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugmentedSzczecinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AugmentedSzczecinTests/Pods-AugmentedSzczecinTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -259,7 +256,6 @@
 				6D2DE51A1A9B7033003717F8 /* Supporting Files */,
 				057B96801AD964BA00372E11 /* StringLocalizableExtensionTests.swift */,
 				05CAECAE1ADFAC6800628015 /* UIColorExtensionTests.swift */,
-				A4E6DEF91AFC088B005EC16B /* ASPOITests.swift */,
 			);
 			path = AugmentedSzczecinTests;
 			sourceTree = "<group>";
@@ -570,8 +566,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				054B54701AB630A400ABCE74 /* ASRegistrationSegueTests.swift in Sources */,
-				2399E0601AE81ECC0000DFEE /* ASMainViewController.swift in Sources */,
-				A4E6DEFA1AFC088B005EC16B /* ASPOITests.swift in Sources */,
 				EF1B26C91AE9082A002CA8F9 /* _ASPOI.swift in Sources */,
 				057B96811AD964BA00372E11 /* StringLocalizableExtensionTests.swift in Sources */,
 				EF1B26CB1AE9082A002CA8F9 /* ASPOI.swift in Sources */,
