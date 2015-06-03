@@ -260,6 +260,8 @@
                                 </state>
                                 <connections>
                                     <action selector="aboutButtonTap:" destination="6Pd-oO-MBu" eventType="touchUpInside" id="lBB-jy-SPy"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plw-PO-kVS">
                                 <rect key="frame" x="270" y="293" width="60" height="30"/>
                                 <constraints>
