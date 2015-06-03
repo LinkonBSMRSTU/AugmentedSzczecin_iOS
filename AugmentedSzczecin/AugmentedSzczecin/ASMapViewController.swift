@@ -7,14 +7,49 @@
 //
 
 import UIKit
+import CoreData
 
-class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControllerDelegate, MKMapViewDelegate {
+class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControllerDelegate, MKMapViewDelegate, NSFetchedResultsControllerDelegate {
     
     var isConnectedToNetwork: Bool?
     
     @IBOutlet weak var homeButton: UIButton!
     @IBOutlet weak var scaleLabel: UILabel!
     @IBOutlet weak var mapChoiceSegmentedControl: UISegmentedControl!
+    
+    lazy var fetchedResultsController: NSFetchedResultsController = {
+        let fetchRequest = NSFetchRequest(entityName: "ASPOI")
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        let frc = NSFetchedResultsController(
+            fetchRequest: fetchRequest,
+            managedObjectContext: ASData.sharedInstance.mainContext!,
+            sectionNameKeyPath: "ASPOI.id",
+            cacheName: nil)
+        
+        frc.delegate = self
+        
+        return frc
+        }()
+    
+    
+    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+        
+        switch (type) {
+            
+        case .Insert:
+            //the implementation of inserting an object
+            break;
+        case .Delete:
+            //the implementation of deleting an object
+            break;
+        case .Update:
+            //the implementation of updating an object
+            break;
+        default:
+            break;
+        }
+    }
     
     override func viewWillAppear(animated: Bool) {
         
@@ -24,7 +59,7 @@ class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControlle
         scaleLabel.text = "500 m"
         scaleLabel.textColor = UIColor(hex: 0x212121, alpha: 1)
     }
-    
+
     func augmentedViewController(augmentedViewController: BLSAugmentedViewController!, viewForAnnotation annotation: BLSAugmentedAnnotation!, forUserLocation location: CLLocation!, distance: CLLocationDistance) -> BLSAugmentedAnnotationView! {
         let annotationView = ASAnnotationView()
         
