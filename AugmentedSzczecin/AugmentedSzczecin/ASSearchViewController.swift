@@ -43,6 +43,10 @@ class ASSearchViewController: UITableViewController, UISearchResultsUpdating, NS
         })()
         
         self.tableView.reloadData()
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -83,6 +87,10 @@ class ASSearchViewController: UITableViewController, UISearchResultsUpdating, NS
             return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("ShowDetailSegue", sender: fetchedResultsController.objectAtIndexPath(indexPath))
+    }
+    
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         if (searchController.searchBar.text != "") {
             
@@ -94,6 +102,13 @@ class ASSearchViewController: UITableViewController, UISearchResultsUpdating, NS
             fetchedResultsController.fetchRequest.predicate = nil
         }
         self.tableView.reloadData()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "ShowDetailSegue") {
+            var destination = segue.destinationViewController as! ASPointDetailViewController
+            destination.POI = sender as? ASPOI
+        }
     }
     
 }
