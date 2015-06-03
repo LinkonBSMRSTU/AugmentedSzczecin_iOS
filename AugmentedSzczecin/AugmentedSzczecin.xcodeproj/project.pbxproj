@@ -70,6 +70,7 @@
 		6D2DE5111A9B7033003717F8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D2DE50F1A9B7033003717F8 /* LaunchScreen.xib */; };
 		6D62583D1B0127C600600FC3 /* ASPOITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D62583B1B0127C600600FC3 /* ASPOITests.swift */; };
 		A42F98D81ABEDE42006CF22E /* ASDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A42F98D61ABEDE42006CF22E /* ASDataModel.xcdatamodeld */; };
+		A484B6D91B1B143D005EC2A3 /* ASAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A484B6D81B1B143D005EC2A3 /* ASAboutViewController.swift */; };
 		A4B52E141AD2AB6200C318A6 /* ASData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B52E131AD2AB6200C318A6 /* ASData.swift */; };
 		A4DF18E01AF9800F00C44ACC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DF18DF1AF9800F00C44ACC /* CoreLocation.framework */; };
 		A4E6DEFA1AFC088B005EC16B /* ASPOITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E6DEF91AFC088B005EC16B /* ASPOITests.swift */; };
@@ -139,6 +140,7 @@
 		910EF554C1DC1F0DAAA42A47 /* Pods_AugmentedSzczecin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AugmentedSzczecin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A78CE0DD15202A86FD6BD9A /* Pods-AugmentedSzczecin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugmentedSzczecin.release.xcconfig"; path = "Pods/Target Support Files/Pods-AugmentedSzczecin/Pods-AugmentedSzczecin.release.xcconfig"; sourceTree = "<group>"; };
 		A42F98D71ABEDE42006CF22E /* ASDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ASDataModel.xcdatamodel; sourceTree = "<group>"; };
+		A484B6D81B1B143D005EC2A3 /* ASAboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASAboutViewController.swift; sourceTree = "<group>"; };
 		A4B52E131AD2AB6200C318A6 /* ASData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASData.swift; sourceTree = "<group>"; };
 		A4DF18DF1AF9800F00C44ACC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A4E6DEF91AFC088B005EC16B /* ASPOITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASPOITests.swift; sourceTree = "<group>"; };
@@ -210,26 +212,27 @@
 		6D2DE5031A9B7033003717F8 /* AugmentedSzczecin */ = {
 			isa = PBXGroup;
 			children = (
-				050B83CD1AFA0AE700DF4342 /* ASMainViewController.swift */,
 				6D2DE5061A9B7033003717F8 /* AppDelegate.swift */,
-				EFB7A3DC1AE2BADE00528083 /* ASRestUtil.swift */,
-				054B54691AB47B6500ABCE74 /* ASFirstContactViewController.swift */,
-				05FC2D361AFFAB7A00A0A04F /* ASPointDetailViewController.swift */,
-				054B547A1AB73AE200ABCE74 /* ASMapViewController.swift */,
-				054B546B1AB47F7D00ABCE74 /* ASRegistrationViewController.swift */,
-				054B546D1AB482E200ABCE74 /* ASRegistrationSegue.swift */,
-				0587A0EC1ADFD75C00B78218 /* ASSearchViewController.swift */,
-				EFB7A3DF1AE2BB2B00528083 /* ASCredentialManager.swift */,
+				A484B6D81B1B143D005EC2A3 /* ASAboutViewController.swift */,
 				2399E0571AE80B970000DFEE /* ASAlertController.swift */,
-				0567302D1AD936A90055308E /* Extensions */,
-				A42F98D91ABEDE4E006CF22E /* Database */,
-				6D90A5721AA744B300F36771 /* Storyboards & XIBs */,
-				6D2DE5041A9B7033003717F8 /* Supporting Files */,
-				6D2DE50D1A9B7033003717F8 /* Images.xcassets */,
-				0567302B1AD3E7C40055308E /* Reachability.swift */,
 				057B96791AD959D300372E11 /* ASAnnotation.swift */,
 				23A168861AF22CD000898337 /* ASAnnotationView.swift */,
 				23A168881AF22CF400898337 /* ASAnnotationView.xib */,
+				EFB7A3DF1AE2BB2B00528083 /* ASCredentialManager.swift */,
+				054B54691AB47B6500ABCE74 /* ASFirstContactViewController.swift */,
+				05FC2D361AFFAB7A00A0A04F /* ASPointDetailViewController.swift */,
+				050B83CD1AFA0AE700DF4342 /* ASMainViewController.swift */,
+				054B547A1AB73AE200ABCE74 /* ASMapViewController.swift */,
+				054B546D1AB482E200ABCE74 /* ASRegistrationSegue.swift */,
+				054B546B1AB47F7D00ABCE74 /* ASRegistrationViewController.swift */,
+				EFB7A3DC1AE2BADE00528083 /* ASRestUtil.swift */,
+				0587A0EC1ADFD75C00B78218 /* ASSearchViewController.swift */,
+				A42F98D91ABEDE4E006CF22E /* Database */,
+				0567302D1AD936A90055308E /* Extensions */,
+				6D2DE50D1A9B7033003717F8 /* Images.xcassets */,
+				0567302B1AD3E7C40055308E /* Reachability.swift */,
+				6D90A5721AA744B300F36771 /* Storyboards & XIBs */,
+				6D2DE5041A9B7033003717F8 /* Supporting Files */,
 			);
 			path = AugmentedSzczecin;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 				6D2DE5071A9B7033003717F8 /* AppDelegate.swift in Sources */,
 				2399E0581AE80B970000DFEE /* ASAlertController.swift in Sources */,
 				057B96781AD93EA500372E11 /* String+Localised.swift in Sources */,
+				A484B6D91B1B143D005EC2A3 /* ASAboutViewController.swift in Sources */,
 				2399E05E1AE80BA90000DFEE /* NSTimerExtension.swift in Sources */,
 				A42F98D81ABEDE42006CF22E /* ASDataModel.xcdatamodeld in Sources */,
 				23A1688D1AF22ED100898337 /* ASAnnotationView.swift in Sources */,
