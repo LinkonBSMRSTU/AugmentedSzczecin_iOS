@@ -15,7 +15,7 @@ typealias JSONArray = Array<AnyObject>
 
 class ASRestUtil {
     
-    //private let ascm: ASCredentialManager = ASCredentialManager.sharedInstance
+    let credentialManager: ASCredentialManager = ASCredentialManager.sharedInstance
     
     typealias APICallbackSuccess = (AnyObject? -> Void)
     typealias APICallbackFailure = ((Int?, String) -> Void)
@@ -35,6 +35,7 @@ class ASRestUtil {
             get{
                 switch self {
                 case .SIGNING_UP(let email, let password):
+                    
                     let (apiPath, parameters) = ASRestUtil.paramsForSigningUp(email, password: password)
                     var err: NSError?
                     let request = NSMutableURLRequest(URL: NSURL(string: Path.baseURLString + apiPath)!)
@@ -43,15 +44,29 @@ class ASRestUtil {
                     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
                     return request
                 case .GET_ALL_POIS:
+                    
                     var err: NSError?
-                    let request = NSMutableURLRequest(URL: NSURL(string: Path.baseURLString + "pois")!)
+                    let request = NSMutableURLRequest(URL: NSURL(string: Path.baseURLString + "places")!)
                     request.HTTPMethod = "GET"
+                    request.setValue("Basic \(ASCredentialManager.sharedInstance.getCredentials()!)", forHTTPHeaderField: "Authorization")
                     return request
+                    
                     
                 }
                 
             }
             
+        }
+        
+        var parameters: (email: String?, password: String?) {
+            get {
+                switch self {
+                case .SIGNING_UP(let email, let password):
+                    return (email, password)
+                default:
+                    return (nil, nil)
+                }
+            }
         }
         
     }
@@ -66,7 +81,7 @@ class ASRestUtil {
         
         makeHTTPRequest(Path.GET_ALL_POIS, callbackSuccess: callbackSuccess, callbackFailure: callbackFailure)
     }
-
+    
     private func makeHTTPRequest(path: Path, callbackSuccess: APICallbackSuccess, callbackFailure: APICallbackFailure) {
         
         self.path = path
@@ -87,7 +102,8 @@ class ASRestUtil {
             case .GET_ALL_POIS:
                 json = NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers, error: &err) as? NSArray
             case .SIGNING_UP(_, _):
-                json = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: &err) as? NSDictionary
+                json = nil
+                err = nil
                 
             }
             var responseCode: Int?
@@ -112,15 +128,30 @@ class ASRestUtil {
                 if json != nil {
                     
                     switch (responseCode!, path) {
-                    case (200, .SIGNING_UP(_, _)):
-                        callbackSuccess(ASRestUtil.handleSignUp(json!))
                     case (200, .GET_ALL_POIS):
                         callbackSuccess(ASRestUtil.handleGetAllPois(json!))
                     default:
                         callbackFailure(responseCode, NSHTTPURLResponse.localizedStringForStatusCode(responseCode!))
                     }
                 } else {
-                    callbackFailure(nil, "Could not parse JSON")
+                    
+                    if responseCode != nil {
+                        
+                        switch (responseCode!, path) {
+                        case (204, .SIGNING_UP(_,_)):
+                            
+                            let userPasswordString = NSString(format: "%@:%@",path.parameters.email!, path.parameters.password!)
+                            let userPasswordData = userPasswordString.dataUsingEncoding(NSUTF8StringEncoding)
+                            let base64EncodedCredential = userPasswordData!.base64EncodedStringWithOptions(nil)
+                            self.credentialManager.storeCredential(base64EncodedCredential)
+                            callbackSuccess(nil)
+                        default:
+                            callbackFailure(responseCode, NSHTTPURLResponse.localizedStringForStatusCode(responseCode!))
+                            //w kontrolerze komunikat o tym, ze uzytkownik o podanych danych istnieje juz w bazie
+                        }
+                    } else {
+                        callbackFailure(nil, "Connection error has occurred")
+                    }
                 }
                 
             }
@@ -130,20 +161,20 @@ class ASRestUtil {
         task.resume()
     }
     
-    class func handleSignUp(json: AnyObject) -> ASUser? {
-        if let userJson = json as? JSONDictionary {
-            if let user = ASRestUtil.createUserFromJson(userJson) {
-                        return user
-            }
-            return nil
-        }
-        return nil
-    }
+    //    class func handleSignUp(json: AnyObject) -> ASUser? {
+    //        if let userJson = json as? JSONDictionary {
+    //            if let user = ASRestUtil.createUserFromJson(userJson) {
+    //                        return user
+    //            }
+    //            return nil
+    //        }
+    //        return nil
+    //    }
     
     class func handleGetAllPois(json: AnyObject) -> Bool {
         if let listOfPoisJson = json as? NSArray {
-                 ASRestUtil.savePoisToDataBase(listOfPoisJson)
-                 return true
+            ASRestUtil.savePoisToDataBase(listOfPoisJson)
+            return true
         }
         return false
     }
@@ -151,7 +182,7 @@ class ASRestUtil {
     class func createUserFromJson(userJson: Dictionary<String, AnyObject>) -> ASUser? {
         
         var user = ASUser(managedObjectContext: ASData.sharedInstance.mainContext)
-
+        
         if let id = userJson["id"] as? Int, let email = userJson["email"] as? String, let password = userJson["password"] as? String {
             user.password = password
             user.email = email
@@ -163,9 +194,9 @@ class ASRestUtil {
     
     class func savePoisToDataBase(listOfPoisJson: NSArray) {
         let managedContext = ASData.sharedInstance.mainContext
-
+        
         for iterator in listOfPoisJson {
-            if let id = iterator["id"] as? Int, let name = iterator["name"] as? String, let tag = iterator["tag"] as? String, let location = iterator["location"]as? NSDictionary {
+            if let id = iterator["id"] as? Int, let name = iterator["name"] as? String, let tag = iterator["description"] as? String, let location = iterator["location"]as? NSDictionary {
                 
                 var poi = ASPOI(managedObjectContext: managedContext)
                 
@@ -187,5 +218,5 @@ class ASRestUtil {
         return (apiPath, parameters)
         
     }
-
+    
 }

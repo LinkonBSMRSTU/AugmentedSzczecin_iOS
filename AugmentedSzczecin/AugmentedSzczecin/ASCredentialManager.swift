@@ -10,8 +10,7 @@ import Foundation
 
 class ASCredentialManager {
     
-    private(set) var usernameKey = "username"
-    private(set) var passwordKey = "password"
+    private(set) var key = "username:password"
     
     var userDefaults: NSUserDefaults = {
         var temporaryUserDefauls: NSUserDefaults = NSUserDefaults()
@@ -41,24 +40,22 @@ class ASCredentialManager {
     }
     
     
-    func storeCredential(username: String!, password: String!) {
-        self.userDefaults.setObject(username, forKey: usernameKey)
-        self.userDefaults.setObject(password, forKey: passwordKey)
+    func storeCredential(hashedCredentials: String!) {
+        self.userDefaults.setObject(hashedCredentials, forKey: key)
         self.userDefaults.synchronize()
     }
     
-    func getCredentials() -> (String, String)? {
-        let username = self.userDefaults.stringForKey(usernameKey)
-        let password = self.userDefaults.stringForKey(passwordKey)
-        if (username != nil || password != nil) {
-            return (username!, password!)
+    func getCredentials() -> String? {
+        let hashedCredentials = self.userDefaults.stringForKey(key)
+        
+        if (hashedCredentials != nil) {
+            return hashedCredentials!
         }
         return nil
     }
     
     func clearCredentials() {
-        self.userDefaults.removeObjectForKey(usernameKey)
-        self.userDefaults.removeObjectForKey(passwordKey)
+        self.userDefaults.removeObjectForKey(key)
         self.userDefaults.synchronize()
     }
     
