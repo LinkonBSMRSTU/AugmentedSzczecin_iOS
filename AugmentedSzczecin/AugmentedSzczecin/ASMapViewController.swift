@@ -8,11 +8,13 @@
 
 import UIKit
 import CoreData
+import MapKit
 
 class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControllerDelegate, MKMapViewDelegate, NSFetchedResultsControllerDelegate {
     
     var isConnectedToNetwork: Bool?
     
+    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var homeButton: UIButton!
     @IBOutlet weak var scaleLabel: UILabel!
     @IBOutlet weak var mapChoiceSegmentedControl: UISegmentedControl!
@@ -38,17 +40,38 @@ class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControlle
         switch (type) {
             
         case .Insert:
-            //the implementation of inserting an object
+            fetchedResultsChangeInsert(anObject)
             break;
         case .Delete:
-            //the implementation of deleting an object
+            fetchedResultsChangeDelete(anObject)
             break;
         case .Update:
-            //the implementation of updating an object
+            fetchedResultsChangeUpdate(anObject)
             break;
         default:
             break;
         }
+    }
+    
+    private func fetchedResultsChangeInsert(anObject: AnyObject) {
+        if let poiObject = anObject as? ASPOI {
+            let annotation = ASAnnotation(poiObject)
+            mapView.addAnnotation(annotation)
+        }
+        
+    }
+    
+    private func fetchedResultsChangeDelete(anObject: AnyObject) {
+        if let poiObject = anObject as? ASPOI {
+            let annotation = ASAnnotation(poiObject)
+            mapView.removeAnnotation(annotation)
+            
+        }
+    }
+    
+    private func fetchedResultsChangeUpdate(anObject: AnyObject) {
+        fetchedResultsChangeDelete(anObject)
+        fetchedResultsChangeInsert(anObject)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -94,4 +117,14 @@ class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControlle
         mapView.showsUserLocation = true
         self.setMapRegionWithTopLeftCoordinate(userLocation.coordinate, andBottomRightCoordinate: userLocation.coordinate, animated: false)
     }
+    
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        
+        let restUtil = ASRestUtil()
+        
+        restUtilTask.getAllPois(callbackSuccess: {(anyObject: AnyObject?) -> Void in},
+            callbackFailure: {(codeError: Int?, message: String) -> Void in})
+        }
 }
