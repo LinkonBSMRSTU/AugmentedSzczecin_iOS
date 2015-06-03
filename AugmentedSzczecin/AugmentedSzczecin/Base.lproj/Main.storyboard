@@ -260,6 +260,17 @@
                                 </state>
                                 <connections>
                                     <action selector="aboutButtonTap:" destination="6Pd-oO-MBu" eventType="touchUpInside" id="lBB-jy-SPy"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plw-PO-kVS">
+                                <rect key="frame" x="270" y="293" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="A6P-Q2-w4p"/>
+                                    <constraint firstAttribute="height" constant="30" id="t7Y-Ss-yRU"/>
+                                </constraints>
+                                <state key="normal" title="Add POI">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showAddPOITap:" destination="6Pd-oO-MBu" eventType="touchUpInside" id="7Me-Rh-HNm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -270,21 +281,149 @@
                             <constraint firstAttribute="centerX" secondItem="ubB-vd-iW2" secondAttribute="centerX" id="UxJ-7Z-sNl"/>
                             <constraint firstItem="Vku-2a-Jbl" firstAttribute="top" secondItem="Ybr-pg-Crk" secondAttribute="bottom" constant="197" id="WiQ-0i-1sc"/>
                             <constraint firstAttribute="centerX" secondItem="vya-KW-mP2" secondAttribute="centerX" id="geb-LH-ygl"/>
+                            <constraint firstItem="plw-PO-kVS" firstAttribute="top" secondItem="vya-KW-mP2" secondAttribute="bottom" constant="8" id="hPg-HT-tcb"/>
+                            <constraint firstAttribute="centerX" secondItem="plw-PO-kVS" secondAttribute="centerX" id="nEr-pR-keR"/>
                             <constraint firstAttribute="centerX" secondItem="Vku-2a-Jbl" secondAttribute="centerX" id="sNM-PW-no6"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="aboutButton" destination="ubB-vd-iW2" id="S5u-Yk-5Uc"/>
                         <outlet property="searchButton" destination="vya-KW-mP2" id="sn8-ks-hjc"/>
+                        <outlet property="showAddPOI" destination="plw-PO-kVS" id="rdR-AN-qAR"/>
                         <outlet property="showMapButton" destination="Vku-2a-Jbl" id="vOI-AC-1rb"/>
                         <segue destination="Wmo-2f-gmO" kind="presentation" identifier="showMapSegue" id="jlj-YO-hqE"/>
                         <segue destination="ylX-W7-8ux" kind="presentation" identifier="searchSegue" id="DK7-hE-Uw4"/>
                         <segue destination="MHl-zy-euQ" kind="presentation" identifier="aboutSegue" id="7jU-Qd-qSW"/>
+                        <segue destination="tOs-2c-GQf" kind="presentation" identifier="showAddPOISegue" id="Fnd-JW-rIM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bF9-A7-eTu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1688" y="329"/>
+        </scene>
+        <!--Add Place View Controller-->
+        <scene sceneID="7kA-ZF-aRL">
+            <objects>
+                <viewController id="tOs-2c-GQf" customClass="ASAddPlaceViewController" customModule="AugmentedSzczecin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qcj-OG-l2E"/>
+                        <viewControllerLayoutGuide type="bottom" id="OoY-st-1mg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="X59-K9-cY0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AyR-kJ-mfR">
+                                <rect key="frame" x="36" y="93" width="528" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vfC-oZ-Gny">
+                                <rect key="frame" x="213" y="237" width="351" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vcX-ea-1us">
+                                <rect key="frame" x="36" y="237" width="169" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OPO-Pd-B0P">
+                                <rect key="frame" x="36" y="199" width="528" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Ny-zZ-dmq">
+                                <rect key="frame" x="36" y="131" width="528" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at ex velit. Phasellus fermentum commodo mollis. Sed lacinia sollicitudin ornare. Sed eu vestibulum neque, imperdiet efficitur erat. Donec egestas mattis nisl, in aliquam lorem tincidunt eu. Cras eros ligula, volutpat vitae mauris at, fringilla consequat tortor. Donec commodo porta metus quis imperdiet. Aenean id lorem sed neque lobortis viverra sed at neque. In eget leo nunc. Proin elementum tempus orci nec consequat posuere. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add POI" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b61-dX-p8d">
+                                <rect key="frame" x="16" y="20" width="70" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rUw-bR-cRf">
+                                <rect key="frame" x="36" y="275" width="528" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="openCategoryPicker:" destination="tOs-2c-GQf" eventType="editingDidBegin" id="jM2-lC-UDu"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tags" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rAm-ha-hDv">
+                                <rect key="frame" x="36" y="313" width="528" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="categoryTextField" destination="rUw-bR-cRf" id="nrZ-es-20l"/>
+                        <outlet property="cityTextField" destination="vfC-oZ-Gny" id="qHr-Yk-cLB"/>
+                        <outlet property="descriptionTextView" destination="8Ny-zZ-dmq" id="e4L-6e-ftq"/>
+                        <outlet property="nameTextField" destination="AyR-kJ-mfR" id="JR8-t2-Rxw"/>
+                        <outlet property="streetTextField" destination="OPO-Pd-B0P" id="66Z-R5-XUG"/>
+                        <outlet property="tagsTextField" destination="rAm-ha-hDv" id="j51-JB-RrX"/>
+                        <outlet property="zipCodeTextField" destination="vcX-ea-1us" id="PXZ-bc-hMh"/>
+                        <segue destination="CTT-AI-Rdp" kind="presentation" identifier="showCategoryPickerSegue" modalPresentationStyle="overCurrentContext" id="hU1-ji-EMD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D6y-pb-5gf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2445" y="-386"/>
+        </scene>
+        <!--Category Picker View Controller-->
+        <scene sceneID="Zy4-m1-yhZ">
+            <objects>
+                <viewController id="CTT-AI-Rdp" customClass="ASCategoryPickerViewController" customModule="AugmentedSzczecin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6yK-IK-dpz"/>
+                        <viewControllerLayoutGuide type="bottom" id="kAd-rk-DMa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="G6L-wp-VVg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52y-CN-ri0">
+                                <rect key="frame" x="0.0" y="438" width="600" height="162"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </pickerView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRg-XA-Zqt">
+                                <rect key="frame" x="0.0" y="394" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ncm-Sp-uFi"/>
+                                    <barButtonItem systemItem="done" id="m15-HQ-9qi">
+                                        <connections>
+                                            <action selector="doneBarButtonItemTapped:" destination="CTT-AI-Rdp" id="SKE-S8-F4m"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="52y-CN-ri0" firstAttribute="top" secondItem="DRg-XA-Zqt" secondAttribute="bottom" id="Aee-wk-fL8"/>
+                            <constraint firstAttribute="centerX" secondItem="52y-CN-ri0" secondAttribute="centerX" id="Flz-sX-WqN"/>
+                            <constraint firstAttribute="trailing" secondItem="52y-CN-ri0" secondAttribute="trailing" id="PJd-TI-37b"/>
+                            <constraint firstItem="kAd-rk-DMa" firstAttribute="top" secondItem="52y-CN-ri0" secondAttribute="bottom" id="UQm-i5-mKd"/>
+                            <constraint firstItem="DRg-XA-Zqt" firstAttribute="leading" secondItem="G6L-wp-VVg" secondAttribute="leading" id="acq-pe-Ogs"/>
+                            <constraint firstAttribute="trailing" secondItem="DRg-XA-Zqt" secondAttribute="trailing" id="o4z-eW-d9t"/>
+                            <constraint firstAttribute="centerX" secondItem="DRg-XA-Zqt" secondAttribute="centerX" id="pZD-Yy-bjV"/>
+                            <constraint firstItem="52y-CN-ri0" firstAttribute="leading" secondItem="G6L-wp-VVg" secondAttribute="leading" id="une-xt-QkH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="categoryPickerView" destination="52y-CN-ri0" id="YrQ-NA-Ao5"/>
+                        <outlet property="doneBarButtonItem" destination="m15-HQ-9qi" id="nR6-li-jMB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SHT-ee-Nda" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3220" y="-386"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="v6K-ma-LjK">

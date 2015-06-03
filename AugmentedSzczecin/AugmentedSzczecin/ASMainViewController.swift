@@ -13,7 +13,7 @@ class ASMainViewController: UIViewController {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var showMapButton: UIButton!
     @IBOutlet weak var aboutButton: UIButton!
-    
+    @IBOutlet weak var showAddPOI: UIButton!
     
     @IBAction func searchButtonTap(sender: AnyObject) {
         self.performSegueWithIdentifier("searchSegue", sender: nil)
@@ -25,6 +25,10 @@ class ASMainViewController: UIViewController {
     
     @IBAction func aboutButtonTap(sender: AnyObject) {
         self.performSegueWithIdentifier("aboutSegue", sender: nil)
+    }
+
+    @IBAction func showAddPOITap(sender: AnyObject) {
+        self.performSegueWithIdentifier("showAddPOISegue", sender: nil)
     }
     
 }
