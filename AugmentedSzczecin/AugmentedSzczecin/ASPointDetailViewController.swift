@@ -24,8 +24,7 @@ class ASPointDetailViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        var shareButton = UIBarButtonItem(image: UIImage(named: "Share"), style: .Plain, target: self, action: Selector("share"))
+        var shareButton = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: Selector("share"))
         shareButton.tintColor = UIColor.blackAugmentedColor()
         var backButton = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: Selector("popViewController"))
 
@@ -33,17 +32,15 @@ class ASPointDetailViewController: UIViewController, UIScrollViewDelegate {
         self.navigationItem.leftBarButtonItem = backButton
         
         //Mocking images
-        if (images.count == 0) {
-            images.append(UIImage(named: "SzczecinNight")!)
-            images.append(UIImage(named: "SzczecinNight2")!)
-            images.append(UIImage(named: "SzczecinNight")!)
-            images.append(UIImage(named: "SzczecinNight2")!)
-        }
+        images.append(UIImage(named: "SzczecinNight")!)
+        images.append(UIImage(named: "SzczecinNight2")!)
+        images.append(UIImage(named: "SzczecinNight")!)
+        images.append(UIImage(named: "SzczecinNight2")!)
         
-        if (POI != nil) {
-            descriptionTextView.text = POI?.description
-            nameLabel.text = POI?.name
-            categoryLabel.text = POI?.tag
+        if let localPOI = POI {
+            descriptionTextView.text = localPOI.description
+            nameLabel.text = localPOI.name
+            categoryLabel.text = localPOI.tag
         }
         
         
@@ -52,7 +49,7 @@ class ASPointDetailViewController: UIViewController, UIScrollViewDelegate {
         let scrollViewWidth: CGFloat = self.scrollView.frame.width
         let scrollViewHeight: CGFloat = self.scrollView.frame.height
         
-        for index in 0...images.count-1 {
+        for index in 0..<images.count {
            var img = UIImageView(frame: CGRectMake(scrollViewWidth * CGFloat(index), 0, scrollViewWidth, scrollViewHeight))
             img.image = images[index ]
             img.contentMode = UIViewContentMode.ScaleToFill
