@@ -238,22 +238,13 @@
                                     <action selector="homeButtonTap:" destination="Wmo-2f-gmO" eventType="touchUpInside" id="U64-h6-yB0"/>
                                 </connections>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="GpD-gq-Amw">
-                                <rect key="frame" x="0.0" y="0.0" width="606" height="600"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="SHw-gU-oHx"/>
-                                    <constraint firstAttribute="width" constant="240" id="cbQ-Qm-F2M"/>
-                                </constraints>
-                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="GpD-gq-Amw" firstAttribute="top" secondItem="60O-2R-d04" secondAttribute="top" id="Acd-dh-VY8"/>
                             <constraint firstItem="eiR-tI-1UA" firstAttribute="bottom" secondItem="xoK-ji-1sM" secondAttribute="top" id="Bnk-vC-2Aa"/>
                             <constraint firstItem="Xsv-aM-9LY" firstAttribute="top" secondItem="0Jl-m6-9Qo" secondAttribute="bottom" constant="8" symbolic="YES" id="EO3-SF-05m"/>
                             <constraint firstItem="ZUB-zw-lil" firstAttribute="leading" secondItem="60O-2R-d04" secondAttribute="leadingMargin" id="Hhc-vq-53Z"/>
                             <constraint firstAttribute="trailing" secondItem="eiR-tI-1UA" secondAttribute="trailing" id="OWc-We-GKK"/>
-                            <constraint firstItem="ZUB-zw-lil" firstAttribute="centerX" secondItem="GpD-gq-Amw" secondAttribute="centerX" id="OhS-Tq-mDm"/>
                             <constraint firstItem="xoK-ji-1sM" firstAttribute="top" secondItem="ZUB-zw-lil" secondAttribute="bottom" constant="66" id="XCs-Dh-g3I"/>
                             <constraint firstItem="eiR-tI-1UA" firstAttribute="leading" secondItem="60O-2R-d04" secondAttribute="leading" id="aS9-hs-JAB"/>
                             <constraint firstItem="Xsv-aM-9LY" firstAttribute="leading" secondItem="ZUB-zw-lil" secondAttribute="leading" id="lna-rD-1cU"/>
@@ -263,7 +254,6 @@
                     <connections>
                         <outlet property="homeButton" destination="Xsv-aM-9LY" id="Hzc-lV-I8c"/>
                         <outlet property="mapChoiceSegmentedControl" destination="ZUB-zw-lil" id="4jG-C0-i7X"/>
-                        <outlet property="mapView" destination="GpD-gq-Amw" id="EBA-NR-eqY"/>
                         <outlet property="scaleLabel" destination="eiR-tI-1UA" id="raK-3j-h8T"/>
                     </connections>
                 </viewController>

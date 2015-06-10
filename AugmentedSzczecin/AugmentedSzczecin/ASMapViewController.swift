@@ -14,7 +14,6 @@ class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControlle
     
     var isConnectedToNetwork: Bool?
     
-    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var homeButton: UIButton!
     @IBOutlet weak var scaleLabel: UILabel!
     @IBOutlet weak var mapChoiceSegmentedControl: UISegmentedControl!
@@ -51,20 +50,21 @@ class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControlle
         default:
             break;
         }
+        
     }
     
     private func fetchedResultsChangeInsert(anObject: AnyObject) {
         if let poiObject = anObject as? ASPOI {
-            let annotation = ASAnnotation(poiObject)
-            mapView.addAnnotation(annotation)
+            let annotation = ASAnnotation(poi: poiObject)
+            self.addAnnotation(annotation)
         }
         
     }
     
     private func fetchedResultsChangeDelete(anObject: AnyObject) {
         if let poiObject = anObject as? ASPOI {
-            let annotation = ASAnnotation(poiObject)
-            mapView.removeAnnotation(annotation)
+            let annotation = ASAnnotation(poi: poiObject)
+            self.removeAnnotation(annotation)
             
         }
     }
@@ -89,6 +89,8 @@ class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControlle
         if let annotation = annotation as? ASAnnotation {
             annotationView.addressLabel.text = annotation.title
             annotationView.distanceLabel.text = annotation.subtitle
+            
+            annotationView.image = UIImage(named: "pin.png")
         }
         
         return annotationView
@@ -124,7 +126,7 @@ class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControlle
         
         let restUtil = ASRestUtil()
         
-        restUtilTask.getAllPois(callbackSuccess: {(anyObject: AnyObject?) -> Void in},
+        restUtil.getAllPois({(anyObject: AnyObject?) -> Void in},
             callbackFailure: {(codeError: Int?, message: String) -> Void in})
         }
 }

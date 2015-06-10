@@ -76,6 +76,7 @@
 		EF1B26C91AE9082A002CA8F9 /* _ASPOI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1B26C61AE9082A002CA8F9 /* _ASPOI.swift */; };
 		EF1B26CA1AE9082A002CA8F9 /* ASPOI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1B26C71AE9082A002CA8F9 /* ASPOI.swift */; };
 		EF1B26CB1AE9082A002CA8F9 /* ASPOI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1B26C71AE9082A002CA8F9 /* ASPOI.swift */; };
+		EF538D931B2873FB00CA54A4 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = EF538D921B2873FB00CA54A4 /* pin.png */; };
 		EF7F50061AE2D6A600502380 /* ASCredentialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB7A3DF1AE2BB2B00528083 /* ASCredentialManager.swift */; };
 		EF7F50071AE2D6AE00502380 /* ASData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B52E131AD2AB6200C318A6 /* ASData.swift */; };
 		EF91BBA01AFA234600F36937 /* ASCredentialManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF91BB9F1AFA234500F36937 /* ASCredentialManagerTests.swift */; };
@@ -142,6 +143,7 @@
 		C71386729CA57FAA34BF4B7D /* Pods-AugmentedSzczecinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugmentedSzczecinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AugmentedSzczecinTests/Pods-AugmentedSzczecinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EF1B26C61AE9082A002CA8F9 /* _ASPOI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = _ASPOI.swift; path = Database/_ASPOI.swift; sourceTree = "<group>"; };
 		EF1B26C71AE9082A002CA8F9 /* ASPOI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASPOI.swift; path = Database/ASPOI.swift; sourceTree = "<group>"; };
+		EF538D921B2873FB00CA54A4 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
 		EF91BB9F1AFA234500F36937 /* ASCredentialManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASCredentialManagerTests.swift; path = ../AugmentedSzczecin/ASCredentialManagerTests.swift; sourceTree = "<group>"; };
 		EFB6C2321AE783C500A74DDA /* ASRestUtilTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASRestUtilTests.swift; sourceTree = "<group>"; };
 		EFB7A3DC1AE2BADE00528083 /* ASRestUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASRestUtil.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				054B546D1AB482E200ABCE74 /* ASRegistrationSegue.swift */,
 				0587A0EC1ADFD75C00B78218 /* ASSearchViewController.swift */,
 				EFB7A3DF1AE2BB2B00528083 /* ASCredentialManager.swift */,
+				EF538D921B2873FB00CA54A4 /* pin.png */,
 				2399E0571AE80B970000DFEE /* ASAlertController.swift */,
 				0567302D1AD936A90055308E /* Extensions */,
 				A42F98D91ABEDE4E006CF22E /* Database */,
@@ -400,6 +403,7 @@
 				050B83CC1AFA0ABC00DF4342 /* Main.storyboard in Resources */,
 				056730331AD9386A0055308E /* Localizable.strings in Resources */,
 				6D2DE5111A9B7033003717F8 /* LaunchScreen.xib in Resources */,
+				EF538D931B2873FB00CA54A4 /* pin.png in Resources */,
 				6D2DE50E1A9B7033003717F8 /* Images.xcassets in Resources */,
 				23A168891AF22CF400898337 /* ASAnnotationView.xib in Resources */,
 			);
