@@ -7,11 +7,9 @@
 //
 
 import UIKit
-import Social
 
 class ASPointDetailViewController: UIViewController, UIScrollViewDelegate {
 
-    @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var detailInfoHolder: UIView!
@@ -38,7 +36,6 @@ class ASPointDetailViewController: UIViewController, UIScrollViewDelegate {
         images.append(UIImage(named: "SzczecinNight2")!)
         
         if let localPOI = POI {
-            descriptionTextView.text = localPOI.description
             nameLabel.text = localPOI.name
             categoryLabel.text = localPOI.tag
         }

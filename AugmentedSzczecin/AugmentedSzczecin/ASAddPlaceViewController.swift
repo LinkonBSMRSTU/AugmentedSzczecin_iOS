@@ -28,6 +28,8 @@ class ASAddPlaceViewController: UIViewController, UITextFieldDelegate, UITextVie
         categoryTextField.placeholder = "Category".localized
         tagsTextField.placeholder = "Tags".localized
         
+        categoryTextField.tintColor = UIColor.clearColor()
+        
         
     }
 
@@ -39,14 +41,21 @@ class ASAddPlaceViewController: UIViewController, UITextFieldDelegate, UITextVie
         // Dispose of any resources that can be recreated.
     }
     
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showCategoryPickerSegue"
+        {
+            if let destinationVC = segue.destinationViewController as? ASCategoryPickerViewController
+            {
+                destinationVC.changeBlock = { categoryString in
+                    self.categoryTextField.text = categoryString
+                }
+
+            }
+        }
     }
-    */
 
 }

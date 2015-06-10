@@ -15,6 +15,7 @@ class ASCategoryPickerViewController: UIViewController, UIPickerViewDataSource, 
     
     var categoryPickerDataSource = [String]()
     var selectedCategory: String!
+    var changeBlock:((text: String) -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +52,7 @@ class ASCategoryPickerViewController: UIViewController, UIPickerViewDataSource, 
 
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedCategory = categoryPickerDataSource[row]
-
+        self.changeBlock?(text: selectedCategory)
     }
     /*
     // MARK: - Navigation
