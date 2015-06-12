@@ -65,17 +65,21 @@ class ASMainViewController: UIViewController {
         let buttons = [showMapButton, searchButton, aboutButton, showAddPOI]
         for index in 0...3 {
             if (buttons[index].backgroundColor != UIColor.clearColor()) {
-                buttons[index].backgroundColor = UIColor.clearColor()
-                buttons[index].tintColor = UIColor(CGColor: buttons[index].layer.borderColor)
                 
-                if (index == buttons.count-1) {
-                    buttons.first?.backgroundColor = UIColor(CGColor: buttons.first!.layer.borderColor)
-                    buttons.first?.tintColor = UIColor.whiteAugmentedColor()
-                } else {
-                    buttons[index+1].backgroundColor = UIColor(CGColor: buttons[index+1].layer.borderColor)
-                    buttons[index+1].tintColor = UIColor.whiteAugmentedColor()
+                UIView.animateWithDuration(0.6, animations: { () -> Void in
+                    buttons[index].backgroundColor = UIColor.clearColor()
+                    buttons[index].tintColor = UIColor(CGColor: buttons[index].layer.borderColor)
                     
-                }
+                    if (index == buttons.count-1) {
+                        buttons.first?.backgroundColor = UIColor(CGColor: buttons.first!.layer.borderColor)
+                        buttons.first?.tintColor = UIColor.whiteAugmentedColor()
+                    } else {
+                        buttons[index+1].backgroundColor = UIColor(CGColor: buttons[index+1].layer.borderColor)
+                        buttons[index+1].tintColor = UIColor.whiteAugmentedColor()
+                        
+                    }
+                })
+                
                 break
             }
         }
