@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import MapKit
 
 class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControllerDelegate, MKMapViewDelegate, NSFetchedResultsControllerDelegate {
     
@@ -39,17 +40,39 @@ class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControlle
         switch (type) {
             
         case .Insert:
-            //the implementation of inserting an object
+            fetchedResultsChangeInsert(anObject)
             break;
         case .Delete:
-            //the implementation of deleting an object
+            fetchedResultsChangeDelete(anObject)
             break;
         case .Update:
-            //the implementation of updating an object
+            fetchedResultsChangeUpdate(anObject)
             break;
         default:
             break;
         }
+        
+    }
+    
+    private func fetchedResultsChangeInsert(anObject: AnyObject) {
+        if let poiObject = anObject as? ASPOI {
+            let annotation = ASAnnotation(poi: poiObject)
+            self.addAnnotation(annotation)
+        }
+        
+    }
+    
+    private func fetchedResultsChangeDelete(anObject: AnyObject) {
+        if let poiObject = anObject as? ASPOI {
+            let annotation = ASAnnotation(poi: poiObject)
+            self.removeAnnotation(annotation)
+            
+        }
+    }
+    
+    private func fetchedResultsChangeUpdate(anObject: AnyObject) {
+        fetchedResultsChangeDelete(anObject)
+        fetchedResultsChangeInsert(anObject)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -69,6 +92,8 @@ class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControlle
         if let annotation = annotation as? ASAnnotation {
             annotationView.addressLabel.text = annotation.title
             annotationView.distanceLabel.text = annotation.subtitle
+            
+            annotationView.image = UIImage(named: "pin.png")
         }
         
         return annotationView
@@ -123,4 +148,14 @@ class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControlle
     override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
         resetTimer()
     }
+    
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        
+        let restUtil = ASRestUtil()
+        
+        restUtil.getAllPois({(anyObject: AnyObject?) -> Void in},
+            callbackFailure: {(codeError: Int?, message: String) -> Void in})
+        }
 }
