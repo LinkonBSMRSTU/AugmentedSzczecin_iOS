@@ -12,7 +12,8 @@ import CoreData
 class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControllerDelegate, MKMapViewDelegate, NSFetchedResultsControllerDelegate {
     
     var isConnectedToNetwork: Bool?
-    
+    var timer: NSTimer?
+    var userLocation: MKUserLocation?
     @IBOutlet weak var homeButton: UIButton!
     @IBOutlet weak var scaleLabel: UILabel!
     @IBOutlet weak var mapChoiceSegmentedControl: UISegmentedControl!
@@ -58,6 +59,8 @@ class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControlle
         scaleLabel.backgroundColor = UIColor(hex: 0xb6b6b6, alpha: 1)
         scaleLabel.text = "500 m"
         scaleLabel.textColor = UIColor(hex: 0x212121, alpha: 1)
+        
+        resetTimer()
     }
 
     func augmentedViewController(augmentedViewController: BLSAugmentedViewController!, viewForAnnotation annotation: BLSAugmentedAnnotation!, forUserLocation location: CLLocation!, distance: CLLocationDistance) -> BLSAugmentedAnnotationView! {
@@ -74,6 +77,7 @@ class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControlle
     @IBAction func homeButtonTap(sender: AnyObject) {
         self.dismissViewControllerAnimated(false, completion: nil)
     }
+    
     @IBAction func mapTypeChange(sender: UISegmentedControl) {
         if (sender.selectedSegmentIndex == 0) {
             self.style = BLSAugmentedViewControllerStyle.Map
@@ -92,6 +96,31 @@ class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControlle
     
     func mapView(mapView: MKMapView!, didUpdateUserLocation userLocation: MKUserLocation!) {
         mapView.showsUserLocation = true
-        self.setMapRegionWithTopLeftCoordinate(userLocation.coordinate, andBottomRightCoordinate: userLocation.coordinate, animated: false)
+        mapView.scrollEnabled = true
+        mapView.zoomEnabled = true
+        self.userLocation = userLocation
+    }
+    
+    func resetTimer() {
+        self.timer?.invalidate()
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: "setLocation", userInfo: nil, repeats: true)
+    }
+    
+    func setLocation() {
+        if let location = self.userLocation {
+            self.setMapRegionWithTopLeftCoordinate(location.coordinate, andBottomRightCoordinate: location.coordinate, animated: false)
+        }
+    }
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        resetTimer()
+    }
+    
+    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+        resetTimer()
+    }
+
+    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+        resetTimer()
     }
 }
