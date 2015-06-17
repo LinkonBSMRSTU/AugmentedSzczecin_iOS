@@ -31,7 +31,7 @@ class ASAboutViewController: UIViewController {
         closeButton.setTitle("Close".localized, forState: UIControlState.Normal)
         closeButton.setTitleColor(UIColor.mediumBlueAugmentedColor(), forState: UIControlState.Normal)
         
-        aboutTextView.textColor = UIColor.blackAugmentedColor()
+        aboutTextView.textColor = UIColor.dodgerBlueAugmentedColor()
     }
 
     override func didReceiveMemoryWarning() {
