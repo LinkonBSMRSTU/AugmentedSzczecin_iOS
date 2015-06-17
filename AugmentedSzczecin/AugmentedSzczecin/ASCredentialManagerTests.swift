@@ -66,13 +66,16 @@ class ASCredentialManagerTests: XCTestCase {
         userDefaultsForTests = NSUserDefaults()
         credentialManagerForTests.userDefaults = userDefaultsForTests
         
-        let username = "Jonasz"
+        let username = "tbilski@wi.zut.edu.pl"
         let password = "QWERTY"
         
-        credentialManagerForTests.storeCredential(username, password: password)
+        let userPasswordString = "\(username):\(password)"
+        let userPasswordData = userPasswordString.dataUsingEncoding(NSUTF8StringEncoding)
+        let base64EncodedCredential = userPasswordData!.base64EncodedStringWithOptions(nil)
         
-        XCTAssertEqual(username, userDefaultsForTests.stringForKey(credentialManagerForTests.usernameKey)!)
-        XCTAssertEqual(password, userDefaultsForTests.stringForKey(credentialManagerForTests.passwordKey)!)
+        credentialManagerForTests.storeCredential(base64EncodedCredential)
+        
+        XCTAssertEqual(base64EncodedCredential, userDefaultsForTests.stringForKey(credentialManagerForTests.key)!)
         
     }
     
@@ -82,16 +85,18 @@ class ASCredentialManagerTests: XCTestCase {
         userDefaultsForTests = NSUserDefaults()
         credentialManagerForTests.userDefaults = userDefaultsForTests
         
-        let username = "Jonasz"
+        let username = "tbilski@wi.zut.edu.pl"
         let password = "QWERTY"
         
-        userDefaultsForTests.setObject(username, forKey: credentialManagerForTests.usernameKey)
-        userDefaultsForTests.setObject(password, forKey: credentialManagerForTests.passwordKey)
+        let userPasswordString = "\(username):\(password)"
+        let userPasswordData = userPasswordString.dataUsingEncoding(NSUTF8StringEncoding)
+        let base64EncodedCredential = userPasswordData!.base64EncodedStringWithOptions(nil)
+        
+        userDefaultsForTests.setObject(base64EncodedCredential, forKey: credentialManagerForTests.key)
         userDefaultsForTests.synchronize()
         
-        if let (getUsername, getPassword) = credentialManagerForTests.getCredentials() {
-            XCTAssertEqual(username, getUsername)
-            XCTAssertEqual(password, getPassword)
+        if let (getHashedCredentials) = credentialManagerForTests.getCredentials() {
+            XCTAssertEqual(base64EncodedCredential, getHashedCredentials)
         } else {
             XCTFail("")
         }
@@ -104,18 +109,19 @@ class ASCredentialManagerTests: XCTestCase {
         userDefaultsForTests = NSUserDefaults()
         credentialManagerForTests.userDefaults = userDefaultsForTests
         
-        let username = "Jonasz"
+        let username = "tbilski@wi.zut.edu.pl"
         let password = "QWERTY"
         
-        userDefaultsForTests.setObject(username, forKey: credentialManagerForTests.usernameKey)
-        userDefaultsForTests.setObject(password, forKey: credentialManagerForTests.passwordKey)
+        let userPasswordString = "\(username):\(password)"
+        let userPasswordData = userPasswordString.dataUsingEncoding(NSUTF8StringEncoding)
+        let base64EncodedCredential = userPasswordData!.base64EncodedStringWithOptions(nil)
+        
+        userDefaultsForTests.setObject(base64EncodedCredential, forKey: credentialManagerForTests.key)
         userDefaultsForTests.synchronize()
         
         credentialManagerForTests.clearCredentials()
         
-        
-        XCTAssertNil(userDefaultsForTests.stringForKey(credentialManagerForTests.usernameKey))
-        XCTAssertNil(userDefaultsForTests.stringForKey(credentialManagerForTests.usernameKey))
+        XCTAssertNil(userDefaultsForTests.stringForKey(credentialManagerForTests.key))
         
         
     }
@@ -126,11 +132,15 @@ class ASCredentialManagerTests: XCTestCase {
         userDefaultsForTests = NSUserDefaults()
         credentialManagerForTests.userDefaults = userDefaultsForTests
         
-        let username = "Jonasz"
+        let username = "tbilski@wi.zut.edu.pl"
         let password = "QWERTY"
         
-        userDefaultsForTests.setObject(username, forKey: credentialManagerForTests.usernameKey)
-        userDefaultsForTests.setObject(password, forKey: credentialManagerForTests.passwordKey)
+        let userPasswordString = "\(username):\(password)"
+        let userPasswordData = userPasswordString.dataUsingEncoding(NSUTF8StringEncoding)
+        let base64EncodedCredential = userPasswordData!.base64EncodedStringWithOptions(nil)
+        
+        userDefaultsForTests.setObject(base64EncodedCredential, forKey: credentialManagerForTests.key)
+        
         userDefaultsForTests.synchronize()
         
         XCTAssertTrue(credentialManagerForTests.hasCredentials(), "")

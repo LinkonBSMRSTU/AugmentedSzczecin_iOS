@@ -51,6 +51,7 @@
 		05CAEC7D1ADEE8A600628015 /* UIColor+ColorFromHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CAEC7B1ADEE8A600628015 /* UIColor+ColorFromHex.swift */; };
 		05CAECAF1ADFAC6800628015 /* UIColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CAECAE1ADFAC6800628015 /* UIColorExtensionTests.swift */; };
 		05DB8B211AB82624008E02DC /* ASRegistrationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054B546D1AB482E200ABCE74 /* ASRegistrationSegue.swift */; };
+		05FC2D371AFFAB7A00A0A04F /* ASPointDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FC2D361AFFAB7A00A0A04F /* ASPointDetailViewController.swift */; };
 		23625D3D1AAE0DB100EAC93B /* libBLSAugmentedController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23625D3C1AAE0DB100EAC93B /* libBLSAugmentedController.a */; };
 		2399E0581AE80B970000DFEE /* ASAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399E0571AE80B970000DFEE /* ASAlertController.swift */; };
 		2399E0591AE80B970000DFEE /* ASAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399E0571AE80B970000DFEE /* ASAlertController.swift */; };
@@ -68,7 +69,10 @@
 		6D2DE50E1A9B7033003717F8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D2DE50D1A9B7033003717F8 /* Images.xcassets */; };
 		6D2DE5111A9B7033003717F8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D2DE50F1A9B7033003717F8 /* LaunchScreen.xib */; };
 		6D62583D1B0127C600600FC3 /* ASPOITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D62583B1B0127C600600FC3 /* ASPOITests.swift */; };
+		A40629AE1B1E6023009C19EE /* ASCategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40629AD1B1E6023009C19EE /* ASCategoryPickerViewController.swift */; };
 		A42F98D81ABEDE42006CF22E /* ASDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A42F98D61ABEDE42006CF22E /* ASDataModel.xcdatamodeld */; };
+		A484B6D91B1B143D005EC2A3 /* ASAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A484B6D81B1B143D005EC2A3 /* ASAboutViewController.swift */; };
+		A484B6DB1B1B269E005EC2A3 /* ASAddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A484B6DA1B1B269E005EC2A3 /* ASAddPlaceViewController.swift */; };
 		A4B52E141AD2AB6200C318A6 /* ASData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B52E131AD2AB6200C318A6 /* ASData.swift */; };
 		A4DF18E01AF9800F00C44ACC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DF18DF1AF9800F00C44ACC /* CoreLocation.framework */; };
 		D386927B9EBA7240D980CCF6 /* Pods_AugmentedSzczecin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 910EF554C1DC1F0DAAA42A47 /* Pods_AugmentedSzczecin.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -76,6 +80,7 @@
 		EF1B26C91AE9082A002CA8F9 /* _ASPOI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1B26C61AE9082A002CA8F9 /* _ASPOI.swift */; };
 		EF1B26CA1AE9082A002CA8F9 /* ASPOI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1B26C71AE9082A002CA8F9 /* ASPOI.swift */; };
 		EF1B26CB1AE9082A002CA8F9 /* ASPOI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1B26C71AE9082A002CA8F9 /* ASPOI.swift */; };
+		EF538D931B2873FB00CA54A4 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = EF538D921B2873FB00CA54A4 /* pin.png */; };
 		EF7F50061AE2D6A600502380 /* ASCredentialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB7A3DF1AE2BB2B00528083 /* ASCredentialManager.swift */; };
 		EF7F50071AE2D6AE00502380 /* ASData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B52E131AD2AB6200C318A6 /* ASData.swift */; };
 		EF91BBA01AFA234600F36937 /* ASCredentialManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF91BB9F1AFA234500F36937 /* ASCredentialManagerTests.swift */; };
@@ -116,6 +121,7 @@
 		0587A0EC1ADFD75C00B78218 /* ASSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASSearchViewController.swift; sourceTree = "<group>"; };
 		05CAEC7B1ADEE8A600628015 /* UIColor+ColorFromHex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+ColorFromHex.swift"; sourceTree = "<group>"; };
 		05CAECAE1ADFAC6800628015 /* UIColorExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTests.swift; sourceTree = "<group>"; };
+		05FC2D361AFFAB7A00A0A04F /* ASPointDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASPointDetailViewController.swift; sourceTree = "<group>"; };
 		23625D3C1AAE0DB100EAC93B /* libBLSAugmentedController.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBLSAugmentedController.a; path = "BLSAugmentedController/build/Debug-iphoneos/libBLSAugmentedController.a"; sourceTree = "<group>"; };
 		2399E0571AE80B970000DFEE /* ASAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASAlertController.swift; sourceTree = "<group>"; };
 		2399E05D1AE80BA90000DFEE /* NSTimerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTimerExtension.swift; sourceTree = "<group>"; };
@@ -134,7 +140,10 @@
 		88C0473809D3465E0B0E8CE0 /* Pods_AugmentedSzczecinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AugmentedSzczecinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		910EF554C1DC1F0DAAA42A47 /* Pods_AugmentedSzczecin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AugmentedSzczecin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A78CE0DD15202A86FD6BD9A /* Pods-AugmentedSzczecin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugmentedSzczecin.release.xcconfig"; path = "Pods/Target Support Files/Pods-AugmentedSzczecin/Pods-AugmentedSzczecin.release.xcconfig"; sourceTree = "<group>"; };
+		A40629AD1B1E6023009C19EE /* ASCategoryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASCategoryPickerViewController.swift; sourceTree = "<group>"; };
 		A42F98D71ABEDE42006CF22E /* ASDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ASDataModel.xcdatamodel; sourceTree = "<group>"; };
+		A484B6D81B1B143D005EC2A3 /* ASAboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASAboutViewController.swift; sourceTree = "<group>"; };
+		A484B6DA1B1B269E005EC2A3 /* ASAddPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASAddPlaceViewController.swift; sourceTree = "<group>"; };
 		A4B52E131AD2AB6200C318A6 /* ASData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASData.swift; sourceTree = "<group>"; };
 		A4DF18DF1AF9800F00C44ACC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A4FE1C711AA5191D0044DE55 /* AugmentedSzczecin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AugmentedSzczecin-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -142,6 +151,7 @@
 		C71386729CA57FAA34BF4B7D /* Pods-AugmentedSzczecinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugmentedSzczecinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AugmentedSzczecinTests/Pods-AugmentedSzczecinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EF1B26C61AE9082A002CA8F9 /* _ASPOI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = _ASPOI.swift; path = Database/_ASPOI.swift; sourceTree = "<group>"; };
 		EF1B26C71AE9082A002CA8F9 /* ASPOI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASPOI.swift; path = Database/ASPOI.swift; sourceTree = "<group>"; };
+		EF538D921B2873FB00CA54A4 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
 		EF91BB9F1AFA234500F36937 /* ASCredentialManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASCredentialManagerTests.swift; path = ../AugmentedSzczecin/ASCredentialManagerTests.swift; sourceTree = "<group>"; };
 		EFB6C2321AE783C500A74DDA /* ASRestUtilTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASRestUtilTests.swift; sourceTree = "<group>"; };
 		EFB7A3DC1AE2BADE00528083 /* ASRestUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASRestUtil.swift; sourceTree = "<group>"; };
@@ -205,25 +215,31 @@
 		6D2DE5031A9B7033003717F8 /* AugmentedSzczecin */ = {
 			isa = PBXGroup;
 			children = (
-				050B83CD1AFA0AE700DF4342 /* ASMainViewController.swift */,
 				6D2DE5061A9B7033003717F8 /* AppDelegate.swift */,
-				EFB7A3DC1AE2BADE00528083 /* ASRestUtil.swift */,
-				054B54691AB47B6500ABCE74 /* ASFirstContactViewController.swift */,
-				054B547A1AB73AE200ABCE74 /* ASMapViewController.swift */,
-				054B546B1AB47F7D00ABCE74 /* ASRegistrationViewController.swift */,
-				054B546D1AB482E200ABCE74 /* ASRegistrationSegue.swift */,
-				0587A0EC1ADFD75C00B78218 /* ASSearchViewController.swift */,
-				EFB7A3DF1AE2BB2B00528083 /* ASCredentialManager.swift */,
+				A484B6D81B1B143D005EC2A3 /* ASAboutViewController.swift */,
+				A484B6DA1B1B269E005EC2A3 /* ASAddPlaceViewController.swift */,
 				2399E0571AE80B970000DFEE /* ASAlertController.swift */,
-				0567302D1AD936A90055308E /* Extensions */,
-				A42F98D91ABEDE4E006CF22E /* Database */,
-				6D90A5721AA744B300F36771 /* Storyboards & XIBs */,
-				6D2DE5041A9B7033003717F8 /* Supporting Files */,
-				6D2DE50D1A9B7033003717F8 /* Images.xcassets */,
-				0567302B1AD3E7C40055308E /* Reachability.swift */,
 				057B96791AD959D300372E11 /* ASAnnotation.swift */,
 				23A168861AF22CD000898337 /* ASAnnotationView.swift */,
 				23A168881AF22CF400898337 /* ASAnnotationView.xib */,
+				A40629AD1B1E6023009C19EE /* ASCategoryPickerViewController.swift */,
+				EFB7A3DF1AE2BB2B00528083 /* ASCredentialManager.swift */,
+				054B54691AB47B6500ABCE74 /* ASFirstContactViewController.swift */,
+				050B83CD1AFA0AE700DF4342 /* ASMainViewController.swift */,
+				054B547A1AB73AE200ABCE74 /* ASMapViewController.swift */,
+				05FC2D361AFFAB7A00A0A04F /* ASPointDetailViewController.swift */,
+				054B546D1AB482E200ABCE74 /* ASRegistrationSegue.swift */,
+				054B546B1AB47F7D00ABCE74 /* ASRegistrationViewController.swift */,
+				EFB7A3DC1AE2BADE00528083 /* ASRestUtil.swift */,
+				0587A0EC1ADFD75C00B78218 /* ASSearchViewController.swift */,
+				EFB7A3DF1AE2BB2B00528083 /* ASCredentialManager.swift */,
+				EF538D921B2873FB00CA54A4 /* pin.png */,
+				A42F98D91ABEDE4E006CF22E /* Database */,
+				0567302D1AD936A90055308E /* Extensions */,
+				6D2DE50D1A9B7033003717F8 /* Images.xcassets */,
+				0567302B1AD3E7C40055308E /* Reachability.swift */,
+				6D90A5721AA744B300F36771 /* Storyboards & XIBs */,
+				6D2DE5041A9B7033003717F8 /* Supporting Files */,
 			);
 			path = AugmentedSzczecin;
 			sourceTree = "<group>";
@@ -400,6 +416,7 @@
 				050B83CC1AFA0ABC00DF4342 /* Main.storyboard in Resources */,
 				056730331AD9386A0055308E /* Localizable.strings in Resources */,
 				6D2DE5111A9B7033003717F8 /* LaunchScreen.xib in Resources */,
+				EF538D931B2873FB00CA54A4 /* pin.png in Resources */,
 				6D2DE50E1A9B7033003717F8 /* Images.xcassets in Resources */,
 				23A168891AF22CF400898337 /* ASAnnotationView.xib in Resources */,
 			);
@@ -529,7 +546,9 @@
 			files = (
 				050B83CB1AFA0A0D00DF4342 /* ASMapViewController.swift in Sources */,
 				057B967A1AD959D300372E11 /* ASAnnotation.swift in Sources */,
+				A484B6DB1B1B269E005EC2A3 /* ASAddPlaceViewController.swift in Sources */,
 				05CAEC7C1ADEE8A600628015 /* UIColor+ColorFromHex.swift in Sources */,
+				05FC2D371AFFAB7A00A0A04F /* ASPointDetailViewController.swift in Sources */,
 				054B546A1AB47B6500ABCE74 /* ASFirstContactViewController.swift in Sources */,
 				050B83C81AFA095A00DF4342 /* _ASUser.swift in Sources */,
 				A4B52E141AD2AB6200C318A6 /* ASData.swift in Sources */,
@@ -547,7 +566,9 @@
 				6D2DE5071A9B7033003717F8 /* AppDelegate.swift in Sources */,
 				2399E0581AE80B970000DFEE /* ASAlertController.swift in Sources */,
 				057B96781AD93EA500372E11 /* String+Localised.swift in Sources */,
+				A484B6D91B1B143D005EC2A3 /* ASAboutViewController.swift in Sources */,
 				2399E05E1AE80BA90000DFEE /* NSTimerExtension.swift in Sources */,
+				A40629AE1B1E6023009C19EE /* ASCategoryPickerViewController.swift in Sources */,
 				A42F98D81ABEDE42006CF22E /* ASDataModel.xcdatamodeld in Sources */,
 				23A1688D1AF22ED100898337 /* ASAnnotationView.swift in Sources */,
 			);

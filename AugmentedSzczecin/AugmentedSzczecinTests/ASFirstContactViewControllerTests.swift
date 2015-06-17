@@ -33,10 +33,6 @@ class ASFirstContactViewControllerTests: XCTestCase {
         XCTAssertNotNil(vc!.registerButton, "Register button is nil")
     }
     
-    func testLoginButton() {
-        XCTAssertNotNil(vc!.loginButton, "Login button is nil")
-    }
-    
     func testRegisterButtonTap() {
         let responders: NSArray = vc!.registerButton.actionsForTarget(vc!, forControlEvent: UIControlEvents.TouchUpInside)!
         XCTAssertTrue(responders.containsObject("showRegistrationViewController:"), "Register button has no actions")
