@@ -149,7 +149,8 @@ class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControlle
         resetTimer()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         let restUtil = ASRestUtil()
         
@@ -170,7 +171,10 @@ class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControlle
             if let dataToShow = data as? [NSManagedObject] {
                 
                 for element in dataToShow {
-                    println(element)
+                    if let poi = element as? ASPOI {
+                        println(poi.name)
+                       
+                    }
                 }
                 managedContext?.save(nil)
             }
