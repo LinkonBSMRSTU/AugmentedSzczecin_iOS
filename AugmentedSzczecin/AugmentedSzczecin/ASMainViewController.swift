@@ -16,33 +16,31 @@ class ASMainViewController: UIViewController {
     @IBOutlet weak var showAddPOI: UIButton!
     
     override func viewDidLoad() {
+        var timer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("switchColor"), userInfo: nil, repeats: true)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.setButton(showMapButton, color: UIColor.redAugmentedColor())
+        self.setButton(aboutButton, color: UIColor.grayAugmentedColor())
+        self.setButton(showAddPOI, color: UIColor.blackAugmentedColor())
+        
         
         searchButton.backgroundColor = UIColor.dodgerBlueAugmentedColor()
         searchButton.tintColor = UIColor.whiteAugmentedColor()
-        searchButton.layer.cornerRadius = 50
+        searchButton.layer.cornerRadius = searchButton.frame.width / 2
         searchButton.layer.borderWidth = 5
         searchButton.layer.borderColor = UIColor.dodgerBlueAugmentedColor().CGColor
         
-        showMapButton.backgroundColor = UIColor.clearColor()
-        showMapButton.tintColor = UIColor.redAugmentedColor()
-        showMapButton.layer.cornerRadius = 50
-        showMapButton.layer.borderWidth = 5
-        showMapButton.layer.borderColor = UIColor.redAugmentedColor().CGColor
-
-        aboutButton.backgroundColor = UIColor.clearColor()
-        aboutButton.tintColor = UIColor.grayAugmentedColor()
-        aboutButton.layer.cornerRadius = 50
-        aboutButton.layer.borderWidth = 5
-        aboutButton.layer.borderColor = UIColor.grayAugmentedColor().CGColor
-        
-        showAddPOI.backgroundColor = UIColor.clearColor()
-        showAddPOI.tintColor = UIColor.blackAugmentedColor()
-        showAddPOI.layer.cornerRadius = 50
-        showAddPOI.layer.borderWidth = 5
-        showAddPOI.layer.borderColor = UIColor.blackAugmentedColor().CGColor
-        
-        
-        var timer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("switchColor"), userInfo: nil, repeats: true)
+    }
+    
+    func setButton(button: UIButton, color: UIColor) {
+        button.backgroundColor = UIColor.clearColor()
+        button.tintColor = color
+        button.layer.cornerRadius = button.frame.width / 2
+        button.layer.borderWidth = 5
+        button.layer.borderColor = color.CGColor
+        button.layer.masksToBounds = true
+        button.clipsToBounds = true
     }
     
     @IBAction func searchButtonTap(sender: AnyObject) {
