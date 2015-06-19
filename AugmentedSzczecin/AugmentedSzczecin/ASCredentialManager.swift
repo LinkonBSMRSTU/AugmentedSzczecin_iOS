@@ -40,8 +40,12 @@ class ASCredentialManager {
     }
     
     
-    func storeCredential(hashedCredentials: String!) {
-        self.userDefaults.setObject(hashedCredentials, forKey: key)
+    func storeCredential(credentials: NSString!) {
+        
+        let userPasswordData = credentials.dataUsingEncoding(NSUTF8StringEncoding)
+        let base64EncodedCredential = userPasswordData!.base64EncodedStringWithOptions(nil)
+        
+        self.userDefaults.setObject(base64EncodedCredential, forKey: key)
         self.userDefaults.synchronize()
     }
     

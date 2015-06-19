@@ -4,11 +4,17 @@
 import CoreData
 
 enum ASPOIAttributes: String {
+    case desription = "desription"
+    case houseNumber = "houseNumber"
     case id = "id"
     case latitude = "latitude"
     case longitude = "longitude"
     case name = "name"
+    case street = "street"
+    case streetNumber = "streetNumber"
+    case subcategory = "subcategory"
     case tag = "tag"
+    case zipcode = "zipcode"
 }
 
 @objc
@@ -38,7 +44,17 @@ class _ASPOI: NSManagedObject {
     // MARK: - Properties
 
     @NSManaged
-    var id: NSNumber?
+    var desription: String?
+
+    // func validateDesription(value: AutoreleasingUnsafePointer<AnyObject>, error: NSErrorPointer) {}
+
+    @NSManaged
+    var houseNumber: NSNumber?
+
+    // func validateHouseNumber(value: AutoreleasingUnsafePointer<AnyObject>, error: NSErrorPointer) {}
+
+    @NSManaged
+    var id: String?
 
     // func validateId(value: AutoreleasingUnsafePointer<AnyObject>, error: NSErrorPointer) {}
 
@@ -58,9 +74,29 @@ class _ASPOI: NSManagedObject {
     // func validateName(value: AutoreleasingUnsafePointer<AnyObject>, error: NSErrorPointer) {}
 
     @NSManaged
+    var street: String?
+
+    // func validateStreet(value: AutoreleasingUnsafePointer<AnyObject>, error: NSErrorPointer) {}
+
+    @NSManaged
+    var streetNumber: NSNumber?
+
+    // func validateStreetNumber(value: AutoreleasingUnsafePointer<AnyObject>, error: NSErrorPointer) {}
+
+    @NSManaged
+    var subcategory: String?
+
+    // func validateSubcategory(value: AutoreleasingUnsafePointer<AnyObject>, error: NSErrorPointer) {}
+
+    @NSManaged
     var tag: String?
 
     // func validateTag(value: AutoreleasingUnsafePointer<AnyObject>, error: NSErrorPointer) {}
+
+    @NSManaged
+    var zipcode: NSNumber?
+
+    // func validateZipcode(value: AutoreleasingUnsafePointer<AnyObject>, error: NSErrorPointer) {}
 
     // MARK: - Relationships
 

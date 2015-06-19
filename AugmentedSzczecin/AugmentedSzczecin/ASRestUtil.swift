@@ -48,8 +48,19 @@ class ASRestUtil {
                     var err: NSError?
                     let request = NSMutableURLRequest(URL: NSURL(string: Path.baseURLString + "places")!)
                     request.HTTPMethod = "GET"
-                    request.setValue("Basic \(ASCredentialManager.sharedInstance.getCredentials()!)", forHTTPHeaderField: "Authorization")
+                    
+                    let credentials = ASCredentialManager.sharedInstance.getCredentials()
+                    
+                    if credentials != nil {
+                        
+                        request.setValue("Basic \(credentials)", forHTTPHeaderField: "Authorization")
+                        
+                    }
+                    
+                    //Zrobic pobieranie dla niezarejstrowanego uzytkownika
+                    
                     return request
+                    
                     
                     
                 }
@@ -141,9 +152,9 @@ class ASRestUtil {
                         case (204, .SIGNING_UP(_,_)):
                             
                             let userPasswordString = NSString(format: "%@:%@",path.parameters.email!, path.parameters.password!)
-                            let userPasswordData = userPasswordString.dataUsingEncoding(NSUTF8StringEncoding)
-                            let base64EncodedCredential = userPasswordData!.base64EncodedStringWithOptions(nil)
-                            self.credentialManager.storeCredential(base64EncodedCredential)
+                            
+                            self.credentialManager.storeCredential(userPasswordString)
+                            
                             callbackSuccess(nil)
                         default:
                             callbackFailure(responseCode, NSHTTPURLResponse.localizedStringForStatusCode(responseCode!))
@@ -196,7 +207,7 @@ class ASRestUtil {
         let managedContext = ASData.sharedInstance.mainContext
         
         for iterator in listOfPoisJson {
-            if let id = iterator["id"] as? Int, let name = iterator["name"] as? String, let tag = iterator["description"] as? String, let location = iterator["location"]as? NSDictionary {
+            if let id = iterator["id"] as? String, let name = iterator["name"] as? String, let tag = iterator["description"] as? String, let location = iterator["location"]as? NSDictionary {
                 
                 var poi = ASPOI(managedObjectContext: managedContext)
                 

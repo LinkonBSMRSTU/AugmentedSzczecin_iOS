@@ -149,13 +149,36 @@ class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControlle
         resetTimer()
     }
     
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
+    override func viewDidAppear(animated: Bool) {
         
         let restUtil = ASRestUtil()
         
-        restUtil.getAllPois({(anyObject: AnyObject?) -> Void in},
+        
+        restUtil.signUp("tbilski@wi.zut.edu.pl", password: "QWERTY", callbackSuccess: {(anyObject: AnyObject?) -> Void in},
             callbackFailure: {(codeError: Int?, message: String) -> Void in})
-        }
+        
+        
+        restUtil.getAllPois({(anyObject: AnyObject?) -> Void in
+            
+            
+            let managedContext = ASData.sharedInstance.mainContext
+            
+            var request = NSFetchRequest(entityName: ASPOI.entityName())
+            
+            var data = managedContext?.executeFetchRequest(request, error: nil)
+            
+            if let dataToShow = data as? [NSManagedObject] {
+                
+                for element in dataToShow {
+                    println(element)
+                }
+                managedContext?.save(nil)
+            }
+            
+            
+            },
+            callbackFailure: {(codeError: Int?, message: String) -> Void in})
+        
+        
+    }
 }
