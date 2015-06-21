@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7B0-UG-zg7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7B0-UG-zg7">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -298,11 +298,43 @@ Aplikacja łączy obraz z kamery z danymi o ciekawych miejscach w Szczecinie (za
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vku-2a-Jbl">
-                                <rect key="frame" x="250" y="294" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubB-vd-iW2">
+                                <rect key="frame" x="210" y="630" width="180" height="180"/>
+                                <state key="normal" title="About">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="aboutButtonTap:" destination="6Pd-oO-MBu" eventType="touchUpInside" id="lBB-jy-SPy"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="szczecin_bg_white" translatesAutoresizingMaskIntoConstraints="NO" id="a31-mY-ynj">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="8xS-iz-t9d"/>
-                                    <constraint firstAttribute="width" constant="100" id="PTn-ez-o5A"/>
+                                    <constraint firstAttribute="height" constant="128" id="kny-dG-5VE"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_as_vert" translatesAutoresizingMaskIntoConstraints="NO" id="82w-O9-UqI">
+                                <rect key="frame" x="0.0" y="54" width="600" height="201"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="82w-O9-UqI" secondAttribute="height" multiplier="200:67" id="WoZ-pw-shV"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plw-PO-kVS">
+                                <rect key="frame" x="11" y="450" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="plw-PO-kVS" secondAttribute="height" multiplier="1:1" id="V4w-b9-dlD"/>
+                                </constraints>
+                                <state key="normal" title="Add POI">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showAddPOITap:" destination="6Pd-oO-MBu" eventType="touchUpInside" id="7Me-Rh-HNm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vku-2a-Jbl">
+                                <rect key="frame" x="210" y="270" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Vku-2a-Jbl" secondAttribute="height" multiplier="1:1" id="c98-yy-jAX"/>
                                 </constraints>
                                 <state key="normal" title="Map">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -312,10 +344,9 @@ Aplikacja łączy obraz z kamery z danymi o ciekawych miejscach w Szczecinie (za
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vya-KW-mP2">
-                                <rect key="frame" x="484" y="383" width="100" height="100"/>
+                                <rect key="frame" x="398" y="450" width="180" height="180"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="eoq-AZ-XUE"/>
-                                    <constraint firstAttribute="width" constant="100" id="gQ4-C0-p4c"/>
+                                    <constraint firstAttribute="width" secondItem="vya-KW-mP2" secondAttribute="height" multiplier="1:1" id="xLV-YL-RoA"/>
                                 </constraints>
                                 <state key="normal" title="Search">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -324,66 +355,36 @@ Aplikacja łączy obraz z kamery z danymi o ciekawych miejscach w Szczecinie (za
                                     <action selector="searchButtonTap:" destination="6Pd-oO-MBu" eventType="touchUpInside" id="Ebp-4h-ShT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubB-vd-iW2">
-                                <rect key="frame" x="250" y="480" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="Cda-9Z-S3u"/>
-                                    <constraint firstAttribute="height" constant="100" id="nVC-0q-8FL"/>
-                                </constraints>
-                                <state key="normal" title="About">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="aboutButtonTap:" destination="6Pd-oO-MBu" eventType="touchUpInside" id="lBB-jy-SPy"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="szczecin_bg_white" translatesAutoresizingMaskIntoConstraints="NO" id="a31-mY-ynj">
-                                <rect key="frame" x="0.0" y="20" width="600" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="n64-oi-x0w"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_as_vert" translatesAutoresizingMaskIntoConstraints="NO" id="82w-O9-UqI">
-                                <rect key="frame" x="196" y="85" width="208" height="201"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="201" id="Cvk-pH-R3y"/>
-                                    <constraint firstAttribute="width" constant="208" id="k32-Cm-fXP"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plw-PO-kVS">
-                                <rect key="frame" x="16" y="383" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="vv5-fv-tfk"/>
-                                    <constraint firstAttribute="width" constant="100" id="x4v-IM-Cfx"/>
-                                </constraints>
-                                <state key="normal" title="Add POI">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showAddPOITap:" destination="6Pd-oO-MBu" eventType="touchUpInside" id="7Me-Rh-HNm"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="a31-mY-ynj" firstAttribute="leading" secondItem="8jS-LT-aGX" secondAttribute="leadingMargin" constant="-16" id="1I9-qD-Tuk"/>
-                            <constraint firstItem="plw-PO-kVS" firstAttribute="leading" secondItem="8jS-LT-aGX" secondAttribute="leadingMargin" id="1IG-sh-gUb"/>
-                            <constraint firstAttribute="centerX" secondItem="82w-O9-UqI" secondAttribute="centerX" id="2DR-M3-euC"/>
-                            <constraint firstItem="Vku-2a-Jbl" firstAttribute="top" secondItem="82w-O9-UqI" secondAttribute="bottom" constant="8" id="5r7-sc-GKb"/>
-                            <constraint firstItem="a31-mY-ynj" firstAttribute="top" secondItem="Ybr-pg-Crk" secondAttribute="bottom" id="6Qs-WW-Acf"/>
-                            <constraint firstAttribute="centerX" secondItem="ubB-vd-iW2" secondAttribute="centerX" id="6ol-Ku-yQx"/>
-                            <constraint firstItem="plw-PO-kVS" firstAttribute="top" secondItem="Vku-2a-Jbl" secondAttribute="bottom" constant="-11" id="GSp-fu-eoM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="vya-KW-mP2" secondAttribute="trailing" id="OB3-xv-dh2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="a31-mY-ynj" secondAttribute="trailing" constant="-16" id="TIV-R2-Jdm"/>
-                            <constraint firstItem="vya-KW-mP2" firstAttribute="top" secondItem="82w-O9-UqI" secondAttribute="bottom" constant="97" id="VsE-rX-ZKW"/>
-                            <constraint firstItem="ubB-vd-iW2" firstAttribute="top" secondItem="vya-KW-mP2" secondAttribute="bottom" constant="12" id="dGz-Or-Seo"/>
-                            <constraint firstItem="82w-O9-UqI" firstAttribute="top" secondItem="Ybr-pg-Crk" secondAttribute="bottom" constant="65" id="jJD-eg-hrj"/>
-                            <constraint firstItem="ubB-vd-iW2" firstAttribute="top" secondItem="Vku-2a-Jbl" secondAttribute="bottom" constant="86" id="naU-vE-IPa"/>
-                            <constraint firstAttribute="centerX" secondItem="Vku-2a-Jbl" secondAttribute="centerX" id="tOJ-Ye-8nd"/>
+                            <constraint firstItem="82w-O9-UqI" firstAttribute="top" secondItem="Ybr-pg-Crk" secondAttribute="bottom" constant="34" id="BLt-wF-Z8c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="a31-mY-ynj" secondAttribute="trailing" constant="-16" id="BnN-51-UXq"/>
+                            <constraint firstItem="82w-O9-UqI" firstAttribute="leading" secondItem="8jS-LT-aGX" secondAttribute="leadingMargin" constant="-16" id="E4u-1F-2vu"/>
+                            <constraint firstItem="ubB-vd-iW2" firstAttribute="top" secondItem="plw-PO-kVS" secondAttribute="bottom" id="Iqr-iJ-2VQ"/>
+                            <constraint firstItem="Vku-2a-Jbl" firstAttribute="height" secondItem="vya-KW-mP2" secondAttribute="height" id="Jo1-bE-s2G"/>
+                            <constraint firstItem="a31-mY-ynj" firstAttribute="top" secondItem="8jS-LT-aGX" secondAttribute="topMargin" id="NpM-re-Sv2"/>
+                            <constraint firstItem="vya-KW-mP2" firstAttribute="trailing" secondItem="8jS-LT-aGX" secondAttribute="trailingMargin" constant="-6" id="O67-az-VUq"/>
+                            <constraint firstAttribute="centerX" secondItem="Vku-2a-Jbl" secondAttribute="centerX" id="OaN-v4-gIf"/>
+                            <constraint firstItem="ubB-vd-iW2" firstAttribute="width" secondItem="Vku-2a-Jbl" secondAttribute="width" id="OcW-re-3Ve"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="82w-O9-UqI" secondAttribute="trailing" constant="-16" id="RUM-GJ-tEh"/>
+                            <constraint firstItem="vya-KW-mP2" firstAttribute="top" secondItem="Vku-2a-Jbl" secondAttribute="bottom" id="TRe-QE-Dqj"/>
+                            <constraint firstItem="plw-PO-kVS" firstAttribute="leading" secondItem="8jS-LT-aGX" secondAttribute="leadingMargin" constant="-5" id="VnA-r9-mdu"/>
+                            <constraint firstItem="plw-PO-kVS" firstAttribute="height" secondItem="Vku-2a-Jbl" secondAttribute="height" id="ZGN-2c-ie4"/>
+                            <constraint firstItem="plw-PO-kVS" firstAttribute="width" secondItem="Vku-2a-Jbl" secondAttribute="width" id="hKB-cl-c4S"/>
+                            <constraint firstItem="Vku-2a-Jbl" firstAttribute="width" secondItem="vya-KW-mP2" secondAttribute="width" id="j1j-jn-DTH"/>
+                            <constraint firstItem="vya-KW-mP2" firstAttribute="leading" secondItem="Vku-2a-Jbl" secondAttribute="trailing" constant="8" id="mmJ-pU-j04"/>
+                            <constraint firstItem="ubB-vd-iW2" firstAttribute="height" secondItem="Vku-2a-Jbl" secondAttribute="height" id="ngx-fL-Xxv"/>
+                            <constraint firstAttribute="centerX" secondItem="ubB-vd-iW2" secondAttribute="centerX" id="nks-Pd-nYS"/>
+                            <constraint firstItem="Vku-2a-Jbl" firstAttribute="top" secondItem="82w-O9-UqI" secondAttribute="bottom" constant="15" id="qiw-qG-jdW"/>
+                            <constraint firstItem="vya-KW-mP2" firstAttribute="top" secondItem="82w-O9-UqI" secondAttribute="bottom" constant="195" id="s3r-eX-a0j"/>
+                            <constraint firstItem="Vku-2a-Jbl" firstAttribute="leading" secondItem="plw-PO-kVS" secondAttribute="trailing" constant="19" id="sgj-f4-XGG"/>
+                            <constraint firstItem="a31-mY-ynj" firstAttribute="leading" secondItem="8jS-LT-aGX" secondAttribute="leadingMargin" constant="-16" id="xxe-gi-V2u"/>
+                            <constraint firstItem="plw-PO-kVS" firstAttribute="top" secondItem="Vku-2a-Jbl" secondAttribute="bottom" id="z0e-wS-gDI"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="dGz-Or-Seo"/>
+                                <exclude reference="s3r-eX-a0j"/>
                             </mask>
                         </variation>
                     </view>
