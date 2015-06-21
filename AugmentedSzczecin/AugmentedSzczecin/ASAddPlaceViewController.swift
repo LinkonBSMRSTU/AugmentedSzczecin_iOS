@@ -17,6 +17,8 @@ class ASAddPlaceViewController: UIViewController, UITextFieldDelegate, UITextVie
     @IBOutlet weak var cityTextField: UITextField!
     @IBOutlet weak var categoryTextField: UITextField!
     @IBOutlet weak var tagsTextField: UITextField!
+    @IBOutlet weak var closeButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +31,8 @@ class ASAddPlaceViewController: UIViewController, UITextFieldDelegate, UITextVie
         tagsTextField.placeholder = "Tags".localized
         
         categoryTextField.tintColor = UIColor.clearColor()
-        
+        closeButton.setTitle("Close".localized, forState: UIControlState.Normal)
+        closeButton.setTitleColor(UIColor.mediumBlueAugmentedColor(), forState: UIControlState.Normal)
         
     }
 
@@ -41,6 +44,10 @@ class ASAddPlaceViewController: UIViewController, UITextFieldDelegate, UITextVie
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func closeButtonTap(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+        })
+    }
 
     // MARK: - Navigation
 
