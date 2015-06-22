@@ -208,16 +208,7 @@ class ASRestUtil {
         let pois = listOfPoisJson
         
         let managedContext = ASData.sharedInstance.mainContext
-        
-        func countObjectsInDatabase() -> (count: Int, error: NSError?)  {
-            
-            var request = NSFetchRequest(entityName: ASPOI.entityName())
-            var _error: NSError?
-            
-            return (count: managedContext!.countForFetchRequest(request, error: &_error), error: _error)
-            
-        }
-        
+    
         func addPoiToDatabase(id: String, name: String, tag: String, latitude: Double, longitude: Double, flag: Bool?) {
             
             var poi = ASPOI(managedObjectContext: managedContext)
@@ -269,11 +260,10 @@ class ASRestUtil {
                             
                             updatePoi(value, id, name, tag, longitude, latitude)
                             value.delete = false
-                            println("update")
+                            
                         } else {
                             
                             addPoiToDatabase(id, name, tag, latitude, longitude, false)
-                            println("insert po raz pierwszy")
                             
                         }
                         
@@ -302,7 +292,7 @@ class ASRestUtil {
                     if let id = iterator["id"] as? String, let name = iterator["name"] as? String, let tag = iterator["description"] as? String, let location = iterator["location"]as? NSDictionary, let latitude = location["latitude"] as? Double, let longitude = location["longitude"] as? Double {
                         
                         addPoiToDatabase(id, name, tag, latitude, longitude, nil)
-                        println("dodaje po raz pierwszy")
+                        
                         
                     }
                     managedContext?.save(nil)
