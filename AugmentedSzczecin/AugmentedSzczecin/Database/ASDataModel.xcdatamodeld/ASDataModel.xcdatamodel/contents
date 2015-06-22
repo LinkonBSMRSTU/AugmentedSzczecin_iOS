@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="ASPOI" representedClassName="ASPOI" syncable="YES">
+        <attribute name="delete" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="desription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="houseNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
@@ -19,7 +20,7 @@
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ASPOI" positionX="-63" positionY="9" width="128" height="210"/>
+        <element name="ASPOI" positionX="-63" positionY="9" width="128" height="225"/>
         <element name="ASUser" positionX="-63" positionY="-18" width="128" height="90"/>
     </elements>
 </model>

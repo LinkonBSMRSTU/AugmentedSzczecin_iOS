@@ -692,14 +692,29 @@ Aplikacja łączy obraz z kamery z danymi o ciekawych miejscach w Szczecinie (za
                                     <action selector="homeButtonTap:" destination="Wmo-2f-gmO" eventType="touchUpInside" id="U64-h6-yB0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTH-wW-Jko">
+                                <rect key="frame" x="16" y="468" width="90" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="47" id="Koi-LY-Ri0"/>
+                                </constraints>
+                                <state key="normal" title="Refresh POIs">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="homeButtonTap:" destination="Wmo-2f-gmO" eventType="touchUpInside" id="OOu-n8-mhR"/>
+                                    <action selector="updatePois:" destination="Wmo-2f-gmO" eventType="touchUpInside" id="Aec-Rz-Z6y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="eiR-tI-1UA" firstAttribute="bottom" secondItem="xoK-ji-1sM" secondAttribute="top" id="Bnk-vC-2Aa"/>
                             <constraint firstItem="Xsv-aM-9LY" firstAttribute="top" secondItem="0Jl-m6-9Qo" secondAttribute="bottom" constant="8" symbolic="YES" id="EO3-SF-05m"/>
+                            <constraint firstItem="YTH-wW-Jko" firstAttribute="leading" secondItem="ZUB-zw-lil" secondAttribute="leading" id="Emw-as-NnI"/>
                             <constraint firstItem="ZUB-zw-lil" firstAttribute="leading" secondItem="60O-2R-d04" secondAttribute="leadingMargin" id="Hhc-vq-53Z"/>
                             <constraint firstAttribute="trailing" secondItem="eiR-tI-1UA" secondAttribute="trailing" id="OWc-We-GKK"/>
                             <constraint firstItem="xoK-ji-1sM" firstAttribute="top" secondItem="ZUB-zw-lil" secondAttribute="bottom" constant="66" id="XCs-Dh-g3I"/>
+                            <constraint firstItem="ZUB-zw-lil" firstAttribute="top" secondItem="YTH-wW-Jko" secondAttribute="bottom" constant="8" symbolic="YES" id="Yb3-em-MtG"/>
                             <constraint firstItem="eiR-tI-1UA" firstAttribute="leading" secondItem="60O-2R-d04" secondAttribute="leading" id="aS9-hs-JAB"/>
                             <constraint firstItem="Xsv-aM-9LY" firstAttribute="leading" secondItem="ZUB-zw-lil" secondAttribute="leading" id="lna-rD-1cU"/>
                             <constraint firstItem="eiR-tI-1UA" firstAttribute="centerX" secondItem="ZUB-zw-lil" secondAttribute="centerX" id="xFy-Ge-HvI"/>
@@ -709,6 +724,7 @@ Aplikacja łączy obraz z kamery z danymi o ciekawych miejscach w Szczecinie (za
                         <outlet property="homeButton" destination="Xsv-aM-9LY" id="Hzc-lV-I8c"/>
                         <outlet property="mapChoiceSegmentedControl" destination="ZUB-zw-lil" id="4jG-C0-i7X"/>
                         <outlet property="scaleLabel" destination="eiR-tI-1UA" id="raK-3j-h8T"/>
+                        <outlet property="update" destination="YTH-wW-Jko" id="WT0-VI-ZRr"/>
                         <segue destination="0K9-u3-YEU" kind="presentation" identifier="ShowDetailSegue" id="ZuN-Gn-vWJ"/>
                     </connections>
                 </viewController>

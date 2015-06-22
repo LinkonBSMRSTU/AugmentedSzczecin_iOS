@@ -17,6 +17,8 @@ class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControlle
     var userLocation: MKUserLocation?
     @IBOutlet weak var homeButton: UIButton!
     @IBOutlet weak var scaleLabel: UILabel!
+    @IBOutlet weak var update: UIButton!
+    
     @IBOutlet weak var mapChoiceSegmentedControl: UISegmentedControl!
     
     lazy var fetchedResultsController: NSFetchedResultsController = {
@@ -101,6 +103,37 @@ class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControlle
     
     @IBAction func homeButtonTap(sender: AnyObject) {
         self.dismissViewControllerAnimated(false, completion: nil)
+    }
+    
+    
+    @IBAction func updatePois(sender: AnyObject) {
+        
+        let restUtil = ASRestUtil()
+        
+        restUtil.getAllPois({(anyObject: AnyObject?) -> Void in
+            
+            
+            let managedContext = ASData.sharedInstance.mainContext
+            
+            var request = NSFetchRequest(entityName: ASPOI.entityName())
+            
+            var data = managedContext?.executeFetchRequest(request, error: nil)
+            
+            if let dataToShow = data as? [NSManagedObject] {
+                
+                for element in dataToShow {
+                    if let poi = element as? ASPOI {
+                        println(poi.name)
+                        
+                    }
+                }
+                managedContext?.save(nil)
+            }
+            
+            
+            },
+            callbackFailure: {(codeError: Int?, message: String) -> Void in})
+        
     }
     
     @IBAction func mapTypeChange(sender: UISegmentedControl) {

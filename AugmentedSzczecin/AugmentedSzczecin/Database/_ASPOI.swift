@@ -4,6 +4,7 @@
 import CoreData
 
 enum ASPOIAttributes: String {
+    case delete = "delete"
     case desription = "desription"
     case houseNumber = "houseNumber"
     case id = "id"
@@ -42,6 +43,11 @@ class _ASPOI: NSManagedObject {
     }
 
     // MARK: - Properties
+
+    @NSManaged
+    var delete: NSNumber?
+
+    // func validateDelete(value: AutoreleasingUnsafePointer<AnyObject>, error: NSErrorPointer) {}
 
     @NSManaged
     var desription: String?
