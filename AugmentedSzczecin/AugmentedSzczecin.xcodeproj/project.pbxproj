@@ -223,7 +223,6 @@
 				23A168861AF22CD000898337 /* ASAnnotationView.swift */,
 				23A168881AF22CF400898337 /* ASAnnotationView.xib */,
 				A40629AD1B1E6023009C19EE /* ASCategoryPickerViewController.swift */,
-				EFB7A3DF1AE2BB2B00528083 /* ASCredentialManager.swift */,
 				054B54691AB47B6500ABCE74 /* ASFirstContactViewController.swift */,
 				050B83CD1AFA0AE700DF4342 /* ASMainViewController.swift */,
 				054B547A1AB73AE200ABCE74 /* ASMapViewController.swift */,
@@ -526,7 +525,7 @@
 		};
 		EFB7A3DB1AE2B8BF00528083 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -535,7 +534,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "MOGENERATOR=$(which mogenerator)\n$MOGENERATOR -m \"${SRCROOT}/AugmentedSzczecin/Database/ASDataModel.xcdatamodeld/ASDataModel.xcdatamodel/\" -O \"${SRCROOT}/AugmentedSzczecin/Database/\" --swift --template-var arc=true";
+			shellScript = "/usr/local/bin/mogenerator -m AugmentedSzczecin/Database/ASDataModel.xcdatamodeld -O AugmentedSzczecin/Database/ --swift --template-var arc=true\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

@@ -34,7 +34,7 @@ class ASPOITests: XCTestCase {
         
         var managedContext = ASData.sharedInstance.mainContext
         mockedPOI = ASPOI(managedObjectContext: managedContext)
-        mockedPOI!.id = 69383
+        mockedPOI!.id = "69383"
         mockedPOI!.name = "Pałac Pod Globusem"
         mockedPOI!.tag = "pl_otwarte_zabytki"
         mockedPOI!.latitude =  53.426098
