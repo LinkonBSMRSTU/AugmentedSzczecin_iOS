@@ -16,6 +16,8 @@ class ASMainViewController: UIViewController {
     @IBOutlet weak var showAddPOI: UIButton!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         var timer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("switchColor"), userInfo: nil, repeats: true)
     }
     
@@ -34,7 +36,7 @@ class ASMainViewController: UIViewController {
         searchButton.layer.borderColor = UIColor.dodgerBlueAugmentedColor().CGColor
         
     }
-    
+
     func setButton(button: UIButton, color: UIColor) {
         button.backgroundColor = UIColor.clearColor()
         button.tintColor = color
