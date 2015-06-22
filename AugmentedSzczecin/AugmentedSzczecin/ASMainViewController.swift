@@ -20,6 +20,8 @@ class ASMainViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
         self.setButton(showMapButton, color: UIColor.redAugmentedColor())
         self.setButton(aboutButton, color: UIColor.grayAugmentedColor())
         self.setButton(showAddPOI, color: UIColor.blackAugmentedColor())
