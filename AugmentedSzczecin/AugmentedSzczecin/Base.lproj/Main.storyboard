@@ -427,38 +427,35 @@ Aplikacja łączy obraz z kamery z danymi o ciekawych miejscach w Szczecinie (za
                                                     <constraint firstAttribute="height" constant="128" id="W2u-Ol-p0j"/>
                                                 </constraints>
                                             </imageView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vfC-oZ-Gny">
-                                                <rect key="frame" x="121" y="163" width="443" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" tag="105" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vfC-oZ-Gny">
+                                                <rect key="frame" x="36" y="239" width="528" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AyR-kJ-mfR">
+                                            <textField opaque="NO" clipsSubviews="YES" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AyR-kJ-mfR">
                                                 <rect key="frame" x="36" y="87" width="528" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="Xji-b8-r2Y"/>
-                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OPO-Pd-B0P">
+                                            <textField opaque="NO" clipsSubviews="YES" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OPO-Pd-B0P">
                                                 <rect key="frame" x="36" y="125" width="528" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rUw-bR-cRf">
-                                                <rect key="frame" x="36" y="239" width="528" height="30"/>
+                                                <rect key="frame" x="36" y="353" width="528" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tags" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rAm-ha-hDv">
-                                                <rect key="frame" x="36" y="201" width="528" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" tag="107" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tags" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rAm-ha-hDv">
+                                                <rect key="frame" x="36" y="315" width="528" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffj-T4-mDc">
-                                                <rect key="frame" x="36" y="21" width="36" height="30"/>
+                                                <rect key="frame" x="8" y="18" width="36" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="dta-CL-pL3"/>
+                                                    <constraint firstAttribute="height" constant="30" id="rgc-78-xUQ"/>
                                                 </constraints>
                                                 <state key="normal" title="Send">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -467,26 +464,23 @@ Aplikacja łączy obraz z kamery z danymi o ciekawych miejscach w Szczecinie (za
                                                     <action selector="sendButtonTapped:" destination="tOs-2c-GQf" eventType="touchUpInside" id="XiD-2x-wvf"/>
                                                 </connections>
                                             </button>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Ny-zZ-dmq">
-                                                <rect key="frame" x="36" y="277" width="528" height="315"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="107" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Ny-zZ-dmq">
+                                                <rect key="frame" x="36" y="391" width="528" height="201"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="315" id="dp2-OI-DWQ"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="201" id="eGm-Gj-E7X"/>
                                                 </constraints>
                                                 <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at ex velit. Phasellus fermentum commodo mollis. Sed lacinia sollicitudin ornare. Sed eu vestibulum neque, imperdiet efficitur erat. Donec egestas mattis nisl, in aliquam lorem tincidunt eu. Cras eros ligula, volutpat vitae mauris at, fringilla consequat tortor. Donec commodo porta metus quis imperdiet. Aenean id lorem sed neque lobortis viverra sed at neque. In eget leo nunc. Proin elementum tempus orci nec consequat posuere. </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vcX-ea-1us">
-                                                <rect key="frame" x="36" y="163" width="77" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="77" id="gH9-0c-7HP"/>
-                                                </constraints>
+                                            <textField opaque="NO" clipsSubviews="YES" tag="106" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vcX-ea-1us">
+                                                <rect key="frame" x="36" y="277" width="528" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atc-eh-UB5">
-                                                <rect key="frame" x="36" y="239" width="528" height="30"/>
+                                            <button opaque="NO" tag="106" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atc-eh-UB5">
+                                                <rect key="frame" x="36" y="353" width="528" height="30"/>
                                                 <state key="normal">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -494,10 +488,20 @@ Aplikacja łączy obraz z kamery z danymi o ciekawych miejscach w Szczecinie (za
                                                     <action selector="categoryButtonTapped:" destination="tOs-2c-GQf" eventType="touchUpInside" id="p53-Vu-L1F"/>
                                                 </connections>
                                             </button>
+                                            <textField opaque="NO" clipsSubviews="YES" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J3v-KB-RyX">
+                                                <rect key="frame" x="36" y="163" width="528" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="House number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Kd-1e-IRC">
+                                                <rect key="frame" x="36" y="201" width="528" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dn7-Rf-dCl">
-                                                <rect key="frame" x="524" y="21" width="40" height="30"/>
+                                                <rect key="frame" x="552" y="18" width="40" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="CxZ-ov-hHL"/>
+                                                    <constraint firstAttribute="height" constant="30" id="gD0-nE-eWT"/>
                                                 </constraints>
                                                 <state key="normal" title="Close">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -509,61 +513,55 @@ Aplikacja łączy obraz z kamery z danymi o ciekawych miejscach w Szczecinie (za
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="1hH-wN-mWn" secondAttribute="trailing" id="5ee-BT-T3h"/>
-                                            <constraint firstAttribute="centerX" secondItem="OPO-Pd-B0P" secondAttribute="centerX" id="9Hc-Dl-opK"/>
-                                            <constraint firstItem="dn7-Rf-dCl" firstAttribute="top" secondItem="nzw-T5-EXj" secondAttribute="top" constant="21" id="9nk-eE-Afk"/>
-                                            <constraint firstItem="rAm-ha-hDv" firstAttribute="top" secondItem="vcX-ea-1us" secondAttribute="bottom" constant="8" id="A6A-NN-xIn"/>
-                                            <constraint firstItem="vfC-oZ-Gny" firstAttribute="leading" secondItem="vcX-ea-1us" secondAttribute="trailing" constant="8" id="D9b-6U-oxC"/>
-                                            <constraint firstItem="8Ny-zZ-dmq" firstAttribute="leading" secondItem="nzw-T5-EXj" secondAttribute="leading" constant="36" id="EOT-OW-fqp"/>
-                                            <constraint firstAttribute="centerX" secondItem="AyR-kJ-mfR" secondAttribute="centerX" id="EeP-Mv-WfS"/>
-                                            <constraint firstItem="ffj-T4-mDc" firstAttribute="leading" secondItem="nzw-T5-EXj" secondAttribute="leading" constant="36" id="Epi-gD-UFy"/>
-                                            <constraint firstAttribute="bottom" secondItem="8Ny-zZ-dmq" secondAttribute="bottom" constant="8" id="IVo-hp-2zd"/>
-                                            <constraint firstItem="vfC-oZ-Gny" firstAttribute="top" secondItem="OPO-Pd-B0P" secondAttribute="bottom" constant="8" id="JyW-aj-h4R"/>
-                                            <constraint firstItem="OPO-Pd-B0P" firstAttribute="leading" secondItem="nzw-T5-EXj" secondAttribute="leading" constant="36" id="Msj-pj-5at"/>
-                                            <constraint firstItem="atc-eh-UB5" firstAttribute="leading" secondItem="nzw-T5-EXj" secondAttribute="leading" constant="36" id="N9N-20-lc4"/>
-                                            <constraint firstAttribute="centerX" secondItem="rAm-ha-hDv" secondAttribute="centerX" id="NQy-TS-WXr"/>
-                                            <constraint firstItem="rAm-ha-hDv" firstAttribute="leading" secondItem="nzw-T5-EXj" secondAttribute="leading" constant="36" id="OGP-38-APz"/>
-                                            <constraint firstItem="AyR-kJ-mfR" firstAttribute="leading" secondItem="nzw-T5-EXj" secondAttribute="leading" constant="36" id="RLf-bR-NGR"/>
-                                            <constraint firstItem="1hH-wN-mWn" firstAttribute="leading" secondItem="nzw-T5-EXj" secondAttribute="leading" id="Rg8-8N-FLp"/>
-                                            <constraint firstItem="vfC-oZ-Gny" firstAttribute="leading" secondItem="nzw-T5-EXj" secondAttribute="leading" constant="36" id="Xbf-wZ-rkQ"/>
-                                            <constraint firstItem="rAm-ha-hDv" firstAttribute="top" secondItem="vcX-ea-1us" secondAttribute="bottom" constant="8" id="ZEL-av-dSy"/>
-                                            <constraint firstItem="OPO-Pd-B0P" firstAttribute="top" secondItem="AyR-kJ-mfR" secondAttribute="bottom" constant="8" id="aGz-aZ-kfv"/>
-                                            <constraint firstAttribute="trailing" secondItem="AyR-kJ-mfR" secondAttribute="trailing" constant="36" id="aoN-vC-g1O"/>
-                                            <constraint firstItem="AyR-kJ-mfR" firstAttribute="top" secondItem="nzw-T5-EXj" secondAttribute="top" constant="87" id="bOG-uc-4JU"/>
-                                            <constraint firstAttribute="trailing" secondItem="OPO-Pd-B0P" secondAttribute="trailing" constant="36" id="bR4-xQ-rel"/>
-                                            <constraint firstItem="vcX-ea-1us" firstAttribute="leading" secondItem="vfC-oZ-Gny" secondAttribute="trailing" constant="8" id="bzH-ad-vEw"/>
-                                            <constraint firstItem="atc-eh-UB5" firstAttribute="top" secondItem="rAm-ha-hDv" secondAttribute="bottom" constant="8" id="dia-4x-CXv"/>
-                                            <constraint firstItem="rUw-bR-cRf" firstAttribute="leading" secondItem="nzw-T5-EXj" secondAttribute="leading" constant="36" id="f1O-Do-uYB"/>
-                                            <constraint firstAttribute="trailing" secondItem="vcX-ea-1us" secondAttribute="trailing" constant="36" id="gNy-Dz-FTc"/>
-                                            <constraint firstAttribute="centerX" secondItem="atc-eh-UB5" secondAttribute="centerX" id="gk8-cP-uTg"/>
-                                            <constraint firstItem="rUw-bR-cRf" firstAttribute="top" secondItem="rAm-ha-hDv" secondAttribute="bottom" constant="8" id="gqw-0i-ugb"/>
-                                            <constraint firstItem="vfC-oZ-Gny" firstAttribute="top" secondItem="OPO-Pd-B0P" secondAttribute="bottom" constant="8" id="itu-11-18z"/>
-                                            <constraint firstAttribute="trailing" secondItem="rUw-bR-cRf" secondAttribute="trailing" constant="36" id="iva-jr-Dta"/>
-                                            <constraint firstAttribute="trailing" secondItem="8Ny-zZ-dmq" secondAttribute="trailing" constant="36" id="ltI-7S-pLH"/>
-                                            <constraint firstAttribute="trailing" secondItem="atc-eh-UB5" secondAttribute="trailing" constant="36" id="m9f-da-QTD"/>
-                                            <constraint firstItem="ffj-T4-mDc" firstAttribute="top" secondItem="nzw-T5-EXj" secondAttribute="top" constant="21" id="n14-Zf-5Wj"/>
-                                            <constraint firstItem="8Ny-zZ-dmq" firstAttribute="top" secondItem="rUw-bR-cRf" secondAttribute="bottom" constant="8" id="nQV-XI-i37"/>
-                                            <constraint firstAttribute="trailing" secondItem="rAm-ha-hDv" secondAttribute="trailing" constant="36" id="nf8-Mk-WAt"/>
-                                            <constraint firstItem="1hH-wN-mWn" firstAttribute="top" secondItem="nzw-T5-EXj" secondAttribute="top" constant="8" id="qrM-ke-i5d"/>
-                                            <constraint firstItem="rUw-bR-cRf" firstAttribute="height" secondItem="atc-eh-UB5" secondAttribute="height" id="rwG-eb-IlT"/>
-                                            <constraint firstAttribute="trailing" secondItem="vfC-oZ-Gny" secondAttribute="trailing" constant="36" id="sb8-xe-KNm"/>
-                                            <constraint firstItem="rUw-bR-cRf" firstAttribute="width" secondItem="atc-eh-UB5" secondAttribute="width" id="skX-Va-MuB"/>
-                                            <constraint firstItem="vfC-oZ-Gny" firstAttribute="leading" secondItem="vcX-ea-1us" secondAttribute="trailing" constant="8" id="tJT-G4-bEx"/>
-                                            <constraint firstItem="vcX-ea-1us" firstAttribute="leading" secondItem="nzw-T5-EXj" secondAttribute="leading" constant="36" id="thY-dg-CbS"/>
-                                            <constraint firstItem="vcX-ea-1us" firstAttribute="top" secondItem="OPO-Pd-B0P" secondAttribute="bottom" constant="8" id="u4Q-Yr-6e8"/>
-                                            <constraint firstAttribute="trailing" secondItem="dn7-Rf-dCl" secondAttribute="trailing" constant="36" id="u6i-1U-S1z"/>
-                                            <constraint firstItem="vcX-ea-1us" firstAttribute="top" secondItem="OPO-Pd-B0P" secondAttribute="bottom" constant="8" id="uUl-zm-AuF"/>
+                                            <constraint firstItem="vfC-oZ-Gny" firstAttribute="leading" secondItem="nzw-T5-EXj" secondAttribute="leading" constant="36" id="6IB-nl-E7j"/>
+                                            <constraint firstItem="rAm-ha-hDv" firstAttribute="top" secondItem="vcX-ea-1us" secondAttribute="bottom" constant="8" id="7Qb-nc-uNS"/>
+                                            <constraint firstItem="rAm-ha-hDv" firstAttribute="leading" secondItem="nzw-T5-EXj" secondAttribute="leading" constant="36" id="8Pi-1u-IR1"/>
+                                            <constraint firstItem="vcX-ea-1us" firstAttribute="leading" secondItem="nzw-T5-EXj" secondAttribute="leading" constant="36" id="8lD-0W-VKE"/>
+                                            <constraint firstAttribute="trailing" secondItem="1hH-wN-mWn" secondAttribute="trailing" id="9ds-7f-gLf"/>
+                                            <constraint firstAttribute="trailing" secondItem="vfC-oZ-Gny" secondAttribute="trailing" constant="36" id="AtR-Gd-t9e"/>
+                                            <constraint firstAttribute="centerX" secondItem="1Kd-1e-IRC" secondAttribute="centerX" id="BbK-Us-cRH"/>
+                                            <constraint firstAttribute="trailing" secondItem="8Ny-zZ-dmq" secondAttribute="trailing" constant="36" id="D0H-AS-zNj"/>
+                                            <constraint firstAttribute="trailing" secondItem="dn7-Rf-dCl" secondAttribute="trailing" constant="8" id="D7m-e9-afe"/>
+                                            <constraint firstAttribute="centerX" secondItem="1hH-wN-mWn" secondAttribute="centerX" id="E11-Ri-Em1"/>
+                                            <constraint firstAttribute="centerX" secondItem="OPO-Pd-B0P" secondAttribute="centerX" id="HQ2-ep-YRS"/>
+                                            <constraint firstItem="rUw-bR-cRf" firstAttribute="top" secondItem="rAm-ha-hDv" secondAttribute="bottom" constant="8" id="HU8-3f-d1C"/>
+                                            <constraint firstAttribute="centerX" secondItem="AyR-kJ-mfR" secondAttribute="centerX" id="ISi-J5-CK8"/>
+                                            <constraint firstItem="rUw-bR-cRf" firstAttribute="leading" secondItem="nzw-T5-EXj" secondAttribute="leading" constant="36" id="Jve-Kk-WrS"/>
+                                            <constraint firstAttribute="bottom" secondItem="8Ny-zZ-dmq" secondAttribute="bottom" constant="8" id="Kp1-lI-RXv"/>
+                                            <constraint firstAttribute="centerX" secondItem="8Ny-zZ-dmq" secondAttribute="centerX" id="Kre-Xd-8fs"/>
+                                            <constraint firstItem="vcX-ea-1us" firstAttribute="top" secondItem="vfC-oZ-Gny" secondAttribute="bottom" constant="8" id="Kxg-fq-9MO"/>
+                                            <constraint firstAttribute="centerX" secondItem="rAm-ha-hDv" secondAttribute="centerX" id="Lhb-v0-zsI"/>
+                                            <constraint firstItem="J3v-KB-RyX" firstAttribute="leading" secondItem="nzw-T5-EXj" secondAttribute="leading" constant="36" id="O6d-N0-wfZ"/>
+                                            <constraint firstItem="1Kd-1e-IRC" firstAttribute="top" secondItem="J3v-KB-RyX" secondAttribute="bottom" constant="8" id="PVC-Sr-vE6"/>
+                                            <constraint firstItem="AyR-kJ-mfR" firstAttribute="top" secondItem="nzw-T5-EXj" secondAttribute="top" constant="87" id="Rur-Vi-m8s"/>
+                                            <constraint firstAttribute="trailing" secondItem="vcX-ea-1us" secondAttribute="trailing" constant="36" id="SbX-QO-jav"/>
+                                            <constraint firstItem="atc-eh-UB5" firstAttribute="leading" secondItem="nzw-T5-EXj" secondAttribute="leading" constant="36" id="TMa-ee-2Wv"/>
+                                            <constraint firstAttribute="centerX" secondItem="J3v-KB-RyX" secondAttribute="centerX" id="Uaj-h4-E4N"/>
+                                            <constraint firstAttribute="centerX" secondItem="vcX-ea-1us" secondAttribute="centerX" id="Yst-Qr-SAz"/>
+                                            <constraint firstItem="1hH-wN-mWn" firstAttribute="leading" secondItem="nzw-T5-EXj" secondAttribute="leading" id="ZEX-RC-oQY"/>
+                                            <constraint firstItem="ffj-T4-mDc" firstAttribute="leading" secondItem="nzw-T5-EXj" secondAttribute="leading" constant="8" id="ZPE-sV-MkW"/>
+                                            <constraint firstAttribute="trailing" secondItem="J3v-KB-RyX" secondAttribute="trailing" constant="36" id="Zdl-qJ-hlV"/>
+                                            <constraint firstItem="dn7-Rf-dCl" firstAttribute="top" secondItem="nzw-T5-EXj" secondAttribute="top" constant="18" id="awa-Zb-SRZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="rUw-bR-cRf" secondAttribute="trailing" constant="36" id="azB-Sv-coD"/>
+                                            <constraint firstItem="ffj-T4-mDc" firstAttribute="top" secondItem="nzw-T5-EXj" secondAttribute="top" constant="18" id="bRG-b6-hUd"/>
+                                            <constraint firstItem="1hH-wN-mWn" firstAttribute="top" secondItem="nzw-T5-EXj" secondAttribute="top" constant="8" id="cvP-61-Ff6"/>
+                                            <constraint firstItem="1Kd-1e-IRC" firstAttribute="leading" secondItem="nzw-T5-EXj" secondAttribute="leading" constant="36" id="d6t-6Y-e7b"/>
+                                            <constraint firstItem="AyR-kJ-mfR" firstAttribute="leading" secondItem="nzw-T5-EXj" secondAttribute="leading" constant="36" id="da2-tm-R87"/>
+                                            <constraint firstAttribute="trailing" secondItem="atc-eh-UB5" secondAttribute="trailing" constant="36" id="efG-bv-OW8"/>
+                                            <constraint firstItem="OPO-Pd-B0P" firstAttribute="top" secondItem="AyR-kJ-mfR" secondAttribute="bottom" constant="8" id="kg5-HX-EXa"/>
+                                            <constraint firstItem="8Ny-zZ-dmq" firstAttribute="top" secondItem="atc-eh-UB5" secondAttribute="bottom" constant="8" id="klv-6r-MIW"/>
+                                            <constraint firstItem="atc-eh-UB5" firstAttribute="top" secondItem="rAm-ha-hDv" secondAttribute="bottom" constant="8" id="l1j-Hn-5MK"/>
+                                            <constraint firstItem="vfC-oZ-Gny" firstAttribute="top" secondItem="1Kd-1e-IRC" secondAttribute="bottom" constant="8" id="lO6-kP-eV7"/>
+                                            <constraint firstAttribute="centerX" secondItem="atc-eh-UB5" secondAttribute="centerX" id="puI-sZ-6r2"/>
+                                            <constraint firstAttribute="trailing" secondItem="rAm-ha-hDv" secondAttribute="trailing" constant="36" id="qrJ-La-3T2"/>
+                                            <constraint firstAttribute="trailing" secondItem="OPO-Pd-B0P" secondAttribute="trailing" constant="36" id="rOf-VT-Rwq"/>
+                                            <constraint firstAttribute="trailing" secondItem="1Kd-1e-IRC" secondAttribute="trailing" constant="36" id="rc2-j9-S2E"/>
+                                            <constraint firstItem="J3v-KB-RyX" firstAttribute="top" secondItem="OPO-Pd-B0P" secondAttribute="bottom" constant="8" id="sAJ-Kb-LYa"/>
+                                            <constraint firstAttribute="centerX" secondItem="vfC-oZ-Gny" secondAttribute="centerX" id="uEh-SS-2d1"/>
+                                            <constraint firstAttribute="trailing" secondItem="AyR-kJ-mfR" secondAttribute="trailing" constant="36" id="yKu-fR-0FR"/>
+                                            <constraint firstItem="OPO-Pd-B0P" firstAttribute="leading" secondItem="nzw-T5-EXj" secondAttribute="leading" constant="36" id="yhf-lh-lZS"/>
+                                            <constraint firstItem="8Ny-zZ-dmq" firstAttribute="leading" secondItem="nzw-T5-EXj" secondAttribute="leading" constant="36" id="zV1-px-jiG"/>
                                         </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="bzH-ad-vEw"/>
-                                                <exclude reference="gNy-Dz-FTc"/>
-                                                <exclude reference="u4Q-Yr-6e8"/>
-                                                <exclude reference="JyW-aj-h4R"/>
-                                                <exclude reference="Xbf-wZ-rkQ"/>
-                                                <exclude reference="A6A-NN-xIn"/>
-                                            </mask>
-                                        </variation>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -588,9 +586,13 @@ Aplikacja łączy obraz z kamery z danymi o ciekawych miejscach w Szczecinie (za
                         <outlet property="categoryTextField" destination="rUw-bR-cRf" id="nrZ-es-20l"/>
                         <outlet property="cityTextField" destination="vfC-oZ-Gny" id="qHr-Yk-cLB"/>
                         <outlet property="closeButton" destination="dn7-Rf-dCl" id="ZGl-zw-iLY"/>
+                        <outlet property="contentView" destination="nzw-T5-EXj" id="gAI-TK-cmV"/>
                         <outlet property="descriptionTextView" destination="8Ny-zZ-dmq" id="e4L-6e-ftq"/>
+                        <outlet property="houseNumberField" destination="1Kd-1e-IRC" id="SZQ-dQ-Ey0"/>
                         <outlet property="nameTextField" destination="AyR-kJ-mfR" id="JR8-t2-Rxw"/>
+                        <outlet property="scrollView" destination="VBh-VT-nyV" id="IfA-i8-XYZ"/>
                         <outlet property="sendButton" destination="ffj-T4-mDc" id="nJc-wA-HNv"/>
+                        <outlet property="streetNumberField" destination="J3v-KB-RyX" id="gmX-cT-29Y"/>
                         <outlet property="streetTextField" destination="OPO-Pd-B0P" id="66Z-R5-XUG"/>
                         <outlet property="tagsTextField" destination="rAm-ha-hDv" id="j51-JB-RrX"/>
                         <outlet property="zipCodeTextField" destination="vcX-ea-1us" id="PXZ-bc-hMh"/>

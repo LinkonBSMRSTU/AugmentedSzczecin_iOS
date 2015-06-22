@@ -20,5 +20,18 @@ class ASPOI: _ASPOI {
             completionHandler(address: placemark)
         })
     }
+    
+//    func getCoorditantesFromAddress(geocoder: CLGeocoder, completionHandler: (placemark: CLPlacemark?) -> Void) {
+//        var address = String()
+//        if (self.street != "") {
+//            address = self.street
+//        }
+//        else {
+//            return
+//        }
+//        if
+//        
+//        geocoder.geocodeAddressString(address, completionHandler: <#CLGeocodeCompletionHandler!##([AnyObject]!, NSError!) -> Void#>)
+//    }
 
 }

@@ -4,7 +4,7 @@
 import CoreData
 
 enum ASPOIAttributes: String {
-    case delete = "delete"
+    case city = "city"
     case desription = "desription"
     case houseNumber = "houseNumber"
     case id = "id"
@@ -15,7 +15,7 @@ enum ASPOIAttributes: String {
     case streetNumber = "streetNumber"
     case subcategory = "subcategory"
     case tag = "tag"
-    case zipcode = "zipcode"
+    case zipCode = "zipCode"
 }
 
 @objc
@@ -45,9 +45,9 @@ class _ASPOI: NSManagedObject {
     // MARK: - Properties
 
     @NSManaged
-    var delete: NSNumber?
+    var city: String?
 
-    // func validateDelete(value: AutoreleasingUnsafePointer<AnyObject>, error: NSErrorPointer) {}
+    // func validateCity(value: AutoreleasingUnsafePointer<AnyObject>, error: NSErrorPointer) {}
 
     @NSManaged
     var desription: String?
@@ -55,7 +55,7 @@ class _ASPOI: NSManagedObject {
     // func validateDesription(value: AutoreleasingUnsafePointer<AnyObject>, error: NSErrorPointer) {}
 
     @NSManaged
-    var houseNumber: NSNumber?
+    var houseNumber: String?
 
     // func validateHouseNumber(value: AutoreleasingUnsafePointer<AnyObject>, error: NSErrorPointer) {}
 
@@ -85,7 +85,7 @@ class _ASPOI: NSManagedObject {
     // func validateStreet(value: AutoreleasingUnsafePointer<AnyObject>, error: NSErrorPointer) {}
 
     @NSManaged
-    var streetNumber: NSNumber?
+    var streetNumber: String?
 
     // func validateStreetNumber(value: AutoreleasingUnsafePointer<AnyObject>, error: NSErrorPointer) {}
 
@@ -100,9 +100,9 @@ class _ASPOI: NSManagedObject {
     // func validateTag(value: AutoreleasingUnsafePointer<AnyObject>, error: NSErrorPointer) {}
 
     @NSManaged
-    var zipcode: NSNumber?
+    var zipCode: String?
 
-    // func validateZipcode(value: AutoreleasingUnsafePointer<AnyObject>, error: NSErrorPointer) {}
+    // func validateZipCode(value: AutoreleasingUnsafePointer<AnyObject>, error: NSErrorPointer) {}
 
     // MARK: - Relationships
 
