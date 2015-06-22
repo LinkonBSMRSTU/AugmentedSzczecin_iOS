@@ -17,8 +17,9 @@ class ASAddPlaceViewController: UIViewController, UITextFieldDelegate, UITextVie
     @IBOutlet weak var cityTextField: UITextField!
     @IBOutlet weak var categoryTextField: UITextField!
     @IBOutlet weak var tagsTextField: UITextField!
+    @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var closeButton: UIButton!
-    
+    @IBOutlet weak var categoryButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,8 @@ class ASAddPlaceViewController: UIViewController, UITextFieldDelegate, UITextVie
         closeButton.setTitle("Close".localized, forState: UIControlState.Normal)
         closeButton.setTitleColor(UIColor.mediumBlueAugmentedColor(), forState: UIControlState.Normal)
         
+        
+        
     }
 
     @IBAction func openCategoryPicker(sender: AnyObject) {
@@ -44,11 +47,24 @@ class ASAddPlaceViewController: UIViewController, UITextFieldDelegate, UITextVie
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func closeButtonTap(sender: AnyObject) {
+    @IBAction func closeButtonTapped(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: { () -> Void in
         })
     }
 
+    @IBAction func sendButtonTapped(sender: AnyObject) {
+        
+    }
+
+    @IBAction func categoryButtonTapped(sender: AnyObject) {
+        self.performSegueWithIdentifier("showCategoryPickerSegue", sender: nil)
+    }
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
