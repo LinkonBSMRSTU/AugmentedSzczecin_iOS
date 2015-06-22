@@ -26,6 +26,8 @@
 		050B83CB1AFA0A0D00DF4342 /* ASMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054B547A1AB73AE200ABCE74 /* ASMapViewController.swift */; };
 		050B83CC1AFA0ABC00DF4342 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D2DE50A1A9B7033003717F8 /* Main.storyboard */; };
 		050B83CE1AFA0AE700DF4342 /* ASMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050B83CD1AFA0AE700DF4342 /* ASMainViewController.swift */; };
+		051CAB641B38C2B400EA7313 /* ASAugmentedMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051CAB631B38C2B400EA7313 /* ASAugmentedMenuButton.swift */; };
+		051CAB651B38C8F200EA7313 /* ASAugmentedMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051CAB631B38C2B400EA7313 /* ASAugmentedMenuButton.swift */; };
 		054B546A1AB47B6500ABCE74 /* ASFirstContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054B54691AB47B6500ABCE74 /* ASFirstContactViewController.swift */; };
 		054B546C1AB47F7D00ABCE74 /* ASRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054B546B1AB47F7D00ABCE74 /* ASRegistrationViewController.swift */; };
 		054B546E1AB482E200ABCE74 /* ASRegistrationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054B546D1AB482E200ABCE74 /* ASRegistrationSegue.swift */; };
@@ -104,6 +106,7 @@
 		050B83C61AFA095A00DF4342 /* _ASUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = _ASUser.swift; path = Database/_ASUser.swift; sourceTree = "<group>"; };
 		050B83C71AFA095A00DF4342 /* ASUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASUser.swift; path = Database/ASUser.swift; sourceTree = "<group>"; };
 		050B83CD1AFA0AE700DF4342 /* ASMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASMainViewController.swift; sourceTree = "<group>"; };
+		051CAB631B38C2B400EA7313 /* ASAugmentedMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASAugmentedMenuButton.swift; sourceTree = "<group>"; };
 		054B54691AB47B6500ABCE74 /* ASFirstContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASFirstContactViewController.swift; sourceTree = "<group>"; };
 		054B546B1AB47F7D00ABCE74 /* ASRegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASRegistrationViewController.swift; sourceTree = "<group>"; };
 		054B546D1AB482E200ABCE74 /* ASRegistrationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASRegistrationSegue.swift; sourceTree = "<group>"; };
@@ -231,6 +234,7 @@
 				054B546B1AB47F7D00ABCE74 /* ASRegistrationViewController.swift */,
 				EFB7A3DC1AE2BADE00528083 /* ASRestUtil.swift */,
 				0587A0EC1ADFD75C00B78218 /* ASSearchViewController.swift */,
+				051CAB631B38C2B400EA7313 /* ASAugmentedMenuButton.swift */,
 				EFB7A3DF1AE2BB2B00528083 /* ASCredentialManager.swift */,
 				EF538D921B2873FB00CA54A4 /* pin.png */,
 				A42F98D91ABEDE4E006CF22E /* Database */,
@@ -564,6 +568,7 @@
 				EF1B26CA1AE9082A002CA8F9 /* ASPOI.swift in Sources */,
 				6D2DE5071A9B7033003717F8 /* AppDelegate.swift in Sources */,
 				2399E0581AE80B970000DFEE /* ASAlertController.swift in Sources */,
+				051CAB641B38C2B400EA7313 /* ASAugmentedMenuButton.swift in Sources */,
 				057B96781AD93EA500372E11 /* String+Localised.swift in Sources */,
 				A484B6D91B1B143D005EC2A3 /* ASAboutViewController.swift in Sources */,
 				2399E05E1AE80BA90000DFEE /* NSTimerExtension.swift in Sources */,
@@ -598,6 +603,7 @@
 				05CAEC7D1ADEE8A600628015 /* UIColor+ColorFromHex.swift in Sources */,
 				05C630A01AFA1038007997A8 /* _ASUser.swift in Sources */,
 				054B54721AB630D700ABCE74 /* ASFirstContactViewControllerTests.swift in Sources */,
+				051CAB651B38C8F200EA7313 /* ASAugmentedMenuButton.swift in Sources */,
 				057235D91ACD932B00B8FAE6 /* ASRegistrationViewController.swift in Sources */,
 				23A1688C1AF22ED000898337 /* ASAnnotationView.swift in Sources */,
 				2399E0611AE81EF40000DFEE /* Reachability.swift in Sources */,

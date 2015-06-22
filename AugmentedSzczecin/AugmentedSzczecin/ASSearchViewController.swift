@@ -42,8 +42,14 @@ class ASSearchViewController: UITableViewController, UISearchResultsUpdating, NS
             return controller
         })()
         
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: self, action: Selector("dismissViewController"))
+                
         self.tableView.reloadData()
         
+    }
+    
+    func dismissViewController() {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func viewDidAppear(animated: Bool) {

@@ -298,7 +298,7 @@ Aplikacja łączy obraz z kamery z danymi o ciekawych miejscach w Szczecinie (za
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubB-vd-iW2">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubB-vd-iW2" customClass="ASAugmentedMenuButton" customModule="AugmentedSzczecin" customModuleProvider="target">
                                 <rect key="frame" x="210" y="630" width="180" height="180"/>
                                 <state key="normal" title="About">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -319,7 +319,7 @@ Aplikacja łączy obraz z kamery z danymi o ciekawych miejscach w Szczecinie (za
                                     <constraint firstAttribute="width" secondItem="82w-O9-UqI" secondAttribute="height" multiplier="200:67" id="WoZ-pw-shV"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plw-PO-kVS">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plw-PO-kVS" customClass="ASAugmentedMenuButton" customModule="AugmentedSzczecin" customModuleProvider="target">
                                 <rect key="frame" x="11" y="450" width="180" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="plw-PO-kVS" secondAttribute="height" multiplier="1:1" id="V4w-b9-dlD"/>
@@ -331,7 +331,7 @@ Aplikacja łączy obraz z kamery z danymi o ciekawych miejscach w Szczecinie (za
                                     <action selector="showAddPOITap:" destination="6Pd-oO-MBu" eventType="touchUpInside" id="7Me-Rh-HNm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vku-2a-Jbl">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vku-2a-Jbl" customClass="ASAugmentedMenuButton" customModule="AugmentedSzczecin" customModuleProvider="target">
                                 <rect key="frame" x="210" y="270" width="180" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Vku-2a-Jbl" secondAttribute="height" multiplier="1:1" id="c98-yy-jAX"/>
@@ -343,7 +343,7 @@ Aplikacja łączy obraz z kamery z danymi o ciekawych miejscach w Szczecinie (za
                                     <action selector="showMapButtonTapped:" destination="6Pd-oO-MBu" eventType="touchUpInside" id="deu-il-kD5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vya-KW-mP2">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vya-KW-mP2" customClass="ASAugmentedMenuButton" customModule="AugmentedSzczecin" customModuleProvider="target">
                                 <rect key="frame" x="398" y="450" width="180" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="vya-KW-mP2" secondAttribute="height" multiplier="1:1" id="xLV-YL-RoA"/>
@@ -389,12 +389,12 @@ Aplikacja łączy obraz z kamery z danymi o ciekawych miejscach w Szczecinie (za
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="aboutButton" destination="ubB-vd-iW2" id="S5u-Yk-5Uc"/>
-                        <outlet property="searchButton" destination="vya-KW-mP2" id="sn8-ks-hjc"/>
-                        <outlet property="showAddPOI" destination="plw-PO-kVS" id="rdR-AN-qAR"/>
-                        <outlet property="showMapButton" destination="Vku-2a-Jbl" id="vOI-AC-1rb"/>
+                        <outlet property="aboutButton" destination="ubB-vd-iW2" id="sWX-PE-njQ"/>
+                        <outlet property="addButton" destination="plw-PO-kVS" id="IDi-5d-eNh"/>
+                        <outlet property="mapButton" destination="Vku-2a-Jbl" id="AKx-UB-tqN"/>
+                        <outlet property="searchButton" destination="vya-KW-mP2" id="1kf-MX-jZv"/>
                         <segue destination="Wmo-2f-gmO" kind="presentation" identifier="showMapSegue" id="jlj-YO-hqE"/>
-                        <segue destination="ylX-W7-8ux" kind="presentation" identifier="searchSegue" id="DK7-hE-Uw4"/>
+                        <segue destination="cl3-GL-kp1" kind="presentation" identifier="searchSegue" id="DK7-hE-Uw4"/>
                         <segue destination="MHl-zy-euQ" kind="presentation" identifier="aboutSegue" id="7jU-Qd-qSW"/>
                         <segue destination="tOs-2c-GQf" kind="presentation" identifier="showAddPOISegue" id="Fnd-JW-rIM"/>
                     </connections>
@@ -716,6 +716,7 @@ Aplikacja łączy obraz z kamery z danymi o ciekawych miejscach w Szczecinie (za
                             <outlet property="delegate" destination="ylX-W7-8ux" id="bhD-4c-IUL"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="vvu-Qb-Tu5"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="FeV-Ac-ipr" id="na2-TO-4xC"/>
                         <segue destination="0K9-u3-YEU" kind="showDetail" identifier="ShowDetailSegue" id="aFB-h9-tP9"/>
@@ -731,7 +732,7 @@ Aplikacja łączy obraz z kamery z danymi o ciekawych miejscach w Szczecinie (za
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2445" y="1077"/>
+            <point key="canvasLocation" x="3257" y="1077"/>
         </scene>
         <!--Point Detail View Controller-->
         <scene sceneID="qPq-DK-aNm">
@@ -843,6 +844,24 @@ Aplikacja łączy obraz z kamery z danymi o ciekawych miejscach w Szczecinie (za
             </objects>
             <point key="canvasLocation" x="4387" y="301"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rz0-5D-oBa">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cl3-GL-kp1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6lm-z7-viR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ylX-W7-8ux" kind="relationship" relationship="rootViewController" id="kIB-3H-i7y"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MBP-lq-6gy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2445" y="1077"/>
+        </scene>
     </scenes>
     <resources>
         <image name="logo_as_vert" width="309" height="361"/>
@@ -850,7 +869,7 @@ Aplikacja łączy obraz z kamery z danymi o ciekawych miejscach w Szczecinie (za
         <image name="szczecin_bg_white" width="1240" height="455"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZuN-Gn-vWJ"/>
         <segue reference="9Te-CJ-Vyg"/>
+        <segue reference="aFB-h9-tP9"/>
     </inferredMetricsTieBreakers>
 </document>
