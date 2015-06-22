@@ -85,6 +85,8 @@ class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControlle
         scaleLabel.text = "500 m"
         scaleLabel.textColor = UIColor(hex: 0x212121, alpha: 1)
         
+        update.setTitle("Refresh POIs".localized, forState: UIControlState.Normal)
+        
         resetTimer()
     }
 

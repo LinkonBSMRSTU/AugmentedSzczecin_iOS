@@ -244,12 +244,11 @@ class ASRestUtil {
             
         }
         
-    
-        if countObjectsInDatabase().count != NSNotFound {
-            
-            var request = NSFetchRequest(entityName: ASPOI.entityName())
-            
-            var data = managedContext?.executeFetchRequest(request, error: nil)
+        var request = NSFetchRequest(entityName: ASPOI.entityName())
+        
+        var data = managedContext?.executeFetchRequest(request, error: nil)
+        
+        if data != nil {
             
             if let array = data as? [NSManagedObject] {
                 
@@ -270,11 +269,11 @@ class ASRestUtil {
                             
                             updatePoi(value, id, name, tag, longitude, latitude)
                             value.delete = false
-                            println("update'uje...")
+                            println("update")
                         } else {
                             
                             addPoiToDatabase(id, name, tag, latitude, longitude, false)
-                             println("inertuje")
+                            println("insert po raz pierwszy")
                             
                         }
                         
@@ -299,23 +298,22 @@ class ASRestUtil {
                 
             } else {
                 
-                //problem witch fetching data - delete all data and insert all of them again
-            }
-           
-            
-            
-        } else {
-            
-            for iterator in pois {
-                if let id = iterator["id"] as? String, let name = iterator["name"] as? String, let tag = iterator["description"] as? String, let location = iterator["location"]as? NSDictionary, let latitude = location["latitude"] as? Double, let longitude = location["longitude"] as? Double {
-                    
-                    addPoiToDatabase(id, name, tag, latitude, longitude, nil)
-                     println("dodaje po raz pierwszy")
-                    
+                for iterator in pois {
+                    if let id = iterator["id"] as? String, let name = iterator["name"] as? String, let tag = iterator["description"] as? String, let location = iterator["location"]as? NSDictionary, let latitude = location["latitude"] as? Double, let longitude = location["longitude"] as? Double {
+                        
+                        addPoiToDatabase(id, name, tag, latitude, longitude, nil)
+                        println("dodaje po raz pierwszy")
+                        
+                    }
+                    managedContext?.save(nil)
                 }
-                managedContext?.save(nil)
             }
         }
+            
+        else {
+            //an error occurred during fetchind data - remove all data and insert them again
+        }
+
         
         
     }
