@@ -112,28 +112,7 @@ class ASMapViewController: BLSAugmentedViewController, BLSAugmentedViewControlle
         
         let restUtil = ASRestUtil()
         
-        restUtil.getAllPois({(anyObject: AnyObject?) -> Void in
-            
-            
-            let managedContext = ASData.sharedInstance.mainContext
-            
-            var request = NSFetchRequest(entityName: ASPOI.entityName())
-            
-            var data = managedContext?.executeFetchRequest(request, error: nil)
-            
-            if let dataToShow = data as? [NSManagedObject] {
-                
-                for element in dataToShow {
-                    if let poi = element as? ASPOI {
-                        println(poi.name)
-                        
-                    }
-                }
-                managedContext?.save(nil)
-            }
-            
-            
-            },
+        restUtil.getAllPois({(anyObject: AnyObject?) -> Void in },
             callbackFailure: {(codeError: Int?, message: String) -> Void in})
         
     }

@@ -57,8 +57,6 @@ class ASRestUtil {
                         
                     }
                     
-                    //Zrobic pobieranie dla niezarejstrowanego uzytkownika
-                    
                     return request
                     
                     
@@ -209,7 +207,7 @@ class ASRestUtil {
         
         let managedContext = ASData.sharedInstance.mainContext
     
-        func addPoiToDatabase(id: String, name: String, tag: String, latitude: Double, longitude: Double, flag: Bool?) {
+        func addPoiToDatabase(id: String, name: String, tag: String, latitude: Double, longitude: Double) {
             
             var poi = ASPOI(managedObjectContext: managedContext)
             
@@ -218,16 +216,11 @@ class ASRestUtil {
             poi.tag = tag
             poi.latitude = latitude
             poi.longitude = longitude
-            
-            if flag != nil {
-                poi.delete = flag
-            }
         }
         
-        func updatePoi(poiToUpdate: ASPOI, idToUpdate: String, nameToUpdate: String, tagToUpdate: String,
+        func updatePoi(poiToUpdate: ASPOI, nameToUpdate: String, tagToUpdate: String,
             longitudeToUpdate: Double, latitudeToUpdate: Double) {
             
-            poiToUpdate.id = idToUpdate
             poiToUpdate.name = nameToUpdate
             poiToUpdate.tag = tagToUpdate
             poiToUpdate.latitude = latitudeToUpdate
@@ -235,77 +228,80 @@ class ASRestUtil {
             
         }
         
-        var request = NSFetchRequest(entityName: ASPOI.entityName())
-        
-        var data = managedContext?.executeFetchRequest(request, error: nil)
-        
-        if data != nil {
+        func countObjectsInDatabase() -> (count: Int, error: NSError?)  {
             
-            if let array = data as? [NSManagedObject] {
-                
-                var objectMap = NSDictionary(object: array, forKey: "id")
-                
-                for (_,value) in objectMap {
-                    
-                    if let poi = value as? ASPOI {
-                        poi.delete = true
+            var request = NSFetchRequest(entityName: ASPOI.entityName())
+            var _error: NSError?
+            
+            return (count: managedContext!.countForFetchRequest(request, error: &_error), error: _error)
+            
+        }
+        
+        func getObject(predicate: NSPredicate) -> [AnyObject]? {
+            
+            var request = NSFetchRequest(entityName: ASPOI.entityName())
+            
+            request.predicate = predicate
+        
+            var data = managedContext!.executeFetchRequest(request, error: nil)
+            
+            return data
+            
+        }
+        
+        var areDataSavedInDatabase: Bool {
+            get {
+                if (countObjectsInDatabase().error == nil) {
+                    if countObjectsInDatabase().count > 0 {
+                        return true
+                    } else {
+                        return false
                     }
-                    
-                }
-                
-                for iterator in pois {
-                    if let id = iterator["id"] as? String, let name = iterator["name"] as? String, let tag = iterator["description"] as? String, let location = iterator["location"]as? NSDictionary, let latitude = location["latitude"] as? Double, let longitude = location["longitude"] as? Double {
-                        
-                        if let value = objectMap.valueForKey(id) as? ASPOI {
-                            
-                            updatePoi(value, id, name, tag, longitude, latitude)
-                            value.delete = false
-                            
-                        } else {
-                            
-                            addPoiToDatabase(id, name, tag, latitude, longitude, false)
-                            
-                        }
-                        
-                    }
-                    managedContext?.save(nil)
-                }
-                
-                
-                //petla po objectMap usuwajaca value z dictionary (ASPOI), ktore maja flage delete = true
-                
-                
-                for (_,value) in objectMap {
-                    
-                    if let poi = value as? ASPOI {
-                        if poi.delete == true {
-                            managedContext?.deleteObject(poi)
-                        }
-                    }
-                    managedContext?.save(nil)
-                    
-                }
-                
-            } else {
-                
-                for iterator in pois {
-                    if let id = iterator["id"] as? String, let name = iterator["name"] as? String, let tag = iterator["description"] as? String, let location = iterator["location"]as? NSDictionary, let latitude = location["latitude"] as? Double, let longitude = location["longitude"] as? Double {
-                        
-                        addPoiToDatabase(id, name, tag, latitude, longitude, nil)
-                        
-                        
-                    }
-                    managedContext?.save(nil)
+                } else {
+                    return false
                 }
             }
         }
+        
+        
+        if areDataSavedInDatabase {
             
-        else {
-            //an error occurred during fetchind data - remove all data and insert them again
-        }
+            for iterator in pois {
+                if let id = iterator["id"] as? String, let name = iterator["name"] as? String, let tag = iterator["description"] as? String, let location = iterator["location"]as? NSDictionary, let latitude = location["latitude"] as? Double, let longitude = location["longitude"] as? Double {
+                    
+                    let predicate = NSPredicate(format: "id == %ld", id)
+                    if let data = getObject(predicate) as? [NSManagedObject] {
+                        if let aspoi = data.valueForKey(id) as? ASPOI {
+                            updatePoi(aspoi, name, tag, longitude, latitude)
 
-        
-        
+                        }
+                        
+                        //problem with updating
+                        
+                    } else {
+                        
+                        addPoiToDatabase(id, name, tag, latitude, longitude)
+                        
+                    }
+    
+                }
+                managedContext?.save(nil)
+            }
+            
+        } else {
+            
+            for iterator in pois {
+                if let id = iterator["id"] as? String, let name = iterator["name"] as? String, let tag = iterator["description"] as? String, let location = iterator["location"]as? NSDictionary, let latitude = location["latitude"] as? Double, let longitude = location["longitude"] as? Double {
+                    
+                    addPoiToDatabase(id, name, tag, latitude, longitude)
+                    
+                    
+                }
+                managedContext?.save(nil)
+            }
+            
+        }
+    
     }
     
     class func paramsForSigningUp(email: String, password: String) -> (apiPath: String, parameters: Dictionary<String, String>) {
