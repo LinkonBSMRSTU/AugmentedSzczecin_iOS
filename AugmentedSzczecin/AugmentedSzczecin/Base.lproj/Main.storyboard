@@ -703,7 +703,6 @@ Aplikacja łączy obraz z kamery z danymi o ciekawych miejscach w Szczecinie (za
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="homeButtonTap:" destination="Wmo-2f-gmO" eventType="touchUpInside" id="OOu-n8-mhR"/>
                                     <action selector="updatePois:" destination="Wmo-2f-gmO" eventType="touchUpInside" id="Aec-Rz-Z6y"/>
                                 </connections>
                             </button>
