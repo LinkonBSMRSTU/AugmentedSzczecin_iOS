@@ -272,10 +272,11 @@ class ASRestUtil {
             for iterator in pois {
                 if let id = iterator["id"] as? String, let name = iterator["name"] as? String, let tag = iterator["description"] as? String, let location = iterator["location"]as? NSDictionary, let latitude = location["latitude"] as? Double, let longitude = location["longitude"] as? Double {
                     
-                    let predicate = NSPredicate(format: "id == %ld", id)
+                    let predicate = NSPredicate(format: "id == %@", id)
                     if let data = getObject(predicate) as? [NSManagedObject] {
                         if let aspoi = data[0] as? ASPOI {
                             updatePoi(aspoi, name, tag, longitude, latitude)
+                            println("update")
 
                         }
                         
@@ -284,6 +285,7 @@ class ASRestUtil {
                     } else {
                         
                         addPoiToDatabase(id, name, tag, latitude, longitude)
+                        println("insert")
                         
                     }
     
@@ -297,6 +299,7 @@ class ASRestUtil {
                 if let id = iterator["id"] as? String, let name = iterator["name"] as? String, let tag = iterator["description"] as? String, let location = iterator["location"]as? NSDictionary, let latitude = location["latitude"] as? Double, let longitude = location["longitude"] as? Double {
                     
                     addPoiToDatabase(id, name, tag, latitude, longitude)
+                    println("add")
                     
                     
                 }
