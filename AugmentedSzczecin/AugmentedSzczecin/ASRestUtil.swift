@@ -249,10 +249,13 @@ class ASRestUtil {
             
         }
         
+        var count = countObjectsInDatabase().count
+        var error = countObjectsInDatabase().error
+        
         var areDataSavedInDatabase: Bool {
             get {
-                if (countObjectsInDatabase().error == nil) {
-                    if countObjectsInDatabase().count > 0 {
+                if error == nil {
+                    if count > 0 {
                         return true
                     } else {
                         return false
@@ -271,7 +274,7 @@ class ASRestUtil {
                     
                     let predicate = NSPredicate(format: "id == %ld", id)
                     if let data = getObject(predicate) as? [NSManagedObject] {
-                        if let aspoi = data.valueForKey(id) as? ASPOI {
+                        if let aspoi = data[0] as? ASPOI {
                             updatePoi(aspoi, name, tag, longitude, latitude)
 
                         }
