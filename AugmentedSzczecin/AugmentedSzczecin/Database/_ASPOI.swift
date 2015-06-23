@@ -50,6 +50,7 @@ class _ASPOI: NSManagedObject {
     // func validateCity(value: AutoreleasingUnsafePointer<AnyObject>, error: NSErrorPointer) {}
 
     @NSManaged
+
     var desription: String?
 
     // func validateDesription(value: AutoreleasingUnsafePointer<AnyObject>, error: NSErrorPointer) {}
